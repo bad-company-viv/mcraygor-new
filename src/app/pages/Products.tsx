@@ -1,0 +1,166 @@
+import { useState } from "react";
+import { Link, useSearchParams } from "react-router";
+import { Search, Filter, ArrowRight } from "lucide-react";
+
+const allProducts = [
+  // Liquid Waste
+  { id: 1, slug: "combined-jetting-cum-suction-machine", name: "Combined Jetting Cum Suction Machine", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/sewer-jetting-suction-machine.jpeg", desc: "Integrated jetting and suction system for sewer and drain cleaning operations.", capacity: "Model Dependent", featured: true },
+  { id: 2, slug: "super-sucker-machine", name: "Super Sucker Machine", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/super-sucker-machine.jpeg", desc: "High suction performance machine for sludge, slurry, and heavy waste evacuation.", capacity: "Model Dependent", featured: true },
+  { id: 3, slug: "sewer-grabbing-manhole-desilting-machine", name: "Sewer Grabbing / Manhole Desilting Machine", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/desilting-machine-grab-bucket.jpeg", desc: "Designed for desilting manholes and grabbing settled sewer waste safely.", capacity: "Model Dependent", featured: false },
+  { id: 4, slug: "gully-suction-emptier-trailer-mounted", name: "Gully Suction Emptier (Trailer Mounted)", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/gully-suction-emptier.jpeg", desc: "Trailer-mounted suction unit for compact and narrow-access operations.", capacity: "Model Dependent", featured: false },
+  { id: 5, slug: "bucket-type-sewer-cleaning-machine", name: "Bucket Type Sewer Cleaning Machine", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/power-bucket-machine.jpeg", desc: "Mechanical bucket-based cleaning solution for sewer line maintenance.", capacity: "Model Dependent", featured: false },
+  { id: 6, slug: "sewer-rodding-machine", name: "Sewer Rodding Machine", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/sewer-rodding-machine.jpeg", desc: "Rodding machine for blockage removal in sewer and drain pipelines.", capacity: "Model Dependent", featured: false },
+  // Solid Waste
+  { id: 7, slug: "litter-picker", name: "Litter Picker", category: "solid-waste", categoryLabel: "Solid Waste", image: "/images/products/dumper-placer-container.jpeg", desc: "Efficient litter collection system for urban cleaning applications.", capacity: "Model Dependent", featured: false },
+  { id: 8, slug: "refuse-garbage-compactor", name: "Refuse / Garbage Compactor", category: "solid-waste", categoryLabel: "Solid Waste", image: "/images/products/refuse-compactor.jpeg", desc: "Compactor solution for high-volume municipal solid waste collection.", capacity: "Model Dependent", featured: true },
+  { id: 9, slug: "road-sweeper", name: "Road Sweeper", category: "solid-waste", categoryLabel: "Solid Waste", image: "/images/products/refuse-compactor2.jpeg", desc: "Road sweeping machine for municipal roads and industrial campuses.", capacity: "Model Dependent", featured: true },
+  // Industrial Vacuum
+  { id: 10, slug: "industrial-vacuum-cleaning-machine-ivc-super-sucker", name: "Industrial Vacuum Cleaning Machine (IVC - Super Sucker)", category: "industrial-vacuum", categoryLabel: "Industrial Vacuum", image: "/images/products/mm-suction-vacuum-pump.jpeg", desc: "Heavy-duty industrial vacuum cleaning platform for demanding suction jobs.", capacity: "Model Dependent", featured: true },
+  // Special Purpose
+  { id: 11, slug: "anti-smog-gun-fogging-system", name: "Anti Smog Gun / Fogging System", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/oil-suction-machine.jpeg", desc: "Fogging system for dust suppression and environment control applications.", capacity: "Model Dependent", featured: true },
+  { id: 12, slug: "skylift-working-platforms", name: "Skylift Working Platforms", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/mobile-toilets.jpeg", desc: "Elevated working platforms for maintenance and utility operations.", capacity: "Model Dependent", featured: false },
+  { id: 13, slug: "mobile-oil-spill-recovery-unit-mosr", name: "Mobile Oil Spill Recovery Unit (MOSR)", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/sewage-suction-tanker.jpeg", desc: "Mobile solution for rapid oil spill containment and recovery operations.", capacity: "Model Dependent", featured: false },
+];
+
+const categories = [
+  { slug: "all", label: "All Products" },
+  { slug: "liquid-waste", label: "Liquid Waste" },
+  { slug: "solid-waste", label: "Solid Waste" },
+  { slug: "industrial-vacuum", label: "Industrial Vacuum" },
+  { slug: "special-purpose", label: "Special Purpose" },
+];
+
+export function Products() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState("");
+  const activeCategory = searchParams.get("category") || "all";
+
+  const filtered = allProducts.filter((p) => {
+    const matchCat = activeCategory === "all" || p.category === activeCategory;
+    const matchSearch = search === "" || p.name.toLowerCase().includes(search.toLowerCase());
+    return matchCat && matchSearch;
+  });
+
+  return (
+    <>
+      {/* Header */}
+      <section className="bg-[#1c2535] text-white py-16">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+          <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">Our Equipment</p>
+          <h1 className="text-white mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.2 }}>
+            Products
+          </h1>
+          <p className="text-gray-400 max-w-xl">
+            SRS-aligned equipment portfolio across liquid waste, solid waste, industrial vacuum cleaning, and special purpose applications.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gray-50 min-h-screen">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+          {/* Filters */}
+          <div className="flex flex-col md:flex-row gap-4 mb-10">
+            <div className="flex gap-2 flex-wrap">
+              {categories.map((cat) => (
+                <button
+                  key={cat.slug}
+                  onClick={() => setSearchParams(cat.slug === "all" ? {} : { category: cat.slug })}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                    activeCategory === cat.slug
+                      ? "bg-[#e8612c] text-white shadow-md"
+                      : "bg-white text-gray-600 border border-gray-200 hover:border-[#e8612c] hover:text-[#e8612c]"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+            <div className="relative md:ml-auto">
+              <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="pl-9 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-[#e8612c] bg-white"
+              />
+            </div>
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filtered.map((product) => (
+              <Link
+                key={product.id}
+                to={`/products/${product.slug}`}
+                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+              >
+                <div className="relative overflow-hidden h-48">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-[#1a5c3a] text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                      {product.categoryLabel}
+                    </span>
+                  </div>
+                  {product.featured && (
+                    <div className="absolute top-3 right-3">
+                      <span className="bg-[#e8612c] text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                        Popular
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="p-5">
+                  <h3 className="text-[#1c2535] font-bold mb-2" style={{ fontSize: "1rem", lineHeight: 1.4 }}>
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-3">{product.desc}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+                      Capacity: {product.capacity}
+                    </span>
+                    <span className="flex items-center gap-1 text-[#e8612c] text-sm font-semibold">
+                      View Details <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {filtered.length === 0 && (
+            <div className="text-center py-20 text-gray-400">
+              <Filter size={40} className="mx-auto mb-3 opacity-30" />
+              <p>No products found matching your search.</p>
+            </div>
+          )}
+
+          <div id="applications" className="mt-16 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+            <h2 className="text-[#1c2535] font-bold text-2xl mb-3" style={{ lineHeight: 1.3 }}>
+              Projects / Applications
+            </h2>
+            <p className="text-gray-500 text-sm mb-6">
+              Typical deployment areas based on municipal and industrial use cases referenced in the SRS.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                "Municipal sewer cleaning and desilting operations",
+                "Solid waste collection and transportation workflows",
+                "Industrial vacuum and heavy-duty suction requirements",
+                "Special-purpose deployments such as anti-smog and utility access",
+              ].map((item) => (
+                <div key={item} className="text-sm text-gray-600 bg-gray-50 border border-gray-100 rounded-lg px-4 py-3">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
