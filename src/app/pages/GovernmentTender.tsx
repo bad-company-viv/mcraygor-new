@@ -36,7 +36,7 @@ export function GovernmentTender() {
                 Your Trusted Government Procurement Partner
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                This section is aligned to SRS expectations for dedicated government tender support with clear communication, fast follow-up, and technically relevant documentation.
+                We provide dedicated support for government tender processes with technical precision, rapid response, and comprehensive documentation.
               </p>
               <div className="space-y-3">
                 {gemBenefits.map((benefit) => (

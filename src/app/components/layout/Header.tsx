@@ -109,7 +109,7 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-14 md:h-16 w-auto object-contain" />
+          <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-10 md:h-12 w-auto object-contain" />
         </Link>
 
         {/* Center: Contact Info */}
@@ -133,7 +133,8 @@ export function Header() {
         {/* Right: CTA + Mobile toggle */}
         <div className="flex items-center gap-3">
           <a
-            href="#"
+            href="/Brochure.pdf"
+            download
             className="hidden md:flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-4 py-2.5 rounded text-sm font-semibold transition-colors whitespace-nowrap"
           >
             <Download size={16} />
@@ -151,13 +152,13 @@ export function Header() {
       {/* Navigation Bar */}
       <nav ref={megaRef} className="hidden lg:block border-t border-gray-100 bg-white relative">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <ul className="flex items-center gap-0">
+          <ul className="flex items-center gap-1">
             {navLinks.map((link) => (
               <li key={link.label} className="relative">
                 {link.hasMega ? (
                   <button
                     onClick={() => setMegaOpen(!megaOpen)}
-                    className={`flex items-center gap-1 px-3 py-4 text-sm font-medium transition-colors whitespace-nowrap
+                    className={`flex items-center gap-1 px-4 py-4 text-sm font-medium transition-colors whitespace-nowrap
                       ${megaOpen ? "text-[#e8612c] bg-orange-50" : "text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50"}`}
                   >
                     {link.label}
@@ -166,7 +167,7 @@ export function Header() {
                 ) : (
                   <Link
                     to={link.to}
-                    className="block px-3 py-4 text-sm font-medium text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50 transition-colors whitespace-nowrap"
+                    className="block px-4 py-4 text-sm font-medium text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50 transition-colors whitespace-nowrap"
                     onClick={() => setMegaOpen(false)}
                   >
                     {link.label}
@@ -235,7 +236,7 @@ export function Header() {
                     Contact Sales <ArrowRight size={20} />
                   </Link>
                   <div className="mt-6 pt-5 border-t border-white/15">
-                    <a href="#" className="text-white/90 hover:text-white text-[1.1rem] leading-snug transition-colors">
+                    <a href="/Brochure.pdf" download className="text-white/90 hover:text-white text-[1.1rem] leading-snug transition-colors">
                       Download Product Catalog
                     </a>
                   </div>
@@ -299,7 +300,7 @@ export function Header() {
               <a href="mailto:support@mcraygor.com" className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c2535]">
                 <Mail size={16} className="text-[#e8612c]" />support@mcraygor.com
               </a>
-              <a href="#" className="flex items-center gap-2 bg-[#e8612c] text-white px-4 py-2.5 rounded text-sm font-semibold mx-3">
+              <a href="/Brochure.pdf" download className="flex items-center gap-2 bg-[#e8612c] text-white px-4 py-2.5 rounded text-sm font-semibold mx-3">
                 <Download size={16} />Download 2026 Company Profile
               </a>
             </div>

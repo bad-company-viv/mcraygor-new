@@ -182,7 +182,8 @@ export function ProductDetail() {
               {/* Sticky CTAs */}
               <div className="flex gap-4 mt-6">
                 <a
-                  href="#"
+                  href="/Brochure.pdf"
+                  download
                   className="flex-1 flex items-center justify-center gap-2 bg-[#1c2535] text-white py-3.5 rounded-xl font-semibold hover:bg-[#263045] transition-colors"
                 >
                   <Download size={18} /> Download Brochure
@@ -194,6 +195,22 @@ export function ProductDetail() {
                   <MessageSquare size={18} /> Request a Quote
                 </Link>
               </div>
+
+              {/* Product Schema */}
+              <script type="application/ld+json">
+                {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Product",
+                  "name": product.name,
+                  "description": product.overview,
+                  "brand": {
+                    "@type": "Brand",
+                    "name": "McRAYGOR"
+                  },
+                  "category": product.category,
+                  "image": `https://www.mcraygor.com${product.image}`
+                })}
+              </script>
             </div>
 
             {/* Content */}

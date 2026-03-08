@@ -4,8 +4,14 @@ import { Globe, ChevronDown, ArrowUpRight } from "lucide-react";
 const regions = ["Asia Pacific", "Europe", "USA", "South America", "Gulf", "Australia", "UK", "India"];
 
 export function PreHeader() {
-  const [region, setRegion] = useState("Asia Pacific");
+  const [region, setRegion] = useState(() => localStorage.getItem("mcraygor-region") || "India");
   const [open, setOpen] = useState(false);
+
+  const handleRegionChange = (r: string) => {
+    setRegion(r);
+    setOpen(false);
+    localStorage.setItem("mcraygor-region", r);
+  };
 
   return (
     <div className="bg-[#1c2535] text-white py-2 px-4 md:px-8">
@@ -24,7 +30,7 @@ export function PreHeader() {
               {regions.map((r) => (
                 <button
                   key={r}
-                  onClick={() => { setRegion(r); setOpen(false); }}
+                  onClick={() => handleRegionChange(r)}
                   className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors ${region === r ? "text-[#e8612c]" : "text-gray-300"}`}
                 >
                   {r}
@@ -34,10 +40,15 @@ export function PreHeader() {
           )}
         </div>
 
-        <button className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-white transition-colors group">
+        <a
+          href="https://mcraygor-global-big-section.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-white transition-colors group"
+        >
           Visit Global Website
           <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-        </button>
+        </a>
       </div>
     </div>
   );

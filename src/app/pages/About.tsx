@@ -52,7 +52,7 @@ export function About() {
                 Legacy Brand, Current Independent Entity
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The McRAYGOR brand has long-standing visibility across municipal and industrial sectors. As captured in the SRS, outdated online references to an older private limited company exist and do not represent the current operating entity.
+                The McRAYGOR brand has long-standing visibility across municipal and industrial sectors. We maintain a clear distinction between our legacy and our current independent operational structure.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
                 The current legal and operational entity is McRAYGOR Mechanicals Infrastructure (sole proprietorship), active since 2019, with a clear focus on reliability, safety, and technology-led mechanized sanitation.

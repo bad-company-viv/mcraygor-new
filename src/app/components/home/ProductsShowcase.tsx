@@ -42,7 +42,6 @@ export function ProductsShowcase() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">What We Make</p>
             <h2 className="text-[#1c2535]" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
               Our Product Range
             </h2>

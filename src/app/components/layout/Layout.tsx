@@ -3,10 +3,12 @@ import { PreHeader } from "./PreHeader";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { FloatingActions } from "./FloatingActions";
+import ScrollToTop from "./ScrollToTop";
 
 export function Layout() {
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+      <ScrollToTop />
       <PreHeader />
       <Header />
       <main className="flex-1">

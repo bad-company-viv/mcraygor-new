@@ -41,7 +41,6 @@ export function ManufacturingSection() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">Built to Last</p>
             <h2 className="text-white mb-6" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
               Manufacturing Expertise at Scale
             </h2>
@@ -62,17 +61,17 @@ export function ManufacturingSection() {
 
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1673201159941-68fcdbbb4fa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900"
-              alt="McRAYGOR Manufacturing Facility"
-              className="rounded-2xl w-full object-cover h-[480px] shadow-2xl"
+              src="/images/manufacturing-facility-branded.png"
+              alt="McRAYGOR Advanced Manufacturing Facility"
+              className="rounded-2xl w-full object-cover h-[480px] shadow-2xl border border-white/10"
             />
-            <div className="absolute -bottom-6 -left-6 bg-[#e8612c] text-white rounded-xl p-5 shadow-xl">
+            <div className="absolute -bottom-6 -left-6 bg-[#e8612c]/90 backdrop-blur-md text-white rounded-xl p-5 shadow-2xl border border-white/20">
               <div className="text-3xl font-black mb-0.5">In-House</div>
-              <div className="text-sm font-semibold opacity-90">Manufacturing</div>
+              <div className="text-sm font-semibold opacity-90 tracking-wide">Manufacturing</div>
             </div>
-            <div className="absolute -top-6 -right-6 bg-[#1a5c3a] text-white rounded-xl p-5 shadow-xl">
+            <div className="absolute -top-6 -right-6 bg-[#1a5c3a]/90 backdrop-blur-md text-white rounded-xl p-5 shadow-2xl border border-white/20">
               <div className="text-3xl font-black mb-0.5">Real</div>
-              <div className="text-sm font-semibold opacity-90">Field Validation</div>
+              <div className="text-sm font-semibold opacity-90 tracking-wide">Field Validation</div>
             </div>
           </div>
         </div>

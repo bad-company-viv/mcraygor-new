@@ -61,7 +61,7 @@ export function Contact() {
             {/* Contact Form */}
             <div className="lg:col-span-2 bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <h2 className="text-[#1c2535] font-bold text-xl mb-2" style={{ lineHeight: 1.3 }}>Send us a Message</h2>
-              <p className="text-gray-500 text-sm mb-7">Simple enquiry form as per SRS: Name, Phone, Brief Requirement.</p>
+              <p className="text-gray-500 text-sm mb-7">Please fill out your details and we'll respond within 24 hours.</p>
 
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                 <div>

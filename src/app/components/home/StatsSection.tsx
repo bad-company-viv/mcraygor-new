@@ -52,9 +52,8 @@ export function StatsSection() {
     <section className="bg-[#0d1117] py-20">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="text-center mb-14">
-          <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">Our Scale</p>
           <h2 className="text-white" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
-            Quantifying Excellence: Operational & Manufacturing Highlights
+            McRAYGOR by the Numbers: Scale & Global Impact
           </h2>
         </div>
 

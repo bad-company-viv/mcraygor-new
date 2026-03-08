@@ -4,6 +4,7 @@ import { ProductsShowcase } from "../components/home/ProductsShowcase";
 import { ClienteleMarquee } from "../components/home/ClienteleMarquee";
 import { ManufacturingSection } from "../components/home/ManufacturingSection";
 import { CTASection } from "../components/home/CTASection";
+import { QuotationSection } from "../components/home/QuotationSection";
 import { BlogSection } from "../components/home/BlogSection";
 
 export function Home() {
@@ -12,9 +13,10 @@ export function Home() {
       <HeroSlider />
       <StatsSection />
       <ProductsShowcase />
+      <CTASection />
       <ClienteleMarquee />
       <ManufacturingSection />
-      <CTASection />
+      <QuotationSection />
       <BlogSection />
     </>
   );

@@ -11,7 +11,6 @@ export function CTASection() {
       <div className="absolute inset-0 bg-[#1a5c3a]/90" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 text-center">
-        <p className="text-green-300 text-sm font-semibold uppercase tracking-widest mb-3">Get Started</p>
         <h2 className="text-white mb-5" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
           Ready to Discuss Machines, Spares, or Tender Requirements?
         </h2>

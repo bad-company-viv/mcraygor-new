@@ -3,18 +3,21 @@ import { ArrowRight } from "lucide-react";
 const posts = [
   {
     title: "Mechanized Sanitation and Worker Safety",
-    excerpt:
-      "How machine-led operations reduce hazardous manual interventions and improve sanitation worker dignity.",
+    excerpt: "How machine-led operations reduce hazardous manual interventions and improve sanitation worker dignity.",
+    image: "https://images.unsplash.com/photo-1590103233868-d050516fc412?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    category: "TECHNOLOGY",
   },
   {
     title: "Choosing the Right Jetting-Cum-Suction Configuration",
-    excerpt:
-      "A practical guide for municipalities and industrial teams selecting the right capacity and use-case fit.",
+    excerpt: "A practical guide for municipalities and industrial teams selecting the right capacity and use-case fit.",
+    image: "https://images.unsplash.com/photo-1619451334792-150fd785ee74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    category: "GUIDE",
   },
   {
     title: "Spares Planning for High-Uptime Fleet Operations",
-    excerpt:
-      "Essential spare categories and service planning checkpoints to keep waste-handling fleets operational.",
+    excerpt: "Essential spare categories and service planning checkpoints to keep waste-handling fleets operational.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900",
+    category: "MAINTENANCE",
   },
 ];
 
@@ -24,7 +27,6 @@ export function BlogSection() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="flex items-end justify-between gap-4 mb-10">
           <div>
-            <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">Knowledge Center</p>
             <h2 className="text-[#1c2535]" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
               Latest Insights
             </h2>
@@ -36,14 +38,28 @@ export function BlogSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {posts.map((post) => (
-            <article key={post.title} className="border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-[#1c2535] font-bold text-lg mb-3" style={{ lineHeight: 1.35 }}>
-                {post.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-5">{post.excerpt}</p>
-              <a href="#" className="text-[#e8612c] text-sm font-semibold inline-flex items-center gap-1.5">
-                Read More <ArrowRight size={14} />
-              </a>
+            <article key={post.title} className="group overflow-hidden rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-300">
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-7 bg-[#1c2535] flex-1 flex flex-col">
+                <p className="text-[#e8612c] text-[0.75rem] font-black tracking-[0.1em] uppercase mb-4">
+                  {post.category}
+                </p>
+                <h3 className="text-white font-bold text-xl mb-3 leading-[1.25] group-hover:text-[#e8612c] transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-gray-400 text-[0.95rem] leading-[1.6] mb-6 line-clamp-2">
+                  {post.excerpt}
+                </p>
+                <div className="mt-auto">
+                  <ArrowRight size={20} className="text-[#e8612c]" />
+                </div>
+              </div>
             </article>
           ))}
         </div>

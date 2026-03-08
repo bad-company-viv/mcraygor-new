@@ -19,7 +19,7 @@ export function Spares() {
             Spares & Service
           </h1>
           <p className="text-gray-400 max-w-xl">
-            Dedicated spares section as defined in SRS, with SEO-ready categories and direct enquiry CTAs.
+            Comprehensive spare part catalog with optimized logistics and direct enquiry support.
           </p>
         </div>
       </section>

@@ -45,12 +45,11 @@ export function ClienteleMarquee() {
     <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-12">
         <div className="text-center">
-          <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">Trusted By</p>
           <h2 className="text-[#1c2535]" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
             Our Esteemed Clientele
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
-            Client mix across private sector leaders and government institutions from the SRS reference list.
+            Trusted by top-tier private sector leaders and major government institutions.
           </p>
         </div>
       </div>

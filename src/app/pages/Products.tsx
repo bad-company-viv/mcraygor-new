@@ -51,7 +51,7 @@ export function Products() {
             Products
           </h1>
           <p className="text-gray-400 max-w-xl">
-            SRS-aligned equipment portfolio across liquid waste, solid waste, industrial vacuum cleaning, and special purpose applications.
+            A comprehensive equipment portfolio across liquid waste, solid waste, industrial vacuum cleaning, and special purpose applications.
           </p>
         </div>
       </section>
@@ -65,11 +65,10 @@ export function Products() {
                 <button
                   key={cat.slug}
                   onClick={() => setSearchParams(cat.slug === "all" ? {} : { category: cat.slug })}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                    activeCategory === cat.slug
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${activeCategory === cat.slug
                       ? "bg-[#e8612c] text-white shadow-md"
                       : "bg-white text-gray-600 border border-gray-200 hover:border-[#e8612c] hover:text-[#e8612c]"
-                  }`}
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -144,7 +143,7 @@ export function Products() {
               Projects / Applications
             </h2>
             <p className="text-gray-500 text-sm mb-6">
-              Typical deployment areas based on municipal and industrial use cases referenced in the SRS.
+              Proven deployment configurations across municipal and industrial sectors.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[

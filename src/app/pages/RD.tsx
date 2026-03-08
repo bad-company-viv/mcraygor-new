@@ -1,86 +1,165 @@
-import { Cpu, FlaskConical, Award, Zap } from "lucide-react";
+import { Cpu, FlaskConical, Award, Zap, CheckCircle2, Microscope } from "lucide-react";
 
 const rdAreas = [
   {
     icon: FlaskConical,
-    title: "Product Testing & Validation",
-    desc: "Each design is validated against practical operating scenarios before release, with field-oriented testing and verification.",
+    title: "Product Validation",
+    desc: "Each design undergoes rigorous stress testing and field-oriented validation to ensure maximum reliability in diverse operating environments.",
+    impact: "Precision",
+    color: "#e8612c",
   },
   {
     icon: Cpu,
-    title: "Continuous Product Improvement",
-    desc: "R&D and manufacturing teams continuously refine performance, maintainability, and operator safety across product lines.",
+    title: "Continuous Innovation",
+    desc: "Our engineering team continuously refines performance, maintainability, and safety protocols across all product lines.",
+    impact: "Uptime",
+    color: "#1a5c3a",
   },
   {
     icon: Award,
-    title: "Customization Capability",
-    desc: "Products can be configured for use-case-specific requirements to support varied municipal and industrial deployment needs.",
+    title: "Custom Engineering",
+    desc: "We offer use-case-specific customizations, allowing municipal and industrial clients to configure equipment for their unique needs.",
+    impact: "Scalability",
+    color: "#1c2535",
   },
   {
     icon: Zap,
-    title: "Patented Work (Where Applicable)",
-    desc: "Innovation efforts include patent-oriented engineering outputs where applicable to product architecture and functional improvements.",
+    title: "Pioneering Tech",
+    desc: "From smart telemetry to advanced structural improvements, we hold multiple design benchmarks in the mechanized sanitation industry.",
+    impact: "Legacy",
+    color: "#e8612c",
   },
+];
+
+const rdStats = [
+  { label: "Engineering Setup", value: "In-House", desc: "End-to-end R&D Control" },
+  { label: "Design Refinement", value: "Agi-Tech", desc: "Rapid Multi-Phase Prototyping" },
 ];
 
 export function RD() {
   return (
-    <>
-      <section className="bg-[#1c2535] text-white py-20">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">Innovation</p>
-          <h1 className="text-white mb-5" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.2 }}>
-            Research & Development
-          </h1>
-          <p className="text-gray-400 max-w-2xl text-lg leading-relaxed">
-            In-house R&D positioned as real, ongoing, and implementation-driven, with focus on testing, improvement, and practical customization.
-          </p>
+    <div className="bg-white min-h-screen">
+      {/* Engineering Hero Section */}
+      <section className="relative h-[65vh] min-h-[500px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/rd-hero.png"
+            alt="McRAYGOR R&D"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1c2535]/95 via-[#1c2535]/80 to-transparent" />
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10 w-full">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-[#e8612c]/20 border border-[#e8612c]/30 text-[#e8612c] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              <Microscope size={14} className="animate-pulse" />
+              Research & Development
+            </div>
+            <h1 className="text-white mb-6" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, lineHeight: 1.1 }}>
+              Precision <br />
+              <span className="text-[#e8612c]">Engineering</span>
+            </h1>
+            <p className="text-gray-300 text-xl leading-relaxed max-w-xl">
+              At McRAYGOR, R&D isn't just about laboratory tests—it's about field-led innovation that drives operational uptime and worker safety.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* Innovation Grid */}
+      <section className="py-24 relative bg-gray-50/50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-14 items-center mb-20">
-            <div>
-              <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">Our Lab</p>
-              <h2 className="text-[#1c2535] mb-5" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 700, lineHeight: 1.3 }}>
-                Dedicated Team, Continuous Validation
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-[#1c2535] text-3xl md:text-5xl font-black mb-4 leading-tight">Driving the Future of Sanitation Tech</h2>
+              <p className="text-gray-600 text-lg">Our dedicated team focuses on practical, real-world engineering outputs.</p>
+            </div>
+            <div className="w-20 h-2 bg-[#e8612c] rounded-full hidden md:block mb-4" />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+            {rdAreas.map((area) => (
+              <div key={area.title} className="group bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 flex flex-col h-full">
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:rotate-12 shrink-0"
+                  style={{ backgroundColor: `${area.color}15`, color: area.color }}
+                >
+                  <area.icon size={28} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-[#1c2535] font-black text-xl mb-4 leading-tight">{area.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">{area.desc}</p>
+                </div>
+                <div
+                  className="inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-xl self-start"
+                  style={{ backgroundColor: `${area.color}10`, color: area.color }}
+                >
+                  <CheckCircle2 size={14} />
+                  {area.impact}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Validation Showcase */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 relative">
+              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+                <img
+                  src="/images/rd-testing.png"
+                  alt="Product Validation & Testing"
+                  className="w-full h-[550px] object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-[#e8612c]/10 rounded-full blur-3xl -z-0" />
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <h2 className="text-[#1c2535] text-3xl md:text-4xl font-black mb-6 leading-tight">
+                Rigorous Validation <br />
+                <span className="text-[#e8612c]">Real-World Results</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                As per SRS direction, R&D is presented as a core in-house function with ongoing engineering work and direct relevance to product outcomes.
+              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+                Every McRAYGOR machine is subjected to stability, pressure, and stress tests that simulate the toughest municipal and industrial environments. This commitment to testing ensures that our equipment not only performs but lasts.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                Workstreams cover dedicated team operations, continuous improvement, customization, testing and validation, and patent-linked outputs where applicable.
-              </p>
-              <div className="grid grid-cols-3 gap-4">
-                {[["In-House", "R&D Setup"], ["Continuous", "Improvement"], ["Field-Led", "Validation"]].map(([val, label]) => (
-                  <div key={label} className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-                    <div className="text-[#e8612c] font-black mb-1" style={{ fontSize: "1.2rem", lineHeight: 1.2 }}>{val}</div>
-                    <div className="text-gray-500 text-xs font-semibold">{label}</div>
+
+              <div className="grid sm:grid-cols-2 gap-8">
+                {rdStats.map((stat) => (
+                  <div key={stat.label} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="text-3xl font-black text-[#1c2535] mb-1">{stat.value}</div>
+                    <div className="text-sm font-bold text-[#e8612c] uppercase tracking-wider mb-2">{stat.label}</div>
+                    <div className="text-xs text-gray-400 font-medium">{stat.desc}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <img
-              src="https://images.unsplash.com/photo-1673201159941-68fcdbbb4fa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900"
-              alt="R&D Lab"
-              className="rounded-2xl w-full h-[380px] object-cover shadow-xl"
-            />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {rdAreas.map((area) => (
-              <div key={area.title} className="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="w-11 h-11 rounded-xl bg-[#e8612c]/10 flex items-center justify-center mb-4">
-                  <area.icon size={22} className="text-[#e8612c]" />
-                </div>
-                <h3 className="text-[#1c2535] font-bold text-lg mb-3" style={{ lineHeight: 1.3 }}>{area.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{area.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
-    </>
+
+      {/* Customization Section */}
+      <section className="py-24 bg-[#1c2535] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#e8612c]/5 skew-x-12 translate-x-32" />
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10 text-center">
+          <Award size={60} className="mx-auto mb-8 text-[#e8612c]" />
+          <h2 className="text-white text-3xl md:text-5xl font-black mb-6">Built for Your Specific Needs</h2>
+          <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+            Our internal R&D capabilities allow us to customize every product to meet the unique challenges of your local infrastructure.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-sm">
+              Custom Tanker Sizes
+            </div>
+            <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-sm">
+              Variable Pump Pressures
+            </div>
+            <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-white text-sm font-semibold backdrop-blur-sm">
+              Smart Telemetry Options
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

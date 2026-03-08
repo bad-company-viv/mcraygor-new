@@ -4,22 +4,25 @@ import { Link } from "react-router";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1764154739233-659b2681d162?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwd2FzdGUlMjBtYW5hZ2VtZW50JTIwZXF1aXBtZW50JTIwbWFjaGluZXJ5fGVufDF8fHx8MTc3Mjc5NzA5MXww&ixlib=rb-4.1.0&q=80&w=1920",
+    image: "/hero/hero1.jpeg",
     headline: "Manufacturer of Municipal and Industrial Waste Handling Equipment",
     subtext: "McRAYGOR Mechanicals Infrastructure - clean cities, safe workers, mechanized sanitation.",
-    cta: { label: "Explore Products", to: "/products" },
+    primaryCta: { label: "Explore Products", to: "/products" },
+    secondaryCta: { label: "Request a Quote", to: "/contact" },
   },
   {
-    image: "https://images.unsplash.com/photo-1762805545352-4ac5355b0f0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdW5pY2lwYWwlMjBnYXJiYWdlJTIwdHJ1Y2slMjB3YXN0ZSUyMGNvbGxlY3Rpb258ZW58MXx8fHwxNzcyNzk3MDkyfDA&ixlib=rb-4.1.0&q=80&w=1920",
+    image: "/hero/hero2.png",
     headline: "25+ Years of Manufacturing Legacy Under the McRAYGOR Brand",
     subtext: "Trusted by municipal bodies, government buyers, and industrial clients across India and export markets.",
-    cta: { label: "About Us", to: "/about" },
+    primaryCta: { label: "Our Story", to: "/about" },
+    secondaryCta: { label: "Contact Us", to: "/contact" },
   },
   {
-    image: "https://images.unsplash.com/photo-1764981966665-1abf644d10a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMGNpdHklMjBzYW5pdGF0aW9uJTIwdXJiYW4lMjBpbmZyYXN0cnVjdHVyZXxlbnwxfHx8fDE3NzI3OTcwOTZ8MA&ixlib=rb-4.1.0&q=80&w=1920",
+    image: "/hero/hero3.png",
     headline: "Premium, Technology-Driven Waste Handling Solutions",
     subtext: "From jetting-cum-suction systems to special-purpose platforms for municipal and industrial applications.",
-    cta: { label: "Get a Quote", to: "/contact" },
+    primaryCta: { label: "View Solutions", to: "/products#applications" },
+    secondaryCta: { label: "Get a Quote", to: "/contact" },
   },
 ];
 
@@ -53,7 +56,7 @@ export function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-[88vh] min-h-[560px] overflow-hidden">
+    <section className="relative h-[80vh] min-h-[500px] overflow-hidden">
       {/* Background images */}
       {slides.map((s, i) => (
         <div
@@ -83,16 +86,16 @@ export function HeroSlider() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                to={slide.cta.to}
+                to={slide.primaryCta.to}
                 className="bg-[#e8612c] hover:bg-[#d4531f] text-white px-7 py-3.5 rounded font-semibold text-base transition-all hover:shadow-lg hover:shadow-orange-500/25"
               >
-                {slide.cta.label} →
+                {slide.primaryCta.label} →
               </Link>
               <Link
-                to="/contact"
+                to={slide.secondaryCta.to}
                 className="border border-white/40 text-white hover:bg-white/10 px-7 py-3.5 rounded font-semibold text-base transition-colors"
               >
-                Request a Quote
+                {slide.secondaryCta.label}
               </Link>
             </div>
           </div>

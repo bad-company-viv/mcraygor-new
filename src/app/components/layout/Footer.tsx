@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 function toProductSlug(name: string) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -19,10 +19,17 @@ export function Footer() {
               Manufacturer of municipal and industrial waste handling equipment focused on clean cities, safe workers, and mechanized sanitation.
             </p>
             <div className="flex gap-3">
-              {[Facebook, Twitter, Linkedin, Youtube].map((Icon, i) => (
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/people/Mcraygor-Mechanicals-Haryana/pfbid0qWyumXgfzw28pQTw2CvvkwqBUdQ6MweAJJTC7LadtfL8SHgL25SQW4cgqSAcokiZl/" },
+                { Icon: Twitter, href: "http://x.com/mcraygor" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/mcraygor-mechanicals-p-ltd-b82399a3/" },
+                { Icon: Instagram, href: "https://www.instagram.com/mcraygor" },
+              ].map(({ Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-[#e8612c] transition-colors"
                 >
                   <Icon size={16} />
