@@ -47,14 +47,14 @@ export function Footer() {
               {[
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
-                { label: "Vision & Mission", to: "/about#vision" },
-                { label: "Legacy", to: "/about#legacy" },
+                { label: "Vision & Mission", to: "/vision" },
+                { label: "Legacy", to: "/legacy" },
                 { label: "Products", to: "/products" },
                 { label: "Spares", to: "/spares" },
                 { label: "R&D", to: "/rd" },
                 { label: "CSR Initiatives", to: "/csr" },
                 { label: "Government & Tender", to: "/government-tender" },
-                { label: "Projects / Applications", to: "/products#applications" },
+                { label: "Projects / Applications", to: "/projects" },
                 { label: "Contact Us", to: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
@@ -141,9 +141,9 @@ export function Footer() {
             © McRAYGOR Mechanicals Infrastructure. All Rights Reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
+            <Link to="/privacy-policy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Terms of Use</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Sitemap</a>
+            <Link to="/sitemap" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Heart, Users, Leaf, Shield, CheckCircle2, Handshake } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 const initiatives = [
   {
@@ -39,6 +40,7 @@ const impactStats = [
 export function CSR() {
   return (
     <div className="bg-white min-h-screen">
+      <SEO pageKey="csr" />
       {/* Immersive Hero Section */}
       <section className="relative h-[60vh] min-h-[450px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">

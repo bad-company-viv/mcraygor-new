@@ -31,12 +31,12 @@ const productCategories = [
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Vision & Mission", to: "/about#vision" },
-  { label: "Legacy", to: "/about#legacy" },
+  { label: "Vision & Mission", to: "/vision" },
+  { label: "Legacy", to: "/legacy" },
   { label: "Products", to: "/products", hasMega: true },
   { label: "Spares", to: "/spares" },
   { label: "Government & Tender Support", to: "/government-tender" },
-  { label: "Projects / Applications", to: "/products#applications" },
+  { label: "Projects / Applications", to: "/projects" },
   { label: "R&D", to: "/rd" },
   { label: "CSR Initiatives", to: "/csr" },
   { label: "Contact Us", to: "/contact" },
@@ -194,49 +194,45 @@ export function Header() {
                     </Link>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-x-10 gap-y-8">
-                    {megaMenuCards.map((card) => (
-                      <Link
-                        key={card.title}
-                        to={`/products/${card.slug}`}
-                        onClick={() => setMegaOpen(false)}
-                        className="group grid grid-cols-[156px_1fr] gap-4 min-h-[112px]"
-                      >
-                        <img
-                          src={card.image}
-                          alt={card.title}
-                          className="w-[156px] h-[92px] rounded-xl object-cover flex-shrink-0 shadow-sm border border-gray-200 bg-white"
-                        />
-                        <div className="min-w-0">
-                          <h4 className="text-[1.05rem] leading-tight font-semibold text-[#1f2937] group-hover:text-[#e8612c] transition-colors mb-1.5">
-                            {card.title}
-                          </h4>
-                          <p
-                            className="text-[0.96rem] leading-[1.35] text-gray-500 overflow-hidden"
-                            style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
-                          >
-                            {card.description}
-                          </p>
-                        </div>
-                      </Link>
+                  <div className="grid grid-cols-2 gap-x-12 gap-y-8">
+                    {productCategories.map((category) => (
+                      <div key={category.title}>
+                        <h4 className="text-[#1a5c3a] font-bold text-base mb-4 pb-2 border-b-2 border-[#1a5c3a]/20">
+                          {category.title}
+                        </h4>
+                        <ul className="space-y-2.5">
+                          {category.items.map((item) => (
+                            <li key={item}>
+                              <Link
+                                to={`/products/${toProductSlug(item)}`}
+                                onClick={() => setMegaOpen(false)}
+                                className="text-gray-700 hover:text-[#e8612c] transition-colors text-sm flex items-center gap-2 group"
+                              >
+                                <span className="text-[#e8612c] text-xs group-hover:translate-x-1 transition-transform">›</span>
+                                {item}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="bg-[#072349] rounded-2xl p-7 text-white flex flex-col">
-                  <h3 className="text-[2.35rem] font-extrabold mb-4 leading-[0.95]">Need Help Choosing?</h3>
-                  <p className="text-[1.05rem] text-blue-100/85 leading-[1.45]">
+                <div className="bg-[#0a2540] rounded-3xl p-8 text-white flex flex-col shadow-xl">
+                  <h3 className="text-[2.5rem] font-bold mb-5 leading-tight">Need Help<br />Choosing?</h3>
+                  <p className="text-[1.05rem] text-gray-300 leading-relaxed mb-8">
                     Our experts can help you find the right equipment for your specific requirements.
                   </p>
                   <Link
                     to="/contact"
                     onClick={() => setMegaOpen(false)}
-                    className="mt-6 w-full bg-[#ff7a12] hover:bg-[#ea6f10] text-white rounded-xl h-12 text-[1.1rem] font-semibold inline-flex items-center justify-center gap-2 transition-colors"
+                    className="w-full bg-[#ff6b35] hover:bg-[#ff7a4d] text-white rounded-xl py-4 text-[1.15rem] font-semibold inline-flex items-center justify-center gap-2.5 transition-all hover:shadow-lg"
                   >
-                    Contact Sales <ArrowRight size={20} />
+                    Contact Sales <ArrowRight size={22} />
                   </Link>
-                  <div className="mt-6 pt-5 border-t border-white/15">
-                    <a href="/Brochure.pdf" download className="text-white/90 hover:text-white text-[1.1rem] leading-snug transition-colors">
+                  <div className="mt-8 pt-6 border-t border-white/10">
+                    <a href="/Brochure.pdf" download className="text-white text-[1.1rem] font-medium hover:text-gray-200 transition-colors inline-block">
                       Download Product Catalog
                     </a>
                   </div>

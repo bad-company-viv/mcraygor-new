@@ -1,5 +1,6 @@
 import { Wrench, Package, Phone, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "../components/SEO";
 
 const spareCategories = [
   { title: "Sewer Cleaning Rods", items: ["Flexible Rod Sets", "Joint Couplers", "Drive Connectors", "Model-wise Length Options"] },
@@ -12,6 +13,7 @@ const spareCategories = [
 export function Spares() {
   return (
     <>
+      <SEO pageKey="spares" />
       <section className="bg-[#1c2535] text-white py-16">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">After-Sales</p>

@@ -1,8 +1,10 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 export function Contact() {
   return (
     <>
+      <SEO pageKey="contact" />
       <section className="bg-[#1c2535] text-white py-16">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">Get In Touch</p>

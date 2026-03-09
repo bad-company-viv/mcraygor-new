@@ -1,5 +1,7 @@
 import { Link, useParams } from "react-router";
 import { Download, MessageSquare, CheckCircle2, ChevronRight } from "lucide-react";
+import { SEO } from "../components/SEO";
+import { getProductSEO } from "../utils/seo";
 
 type ProductProfile = {
   name: string;
@@ -158,6 +160,8 @@ export function ProductDetail() {
 
   return (
     <>
+      {product && <SEO metadata={getProductSEO(slug!, product.name, product.category, product.desc)} />}
+      
       {/* Breadcrumb */}
       <div className="bg-gray-50 border-b border-gray-200 py-3">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center gap-2 text-sm text-gray-500">
@@ -169,31 +173,34 @@ export function ProductDetail() {
         </div>
       </div>
 
-      <section className="py-14 bg-white">
+      <section className="py-12 bg-white min-h-screen">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Image */}
+          <div className="grid lg:grid-cols-[480px_1fr] gap-10">
+            {/* Left Column - Image and CTAs */}
             <div>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="rounded-2xl w-full h-[420px] object-cover shadow-xl"
-              />
-              {/* Sticky CTAs */}
-              <div className="flex gap-4 mt-6">
-                <a
-                  href="/Brochure.pdf"
-                  download
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#1c2535] text-white py-3.5 rounded-xl font-semibold hover:bg-[#263045] transition-colors"
-                >
-                  <Download size={18} /> Download Brochure
-                </a>
-                <Link
-                  to="/contact"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#e8612c] text-white py-3.5 rounded-xl font-semibold hover:bg-[#d4531f] transition-colors"
-                >
-                  <MessageSquare size={18} /> Request a Quote
-                </Link>
+              <div className="sticky top-24">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="rounded-2xl w-full h-[360px] object-cover shadow-lg border border-gray-100"
+                />
+                
+                {/* CTA Buttons */}
+                <div className="flex gap-3 mt-5">
+                  <a
+                    href="/Brochure.pdf"
+                    download
+                    className="flex-1 flex items-center justify-center gap-2 bg-[#1a5c3a] text-white py-3 rounded-lg font-semibold hover:bg-[#14532d] transition-colors text-sm"
+                  >
+                    <Download size={16} /> Download Brochure
+                  </a>
+                  <a
+                    href="#quote"
+                    className="flex-1 flex items-center justify-center gap-2 bg-[#e8612c] text-white py-3 rounded-lg font-semibold hover:bg-[#d4531f] transition-colors text-sm"
+                  >
+                    <MessageSquare size={16} /> Request a Quote
+                  </a>
+                </div>
               </div>
 
               {/* Product Schema */}
@@ -213,83 +220,104 @@ export function ProductDetail() {
               </script>
             </div>
 
-            {/* Content */}
+            {/* Right Column - Content */}
             <div>
-              <span className="inline-block bg-[#1a5c3a]/10 text-[#1a5c3a] text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                {product.category}
-              </span>
-              <h1 className="text-[#1c2535] mb-4" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 800, lineHeight: 1.2 }}>
-                {product.name}
-              </h1>
-              <p className="text-gray-600 leading-relaxed mb-8">{product.overview}</p>
+              {/* Category Badge */}
+              <div className="inline-block border border-gray-300 text-gray-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+                {product.category.toUpperCase()}
+              </div>
 
-              {/* Specs */}
-              <h3 className="text-[#1c2535] font-bold mb-4 text-lg" style={{ lineHeight: 1.3 }}>Key Specifications</h3>
-              <div className="border border-gray-100 rounded-xl overflow-hidden mb-8">
-                {product.specs.map((spec, i) => (
-                  <div
-                    key={spec.key}
-                    className={`flex items-center justify-between px-5 py-3 ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
-                  >
-                    <span className="text-gray-500 text-sm">{spec.key}</span>
-                    <span className="text-[#1c2535] font-semibold text-sm">{spec.value}</span>
+              {/* Product Description */}
+              <p className="text-gray-700 leading-relaxed mb-8 text-base">
+                {product.overview}
+              </p>
+
+              {/* Industrial Grade Performance Badge */}
+              <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-8">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 size={24} className="text-green-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-[#1c2535] font-bold text-base mb-1">Industrial Grade Performance</h4>
+                    <p className="text-gray-600 text-sm">Engineered for extreme durability and continuous operation.</p>
                   </div>
-                ))}
+                </div>
+              </div>
+
+              {/* Key Specifications */}
+              <div className="mb-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <CheckCircle2 size={20} className="text-[#1a5c3a]" />
+                  <h3 className="text-[#1c2535] font-bold text-lg">Key Specifications</h3>
+                </div>
+                <div className="border border-gray-200 rounded-xl overflow-hidden">
+                  {product.specs.map((spec, i) => (
+                    <div
+                      key={spec.key}
+                      className={`grid grid-cols-[180px_1fr] gap-4 px-5 py-3.5 ${i !== product.specs.length - 1 ? "border-b border-gray-200" : ""}`}
+                    >
+                      <span className="text-gray-600 text-sm font-medium">{spec.key}</span>
+                      <span className="text-[#1c2535] text-sm">{spec.value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Applications */}
-              <h3 className="text-[#1c2535] font-bold mb-4 text-lg" style={{ lineHeight: 1.3 }}>Applications</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {product.applications.map((app) => (
-                  <div key={app} className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckCircle2 size={15} className="text-[#1a5c3a] flex-shrink-0" />
-                    {app}
-                  </div>
-                ))}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <CheckCircle2 size={20} className="text-[#1a5c3a]" />
+                  <h3 className="text-[#1c2535] font-bold text-lg">Applications</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {product.applications.map((app) => (
+                    <div key={app} className="bg-[#1a5c3a] text-white px-4 py-3 rounded-lg text-sm font-medium flex items-center gap-2">
+                      <CheckCircle2 size={14} className="flex-shrink-0" />
+                      {app}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quote form */}
+      {/* Quote Form Section */}
       <section className="py-14 bg-gray-50" id="quote">
-        <div className="max-w-3xl mx-auto px-4 md:px-8">
+        <div className="max-w-2xl mx-auto px-4 md:px-8">
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-            <h2 className="text-[#1c2535] font-bold text-2xl mb-2" style={{ lineHeight: 1.3 }}>Request a Quote</h2>
-            <p className="text-gray-500 text-sm mb-7">Fill the form and our team will get back within 24 hours.</p>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-[#1c2535] mb-1.5">Full Name *</label>
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#e8612c] bg-gray-50"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#1c2535] mb-1.5">Phone Number *</label>
-                  <input
-                    type="tel"
-                    placeholder="+91 XXXXX XXXXX"
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#e8612c] bg-gray-50"
-                  />
-                </div>
+            <h2 className="text-[#1c2535] font-bold text-2xl mb-2">Request a Quote</h2>
+            <p className="text-gray-500 text-sm mb-7">Our experts will get back to you with the best configuration for your needs.</p>
+            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">FULL NAME</label>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1c2535] mb-1.5">Brief Requirement</label>
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">PHONE NUMBER</label>
+                <input
+                  type="tel"
+                  placeholder="+1 (555) 000-0000"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">BRIEF REQUIREMENT</label>
                 <textarea
-                  placeholder="Describe your requirement..."
+                  placeholder="Details about your project..."
                   rows={4}
-                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#e8612c] bg-gray-50 resize-none"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c] resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#e8612c] hover:bg-[#d4531f] text-white py-3 rounded-lg font-semibold text-sm transition-colors"
+                className="w-full bg-[#e8612c] hover:bg-[#d4531f] text-white py-3.5 rounded-lg font-semibold text-base transition-colors flex items-center justify-center gap-2"
               >
-                Submit Request →
+                <MessageSquare size={18} /> Submit Inquiry
               </button>
             </form>
           </div>

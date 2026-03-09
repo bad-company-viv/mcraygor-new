@@ -1,5 +1,6 @@
 import { FileText, CheckCircle2, Download, Phone } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "../components/SEO";
 
 const gemBenefits = [
   "Tender-oriented technical specification support",
@@ -15,6 +16,7 @@ const gemBenefits = [
 export function GovernmentTender() {
   return (
     <>
+      <SEO pageKey="governmentTender" />
       <section className="bg-[#1c2535] text-white py-20">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">Public Sector</p>

@@ -14,6 +14,7 @@ const staticRoutes = [
     '/rd',
     '/government-tender',
     '/contact',
+    '/sitemap',
 ];
 
 // Product data (imported or defined here for simplicity in script)

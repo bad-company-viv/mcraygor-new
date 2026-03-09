@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { Search, Filter, ArrowRight } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 const allProducts = [
   // Liquid Waste
@@ -43,6 +44,7 @@ export function Products() {
 
   return (
     <>
+      <SEO pageKey="products" />
       {/* Header */}
       <section className="bg-[#1c2535] text-white py-16">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">

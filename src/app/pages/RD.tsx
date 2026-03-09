@@ -1,4 +1,5 @@
 import { Cpu, FlaskConical, Award, Zap, CheckCircle2, Microscope } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 const rdAreas = [
   {
@@ -39,6 +40,7 @@ const rdStats = [
 export function RD() {
   return (
     <div className="bg-white min-h-screen">
+      <SEO pageKey="rd" />
       {/* Engineering Hero Section */}
       <section className="relative h-[65vh] min-h-[500px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
