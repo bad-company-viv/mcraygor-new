@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router";
+import { Link } from "react-router";
 import { Search, Filter, ArrowRight } from "lucide-react";
 import { SEO } from "../components/SEO";
 
@@ -23,23 +23,12 @@ const allProducts = [
   { id: 13, slug: "mobile-oil-spill-recovery-unit-mosr", name: "Mobile Oil Spill Recovery Unit (MOSR)", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/sewage-suction-tanker.jpeg", desc: "Mobile solution for rapid oil spill containment and recovery operations.", capacity: "Model Dependent", featured: false },
 ];
 
-const categories = [
-  { slug: "all", label: "All Products" },
-  { slug: "liquid-waste", label: "Liquid Waste" },
-  { slug: "solid-waste", label: "Solid Waste" },
-  { slug: "industrial-vacuum", label: "Industrial Vacuum" },
-  { slug: "special-purpose", label: "Special Purpose" },
-];
-
 export function Products() {
-  const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState("");
-  const activeCategory = searchParams.get("category") || "all";
 
   const filtered = allProducts.filter((p) => {
-    const matchCat = activeCategory === "all" || p.category === activeCategory;
     const matchSearch = search === "" || p.name.toLowerCase().includes(search.toLowerCase());
-    return matchCat && matchSearch;
+    return matchSearch;
   });
 
   return (
@@ -61,21 +50,7 @@ export function Products() {
       <section className="py-12 bg-gray-50 min-h-screen">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           {/* Filters */}
-          <div className="flex flex-col md:flex-row gap-4 mb-10">
-            <div className="flex gap-2 flex-wrap">
-              {categories.map((cat) => (
-                <button
-                  key={cat.slug}
-                  onClick={() => setSearchParams(cat.slug === "all" ? {} : { category: cat.slug })}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${activeCategory === cat.slug
-                      ? "bg-[#e8612c] text-white shadow-md"
-                      : "bg-white text-gray-600 border border-gray-200 hover:border-[#e8612c] hover:text-[#e8612c]"
-                    }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
+          <div className="flex justify-end mb-10">
             <div className="relative md:ml-auto w-full md:w-auto">
               <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -102,11 +77,6 @@ export function Products() {
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3">
-                    <span className="bg-[#1a5c3a] text-white text-xs font-semibold px-2.5 py-1 rounded-full">
-                      {product.categoryLabel}
-                    </span>
-                  </div>
                   {product.featured && (
                     <div className="absolute top-3 right-3">
                       <span className="bg-[#e8612c] text-white text-xs font-semibold px-2.5 py-1 rounded-full">

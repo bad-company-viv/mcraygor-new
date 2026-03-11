@@ -58,7 +58,7 @@ export function ProductsShowcase() {
           {categories.map((cat) => (
             <Link
               key={cat.slug}
-              to={`/products?category=${cat.slug}`}
+              to="/products"
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative overflow-hidden h-52">

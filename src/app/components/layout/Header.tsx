@@ -19,10 +19,6 @@ const productCategories = [
     items: ["Litter Picker", "Refuse / Garbage Compactor", "Road Sweeper"],
   },
   {
-    title: "Industrial Vacuum Cleaning",
-    items: ["Industrial Vacuum Cleaning Machine (IVC - Super Sucker)"],
-  },
-  {
     title: "Special Purpose Equipment",
     items: ["Anti Smog Gun / Fogging System", "Skylift Working Platforms", "Mobile Oil Spill Recovery Unit (MOSR)"],
   },

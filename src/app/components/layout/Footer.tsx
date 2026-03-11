@@ -1,8 +1,19 @@
 import { Link } from "react-router";
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
 function toProductSlug(name: string) {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
 const logoImg = "/mcraygor-logo.jpeg";
@@ -14,15 +25,26 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <img src={logoImg} alt="McRAYGOR" className="h-14 w-auto object-contain mb-5" />
+            <img
+              src={logoImg}
+              alt="McRAYGOR"
+              className="h-14 w-auto object-contain mb-5"
+            />
             <p className="text-sm text-gray-400 leading-relaxed mb-5">
-              Manufacturer of municipal and industrial waste handling equipment focused on clean cities, safe workers, and mechanized sanitation.
+              Manufacturer of municipal and industrial waste handling equipment
+              focused on clean cities, safe workers, and mechanized sanitation.
             </p>
             <div className="flex gap-3">
               {[
-                { Icon: Facebook, href: "https://www.facebook.com/people/Mcraygor-Mechanicals-Haryana/pfbid0qWyumXgfzw28pQTw2CvvkwqBUdQ6MweAJJTC7LadtfL8SHgL25SQW4cgqSAcokiZl/" },
+                {
+                  Icon: Facebook,
+                  href: "https://www.facebook.com/people/Mcraygor-Mechanicals-Haryana/pfbid0qWyumXgfzw28pQTw2CvvkwqBUdQ6MweAJJTC7LadtfL8SHgL25SQW4cgqSAcokiZl/",
+                },
                 { Icon: Twitter, href: "http://x.com/mcraygor" },
-                { Icon: Linkedin, href: "https://www.linkedin.com/in/mcraygor-mechanicals-p-ltd-b82399a3/" },
+                {
+                  Icon: Linkedin,
+                  href: "https://www.linkedin.com/in/mcraygor-mechanicals-p-ltd-b82399a3/",
+                },
                 { Icon: Instagram, href: "https://www.instagram.com/mcraygor" },
               ].map(({ Icon, href }, i) => (
                 <a
@@ -106,20 +128,35 @@ export function Footer() {
             </h4>
             <div className="space-y-4">
               <div className="flex gap-3">
-                <MapPin size={16} className="text-[#e8612c] mt-1 flex-shrink-0" />
+                <MapPin
+                  size={16}
+                  className="text-[#e8612c] mt-1 flex-shrink-0"
+                />
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  Plot 14, Dhumaspur Road, Sector 67,<br />
-                  Badshahpur, Gurugram, Haryana,<br />
+                  Plot 14, Dhumaspur Road, Sector 67,
+                  <br />
+                  Badshahpur, Gurugram, Haryana,
+                  <br />
                   India - 122101
                 </p>
               </div>
-              <a href="tel:+918447745599" className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#e8612c] transition-colors">
+              <a
+                href="tel:+918447745599"
+                className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#e8612c] transition-colors"
+              >
                 <Phone size={16} className="text-[#e8612c] flex-shrink-0" />
-                <span className="break-words">+91 8447745599 / +91 9812001368</span>
+                <span className="break-words">
+                  +91 8447745599 / +91 9812001368
+                </span>
               </a>
-              <a href="mailto:support@mcraygor.com" className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#e8612c] transition-colors">
+              <a
+                href="mailto:support@mcraygor.com"
+                className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#e8612c] transition-colors"
+              >
                 <Mail size={16} className="text-[#e8612c] flex-shrink-0" />
-                <span className="break-all">support@mcraygor.com / system@mcraygor.com</span>
+                <span className="break-all">
+                  support@mcraygor.com / system@mcraygor.com
+                </span>
               </a>
             </div>
 
@@ -127,7 +164,9 @@ export function Footer() {
             <div className="mt-5 rounded overflow-hidden h-28 bg-white/5 border border-white/10 flex items-center justify-center">
               <div className="text-center">
                 <MapPin size={20} className="text-[#e8612c] mx-auto mb-1" />
-                <span className="text-xs text-gray-500">View on Google Maps</span>
+                <span className="text-xs text-gray-500">
+                  View on Google Maps
+                </span>
               </div>
             </div>
           </div>
@@ -140,10 +179,56 @@ export function Footer() {
           <p className="text-xs text-gray-500">
             © McRAYGOR Mechanicals Infrastructure. All Rights Reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link to="/privacy-policy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</Link>
-            <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Terms of Use</a>
-            <Link to="/sitemap" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Sitemap</Link>
+          <div className="w-full md:w-auto flex flex-col md:flex-row items-center justify-center md:justify-end gap-3 md:gap-5 md:ml-auto">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 md:pr-1">
+              <Link
+                to="/privacy-policy"
+                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <a
+                href="#"
+                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                Terms of Use
+              </a>
+              <Link
+                to="/sitemap"
+                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                Sitemap
+              </Link>
+            </div>
+            <div className="rounded-full px-3 py-1.5 flex items-center gap-3 bg-[#0b1530]/65 border border-white/15 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.28)] md:self-center">
+              <a
+                href="https://fabulousmedia.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Fabulous Media"
+                className="inline-flex items-center opacity-95 hover:opacity-100 transition-opacity"
+              >
+                <img
+                  src="/sitecredits/fabulous.png"
+                  alt="Fabulous Media"
+                  className="h-5 w-auto object-contain"
+                />
+              </a>
+              <span className="h-5 w-px bg-white/25" aria-hidden />
+              <a
+                href="https://gocommercially.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Go Commercially"
+                className="inline-flex items-center opacity-95 hover:opacity-100 transition-opacity"
+              >
+                <img
+                  src="/sitecredits/gocommercially.webp"
+                  alt="Go Commercially"
+                  className="h-4 w-auto object-contain"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
