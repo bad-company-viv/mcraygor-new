@@ -9,8 +9,8 @@ const sitemapSections = [
     links: [
       { label: "Home", to: "/" },
       { label: "About Us", to: "/about" },
-      { label: "Vision & Mission", to: "/about#vision" },
-      { label: "Legacy", to: "/about#legacy" },
+      { label: "Vision & Mission", to: "/vision" },
+      { label: "Legacy", to: "/legacy" },
       { label: "Contact Us", to: "/contact" },
     ],
   },

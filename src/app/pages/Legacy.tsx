@@ -44,14 +44,14 @@ export function Legacy() {
             Company Legacy
           </h1>
           <div className="w-24 h-1 bg-[#1a5c3a] mb-6"></div>
-          <p className="text-gray-400 max-w-2xl text-lg">
+          <p className="text-gray-400 max-w-2xl text-base md:text-lg">
             25+ years of manufacturing legacy under the McRAYGOR brand, building trust with government and industrial customers across India and globally.
           </p>
         </div>
       </section>
 
       {/* Legacy Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
@@ -77,7 +77,7 @@ export function Legacy() {
                 </li>
               </ul>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   { icon: Calendar, val: "2007", label: "Brand Established" },
                   { icon: Award, val: "25+", label: "Years Legacy" },
@@ -96,7 +96,7 @@ export function Legacy() {
               <img
                 src="/images/manufacturing-facility.png"
                 alt="McRAYGOR Manufacturing Legacy"
-                className="rounded-2xl w-full h-[420px] object-cover shadow-xl"
+                className="rounded-2xl w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover shadow-xl"
               />
             </div>
           </div>
@@ -104,7 +104,7 @@ export function Legacy() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="text-center mb-14">
             <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">Journey</p>
@@ -137,7 +137,7 @@ export function Legacy() {
       </section>
 
       {/* Current Entity Focus */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">

@@ -16,14 +16,14 @@ export function About() {
             About Us
           </h1>
           <div className="w-24 h-1 bg-[#1a5c3a] mb-6"></div>
-          <p className="text-gray-400 max-w-2xl text-lg">
+          <p className="text-gray-400 max-w-2xl text-base md:text-lg">
             Manufacturer of municipal and industrial waste handling equipment, with brand legacy in market since 2007 and current operations under McRAYGOR Mechanicals Infrastructure since 2019.
           </p>
         </div>
       </section>
 
       {/* Main About Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
@@ -38,7 +38,7 @@ export function About() {
                 The current legal and operational entity is McRAYGOR Mechanicals Infrastructure (sole proprietorship), active since 2019, with a clear focus on reliability, safety, and technology-led mechanized sanitation.
               </p>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   { val: "2007", label: "Brand Established" },
                   { val: "2019", label: "Current Operations" },
@@ -56,24 +56,15 @@ export function About() {
               <img
                 src="/images/manufacturing-facility-branded.png"
                 alt="McRAYGOR Operations"
-                className="rounded-2xl w-full h-[420px] object-cover shadow-xl"
+                className="rounded-2xl w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover shadow-xl"
               />
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <ShieldCheck size={32} className="text-[#e8612c] flex-shrink-0" />
-                  <div>
-                    <div className="text-[#1c2535] font-bold text-sm">Operationally Independent Since 2019</div>
-                    <div className="text-gray-500 text-xs">Current entity focus: modern engineering and safer sanitation outcomes</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* What We Do */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">Our Expertise</p>
@@ -117,7 +108,7 @@ export function About() {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3 text-center">Our Commitment</p>

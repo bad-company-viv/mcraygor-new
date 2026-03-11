@@ -52,7 +52,7 @@ export function Products() {
           <h1 className="text-white mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.2 }}>
             Products
           </h1>
-          <p className="text-gray-400 max-w-xl">
+          <p className="text-gray-400 max-w-xl text-sm sm:text-base">
             A comprehensive equipment portfolio across liquid waste, solid waste, industrial vacuum cleaning, and special purpose applications.
           </p>
         </div>
@@ -76,14 +76,14 @@ export function Products() {
                 </button>
               ))}
             </div>
-            <div className="relative md:ml-auto">
+            <div className="relative md:ml-auto w-full md:w-auto">
               <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search products..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-[#e8612c] bg-white"
+                className="pl-9 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-[#e8612c] bg-white w-full md:w-auto"
               />
             </div>
           </div>
@@ -140,7 +140,7 @@ export function Products() {
             </div>
           )}
 
-          <div id="applications" className="mt-16 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div id="applications" className="mt-16 bg-white rounded-2xl p-5 sm:p-8 border border-gray-100 shadow-sm">
             <h2 className="text-[#1c2535] font-bold text-2xl mb-3" style={{ lineHeight: 1.3 }}>
               Projects / Applications
             </h2>

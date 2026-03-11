@@ -106,7 +106,7 @@ export function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40">
       {/* Main Header Row */}
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-10 md:h-12 w-auto object-contain" />
@@ -149,10 +149,24 @@ export function Header() {
         </div>
       </div>
 
+      {/* Mobile quick contact strip */}
+      <div className="lg:hidden border-t border-gray-100 bg-[#f8fafc]">
+        <div className="max-w-[1600px] mx-auto px-4 py-2 flex items-center justify-between gap-3">
+          <a href="tel:+918447745599" className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1c2535] hover:text-[#e8612c] transition-colors">
+            <Phone size={14} className="text-[#e8612c]" />
+            +91 8447745599
+          </a>
+          <a href="mailto:support@mcraygor.com" className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1c2535] hover:text-[#e8612c] transition-colors">
+            <Mail size={14} className="text-[#e8612c]" />
+            support@mcraygor.com
+          </a>
+        </div>
+      </div>
+
       {/* Navigation Bar */}
       <nav ref={megaRef} className="hidden lg:block border-t border-gray-100 bg-white relative">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <ul className="flex items-center gap-1">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-8">
+          <ul className="flex items-center justify-center gap-1">
             {navLinks.map((link) => (
               <li key={link.label} className="relative">
                 {link.hasMega ? (
@@ -179,11 +193,11 @@ export function Header() {
         </div>
 
         {megaOpen && (
-          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[min(94vw,1640px)] bg-[#f1f2f5] border border-gray-200 z-50 rounded-b-2xl shadow-[0_22px_48px_rgba(0,0,0,0.16)] overflow-hidden">
-            <div className="p-8 xl:p-10">
-              <div className="grid grid-cols-[1fr_360px] gap-8">
-                <div>
-                  <div className="flex items-center justify-between mb-9">
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[min(96vw,1700px)] bg-[#f1f2f5] border border-gray-200 z-50 rounded-b-2xl shadow-[0_22px_48px_rgba(0,0,0,0.16)] overflow-hidden">
+            <div className="p-6 xl:p-8">
+              <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(260px,320px)] gap-6 xl:gap-7 items-start">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
                     <p className="text-sm font-bold tracking-wider text-gray-500 uppercase">Product Categories</p>
                     <Link
                       to="/products"
@@ -194,9 +208,9 @@ export function Header() {
                     </Link>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-x-12 gap-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7">
                     {productCategories.map((category) => (
-                      <div key={category.title}>
+                      <div key={category.title} className="min-w-0">
                         <h4 className="text-[#1a5c3a] font-bold text-base mb-4 pb-2 border-b-2 border-[#1a5c3a]/20">
                           {category.title}
                         </h4>
@@ -206,7 +220,7 @@ export function Header() {
                               <Link
                                 to={`/products/${toProductSlug(item)}`}
                                 onClick={() => setMegaOpen(false)}
-                                className="text-gray-700 hover:text-[#e8612c] transition-colors text-sm flex items-center gap-2 group"
+                                className="text-gray-700 hover:text-[#e8612c] transition-colors text-sm flex items-start gap-2 group leading-snug"
                               >
                                 <span className="text-[#e8612c] text-xs group-hover:translate-x-1 transition-transform">›</span>
                                 {item}
@@ -219,20 +233,20 @@ export function Header() {
                   </div>
                 </div>
 
-                <div className="bg-[#0a2540] rounded-3xl p-8 text-white flex flex-col shadow-xl">
-                  <h3 className="text-[2.5rem] font-bold mb-5 leading-tight">Need Help<br />Choosing?</h3>
-                  <p className="text-[1.05rem] text-gray-300 leading-relaxed mb-8">
+                <div className="bg-[#0a2540] rounded-3xl p-5 xl:p-6 text-white flex flex-col shadow-xl w-full xl:max-w-[320px] xl:justify-self-end">
+                  <h3 className="text-[1.75rem] xl:text-[2.1rem] font-bold mb-3 xl:mb-4 leading-tight">Need Help Choosing?</h3>
+                  <p className="text-[0.98rem] xl:text-base text-gray-300 leading-relaxed mb-5 xl:mb-6">
                     Our experts can help you find the right equipment for your specific requirements.
                   </p>
                   <Link
                     to="/contact"
                     onClick={() => setMegaOpen(false)}
-                    className="w-full bg-[#ff6b35] hover:bg-[#ff7a4d] text-white rounded-xl py-4 text-[1.15rem] font-semibold inline-flex items-center justify-center gap-2.5 transition-all hover:shadow-lg"
+                    className="w-full bg-[#ff6b35] hover:bg-[#ff7a4d] text-white rounded-xl py-3 xl:py-3.5 text-base xl:text-lg font-semibold inline-flex items-center justify-center gap-2.5 transition-all hover:shadow-lg"
                   >
                     Contact Sales <ArrowRight size={22} />
                   </Link>
-                  <div className="mt-8 pt-6 border-t border-white/10">
-                    <a href="/Brochure.pdf" download className="text-white text-[1.1rem] font-medium hover:text-gray-200 transition-colors inline-block">
+                  <div className="mt-5 xl:mt-6 pt-4 xl:pt-5 border-t border-white/10 flex justify-center">
+                    <a href="/Brochure.pdf" download className="text-white text-base xl:text-[1.02rem] font-medium hover:text-gray-200 transition-colors inline-block text-center">
                       Download Product Catalog
                     </a>
                   </div>
@@ -268,7 +282,7 @@ export function Header() {
                                 key={item}
                                 to={`/products/${toProductSlug(item)}`}
                                 onClick={() => setMobileOpen(false)}
-                                className="block px-3 py-1.5 text-sm text-gray-600 hover:text-[#e8612c]"
+                                className="block px-3 py-1.5 text-sm text-gray-600 hover:text-[#e8612c] leading-snug"
                               >
                                 {item}
                               </Link>
@@ -282,7 +296,7 @@ export function Header() {
                   <Link
                     to={link.to}
                     onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-2.5 text-sm font-medium text-[#1c2535] hover:text-[#e8612c]"
+                    className="block px-3 py-2.5 text-sm font-medium text-[#1c2535] hover:text-[#e8612c] leading-snug"
                   >
                     {link.label}
                   </Link>
@@ -293,10 +307,10 @@ export function Header() {
               <a href="tel:+918447745599" className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c2535]">
                 <Phone size={16} className="text-[#e8612c]" />+91 8447745599
               </a>
-              <a href="mailto:support@mcraygor.com" className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c2535]">
+              <a href="mailto:support@mcraygor.com" className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c2535] break-all">
                 <Mail size={16} className="text-[#e8612c]" />support@mcraygor.com
               </a>
-              <a href="/Brochure.pdf" download className="flex items-center gap-2 bg-[#e8612c] text-white px-4 py-2.5 rounded text-sm font-semibold mx-3">
+              <a href="/Brochure.pdf" download className="flex items-center justify-center gap-2 bg-[#e8612c] text-white px-4 py-2.5 rounded text-sm font-semibold mx-3 text-center leading-snug">
                 <Download size={16} />Download 2026 Company Profile
               </a>
             </div>

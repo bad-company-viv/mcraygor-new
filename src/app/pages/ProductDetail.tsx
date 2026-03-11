@@ -164,29 +164,29 @@ export function ProductDetail() {
       
       {/* Breadcrumb */}
       <div className="bg-gray-50 border-b border-gray-200 py-3">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center gap-2 text-sm text-gray-500">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500">
           <Link to="/" className="hover:text-[#e8612c]">Home</Link>
           <ChevronRight size={14} />
           <Link to="/products" className="hover:text-[#e8612c]">Products</Link>
           <ChevronRight size={14} />
-          <span className="text-[#1c2535] font-medium">{product.name}</span>
+          <span className="text-[#1c2535] font-medium break-words">{product.name}</span>
         </div>
       </div>
 
       <section className="py-12 bg-white min-h-screen">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-[480px_1fr] gap-10">
+          <div className="grid lg:grid-cols-[440px_1fr] gap-10">
             {/* Left Column - Image and CTAs */}
             <div>
-              <div className="sticky top-24">
+              <div className="lg:sticky lg:top-24">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="rounded-2xl w-full h-[360px] object-cover shadow-lg border border-gray-100"
+                  className="rounded-2xl w-full h-[280px] sm:h-[360px] object-cover shadow-lg border border-gray-100"
                 />
                 
                 {/* CTA Buttons */}
-                <div className="flex gap-3 mt-5">
+                <div className="flex flex-col sm:flex-row gap-3 mt-5">
                   <a
                     href="/Brochure.pdf"
                     download
@@ -253,7 +253,7 @@ export function ProductDetail() {
                   {product.specs.map((spec, i) => (
                     <div
                       key={spec.key}
-                      className={`grid grid-cols-[180px_1fr] gap-4 px-5 py-3.5 ${i !== product.specs.length - 1 ? "border-b border-gray-200" : ""}`}
+                      className={`grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-1 sm:gap-4 px-5 py-3.5 ${i !== product.specs.length - 1 ? "border-b border-gray-200" : ""}`}
                     >
                       <span className="text-gray-600 text-sm font-medium">{spec.key}</span>
                       <span className="text-[#1c2535] text-sm">{spec.value}</span>
@@ -268,7 +268,7 @@ export function ProductDetail() {
                   <CheckCircle2 size={20} className="text-[#1a5c3a]" />
                   <h3 className="text-[#1c2535] font-bold text-lg">Applications</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.applications.map((app) => (
                     <div key={app} className="bg-[#1a5c3a] text-white px-4 py-3 rounded-lg text-sm font-medium flex items-center gap-2">
                       <CheckCircle2 size={14} className="flex-shrink-0" />

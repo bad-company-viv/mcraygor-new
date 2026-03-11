@@ -92,6 +92,35 @@ export function GovernmentTender() {
               </Link>
             </div>
           </div>
+
+          <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 md:p-8">
+            <div className="max-w-3xl">
+              <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">
+                Organizational Strength
+              </p>
+              <h2 className="text-[#1c2535] mb-3" style={{ fontSize: "clamp(1.4rem, 2.4vw, 1.9rem)", fontWeight: 700, lineHeight: 1.3 }}>
+                Teams That Support Tender Delivery End-to-End
+              </h2>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Tender execution is coordinated across internal teams for stores readiness, production planning, technical validation, documentation support, and customer communication throughout the lifecycle.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+              {[
+                "Stores Team",
+                "Production Team",
+                "R&D Team",
+                "Sales Team",
+                "Business Development Team",
+                "Government & Private PR Coordination Team",
+              ].map((team) => (
+                <div key={team} className="bg-white border border-gray-100 rounded-xl px-4 py-3 text-sm font-medium text-[#1c2535]">
+                  {team}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>

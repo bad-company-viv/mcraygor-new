@@ -115,11 +115,11 @@ export function Footer() {
               </div>
               <a href="tel:+918447745599" className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#e8612c] transition-colors">
                 <Phone size={16} className="text-[#e8612c] flex-shrink-0" />
-                +91 8447745599 / +91 9812001368
+                <span className="break-words">+91 8447745599 / +91 9812001368</span>
               </a>
               <a href="mailto:support@mcraygor.com" className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#e8612c] transition-colors">
                 <Mail size={16} className="text-[#e8612c] flex-shrink-0" />
-                support@mcraygor.com / system@mcraygor.com
+                <span className="break-all">support@mcraygor.com / system@mcraygor.com</span>
               </a>
             </div>
 
@@ -140,7 +140,7 @@ export function Footer() {
           <p className="text-xs text-gray-500">
             © McRAYGOR Mechanicals Infrastructure. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link to="/privacy-policy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Terms of Use</a>
             <Link to="/sitemap" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">Sitemap</Link>

@@ -8,13 +8,17 @@ const BASE_URL = 'https://www.mcraygor.com';
 const staticRoutes = [
     '',
     '/about',
+    '/vision',
+    '/legacy',
     '/products',
+    '/projects',
     '/spares',
     '/csr',
     '/rd',
     '/government-tender',
     '/contact',
     '/sitemap',
+    '/privacy-policy',
 ];
 
 // Product data (imported or defined here for simplicity in script)
@@ -32,6 +36,16 @@ const products = [
     "anti-smog-gun-fogging-system",
     "skylift-working-platforms",
     "mobile-oil-spill-recovery-unit-mosr",
+];
+
+// Dynamic project routes
+const projects = [
+    "delhi-jal-board-mass-sewage-treatment-project-2014",
+    "karnal-highway-pipeline-leak-2015",
+    "ludhiana-punjab-clogged-sewer-alpha-project-2003",
+    "maharashtra-state-sewer-broke-project-2010",
+    "reliance-industries-sewer-cleaning-project-2013",
+    "united-nations-mission-haiti-major-sewer-choke-2010",
 ];
 
 const generateSitemap = () => {
@@ -54,6 +68,16 @@ const generateSitemap = () => {
     products.forEach(slug => {
         xml += '  <url>\n';
         xml += `    <loc>${BASE_URL}/products/${slug}</loc>\n`;
+        xml += `    <lastmod>${date}</lastmod>\n`;
+        xml += '    <changefreq>monthly</changefreq>\n';
+        xml += '    <priority>0.7</priority>\n';
+        xml += '  </url>\n';
+    });
+
+    // Add dynamic project routes
+    projects.forEach(slug => {
+        xml += '  <url>\n';
+        xml += `    <loc>${BASE_URL}/projects/${slug}</loc>\n`;
         xml += `    <lastmod>${date}</lastmod>\n`;
         xml += '    <changefreq>monthly</changefreq>\n';
         xml += '    <priority>0.7</priority>\n';

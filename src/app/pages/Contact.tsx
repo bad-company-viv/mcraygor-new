@@ -75,17 +75,17 @@ export function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#1c2535] mb-1.5">Phone Number *</label>
+                  <label className="block text-sm font-medium text-[#1c2535] mb-1.5">Email *</label>
                   <input
-                    type="tel"
-                    placeholder="+91 XXXXX XXXXX"
+                    type="email"
+                    placeholder="you@company.com"
                     className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#e8612c] bg-gray-50"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#1c2535] mb-1.5">Brief Requirement *</label>
+                  <label className="block text-sm font-medium text-[#1c2535] mb-1.5">Message *</label>
                   <textarea
-                    placeholder="Describe your requirement or query in brief..."
+                    placeholder="Machine enquiry / Tender / Service requirement"
                     rows={5}
                     className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#e8612c] bg-gray-50 resize-none"
                   />

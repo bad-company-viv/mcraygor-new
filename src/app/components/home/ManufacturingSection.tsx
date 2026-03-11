@@ -25,7 +25,7 @@ const capabilities = [
 
 export function ManufacturingSection() {
   return (
-    <section className="py-20 bg-[#1c2535] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-[#1c2535] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -39,16 +39,16 @@ export function ManufacturingSection() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-14 items-center">
           <div>
             <h2 className="text-white mb-6" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
               Manufacturing Expertise at Scale
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
               McRAYGOR's manufacturing backbone is designed for long lifecycle performance. Every machine is engineered for harsh operating environments with practical serviceability and reliable output.
             </p>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
               {capabilities.map((cap) => (
                 <div key={cap.title} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors">
                   <cap.icon size={24} className="text-[#e8612c] mb-3" />
@@ -59,20 +59,13 @@ export function ManufacturingSection() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
             <img
               src="/images/manufacturing-facility-branded.png"
               alt="McRAYGOR Advanced Manufacturing Facility"
-              className="rounded-2xl w-full object-cover h-[480px] shadow-2xl border border-white/10"
+              className="w-full object-cover h-[320px] sm:h-[420px] md:h-[480px]"
             />
-            <div className="absolute -bottom-6 -left-6 bg-[#e8612c]/90 backdrop-blur-md text-white rounded-xl p-5 shadow-2xl border border-white/20">
-              <div className="text-3xl font-black mb-0.5">In-House</div>
-              <div className="text-sm font-semibold opacity-90 tracking-wide">Manufacturing</div>
-            </div>
-            <div className="absolute -top-6 -right-6 bg-[#1a5c3a]/90 backdrop-blur-md text-white rounded-xl p-5 shadow-2xl border border-white/20">
-              <div className="text-3xl font-black mb-0.5">Real</div>
-              <div className="text-sm font-semibold opacity-90 tracking-wide">Field Validation</div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none" />
           </div>
         </div>
       </div>

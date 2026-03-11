@@ -16,14 +16,14 @@ export function Vision() {
             Vision & Mission
           </h1>
           <div className="w-24 h-1 bg-[#1a5c3a] mb-6"></div>
-          <p className="text-gray-400 max-w-2xl text-lg">
+          <p className="text-gray-400 max-w-2xl text-base md:text-lg">
             Our commitment to cleaner cities, safer sanitation practices, and mechanized infrastructure aligned with Make in India.
           </p>
         </div>
       </section>
 
       {/* Vision & Mission Cards */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -62,7 +62,7 @@ export function Vision() {
       </section>
 
       {/* Long-term Vision Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -98,7 +98,7 @@ export function Vision() {
               <img
                 src="/images/manufacturing-facility-branded.png"
                 alt="McRAYGOR Manufacturing Facility"
-                className="rounded-2xl w-full h-[420px] object-cover shadow-xl"
+                className="rounded-2xl w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover shadow-xl"
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ export function Vision() {
       </section>
 
       {/* Make in India Alignment */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-2">National Alignment</p>

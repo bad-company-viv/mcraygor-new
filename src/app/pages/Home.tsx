@@ -6,6 +6,8 @@ import { ManufacturingSection } from "../components/home/ManufacturingSection";
 import { CTASection } from "../components/home/CTASection";
 import { QuotationSection } from "../components/home/QuotationSection";
 import { BlogSection } from "../components/home/BlogSection";
+import { ProjectsInstallationsSection } from "../components/home/ProjectsInstallationsSection";
+import { WorldwidePresenceSection } from "../components/home/WorldwidePresenceSection";
 import { SEO } from "../components/SEO";
 
 export function Home() {
@@ -17,9 +19,11 @@ export function Home() {
       <ProductsShowcase />
       <CTASection />
       <ClienteleMarquee />
+      <ProjectsInstallationsSection />
       <ManufacturingSection />
       <QuotationSection />
       <BlogSection />
+      <WorldwidePresenceSection />
     </>
   );
 }

@@ -1,0 +1,41 @@
+{
+  "title": "Quantifying Excellence: Operational & Manufacturing Highlights",
+  "metrics": [
+    {
+      "value": 25,
+      "suffix": "+",
+      "label": "Years in Business",
+      "description": "Manufacturing Legacy"
+    },
+    {
+      "value": 1200,
+      "suffix": "+",
+      "label": "Tenders Executed",
+      "description": "Government & Institutional"
+    },
+    {
+      "value": 40000,
+      "suffix": "+",
+      "label": "Machines Manufactured",
+      "description": "Municipal & Industrial"
+    },
+    {
+      "value": 500,
+      "suffix": "+",
+      "label": "Machines Running Worldwide",
+      "description": "Active Fleet"
+    },
+    {
+      "value": 18,
+      "suffix": "+",
+      "label": "Countries Served",
+      "description": "Global Presence"
+    },
+    {
+      "value": 1200,
+      "suffix": "+",
+      "label": "Projects Completed",
+      "description": "Public & Private Sectors"
+    }
+  ]
+}

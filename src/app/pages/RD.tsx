@@ -42,7 +42,7 @@ export function RD() {
     <div className="bg-white min-h-screen">
       <SEO pageKey="rd" />
       {/* Engineering Hero Section */}
-      <section className="relative h-[65vh] min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative h-[58vh] min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/rd-hero.png"
@@ -62,7 +62,7 @@ export function RD() {
               Precision <br />
               <span className="text-[#e8612c]">Engineering</span>
             </h1>
-            <p className="text-gray-300 text-xl leading-relaxed max-w-xl">
+            <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl">
               At McRAYGOR, R&D isn't just about laboratory tests—it's about field-led innovation that drives operational uptime and worker safety.
             </p>
           </div>
@@ -70,19 +70,19 @@ export function RD() {
       </section>
 
       {/* Innovation Grid */}
-      <section className="py-24 relative bg-gray-50/50">
+      <section className="py-16 md:py-24 relative bg-gray-50/50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-[#1c2535] text-3xl md:text-5xl font-black mb-4 leading-tight">Driving the Future of Sanitation Tech</h2>
-              <p className="text-gray-600 text-lg">Our dedicated team focuses on practical, real-world engineering outputs.</p>
+              <h2 className="text-[#1c2535] text-2xl sm:text-3xl md:text-5xl font-black mb-4 leading-tight">Driving the Future of Sanitation Tech</h2>
+              <p className="text-gray-600 text-base md:text-lg">Our dedicated team focuses on practical, real-world engineering outputs.</p>
             </div>
             <div className="w-20 h-2 bg-[#e8612c] rounded-full hidden md:block mb-4" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
             {rdAreas.map((area) => (
-              <div key={area.title} className="group bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 flex flex-col h-full">
+              <div key={area.title} className="group bg-white border border-gray-100 rounded-3xl p-6 sm:p-8 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 flex flex-col h-full">
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:rotate-12 shrink-0"
                   style={{ backgroundColor: `${area.color}15`, color: area.color }}
@@ -111,18 +111,18 @@ export function RD() {
                 <img
                   src="/images/rd-testing.png"
                   alt="Product Validation & Testing"
-                  className="w-full h-[550px] object-cover"
+                  className="w-full h-[320px] sm:h-[420px] md:h-[550px] object-cover"
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-[#e8612c]/10 rounded-full blur-3xl -z-0" />
             </div>
 
             <div className="order-1 lg:order-2">
-              <h2 className="text-[#1c2535] text-3xl md:text-4xl font-black mb-6 leading-tight">
+              <h2 className="text-[#1c2535] text-2xl sm:text-3xl md:text-4xl font-black mb-6 leading-tight">
                 Rigorous Validation <br />
                 <span className="text-[#e8612c]">Real-World Results</span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10">
                 Every McRAYGOR machine is subjected to stability, pressure, and stress tests that simulate the toughest municipal and industrial environments. This commitment to testing ensures that our equipment not only performs but lasts.
               </p>
 
@@ -141,12 +141,12 @@ export function RD() {
       </section>
 
       {/* Customization Section */}
-      <section className="py-24 bg-[#1c2535] relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-[#1c2535] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#e8612c]/5 skew-x-12 translate-x-32" />
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10 text-center">
-          <Award size={60} className="mx-auto mb-8 text-[#e8612c]" />
-          <h2 className="text-white text-3xl md:text-5xl font-black mb-6">Built for Your Specific Needs</h2>
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+          <Award size={52} className="mx-auto mb-8 text-[#e8612c]" />
+          <h2 className="text-white text-2xl sm:text-3xl md:text-5xl font-black mb-6">Built for Your Specific Needs</h2>
+          <p className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
             Our internal R&D capabilities allow us to customize every product to meet the unique challenges of your local infrastructure.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

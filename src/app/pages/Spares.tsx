@@ -48,9 +48,9 @@ export function Spares() {
             <div className="bg-[#1c2535] px-7 py-5">
               <h2 className="text-white font-bold text-xl" style={{ lineHeight: 1.3 }}>Spare Parts Categories</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0">
-              {spareCategories.map((cat, i) => (
-                <div key={cat.title} className={`p-6 ${i < spareCategories.length - 1 ? "border-r border-gray-100" : ""}`}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-4">
+              {spareCategories.map((cat) => (
+                <div key={cat.title} className="p-6 border border-gray-100 rounded-xl">
                   <h4 className="text-[#1a5c3a] font-bold text-sm uppercase tracking-wide mb-4 pb-2 border-b border-gray-100">
                     {cat.title}
                   </h4>

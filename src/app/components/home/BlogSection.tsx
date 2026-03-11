@@ -20,9 +20,9 @@ const posts = [
 
 export function BlogSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 md:py-20 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="flex items-end justify-between gap-4 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 md:mb-10">
           <div>
             <h2 className="text-[#1c2535]" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
               Latest Insights
@@ -36,10 +36,10 @@ export function BlogSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {posts.map((post) => (
             <article key={post.title} className="group overflow-hidden rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-300">
-              <div className="relative h-56 overflow-hidden bg-gray-100">
+              <div className="relative h-48 sm:h-56 overflow-hidden bg-gray-100">
                 {/* Image placeholder - keeping space for future blog images */}
               </div>
-              <div className="p-7 bg-[#1c2535] flex-1 flex flex-col">
+              <div className="p-5 sm:p-7 bg-[#1c2535] flex-1 flex flex-col">
                 <p className="text-[#e8612c] text-[0.75rem] font-black tracking-[0.1em] uppercase mb-4">
                   {post.category}
                 </p>

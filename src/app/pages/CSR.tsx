@@ -42,7 +42,7 @@ export function CSR() {
     <div className="bg-white min-h-screen">
       <SEO pageKey="csr" />
       {/* Immersive Hero Section */}
-      <section className="relative h-[60vh] min-h-[450px] flex items-center overflow-hidden">
+      <section className="relative h-[56vh] min-h-[380px] md:min-h-[450px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/csr-hero.png"
@@ -61,7 +61,7 @@ export function CSR() {
             <h1 className="text-white mb-6" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, lineHeight: 1.1 }}>
               Engineering <br /> Social Change
             </h1>
-            <p className="text-green-50 text-xl leading-relaxed max-w-xl">
+            <p className="text-green-50 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl">
               Replacing hazardous manual intervention with mechanized dignity. Our technology is designed to protect lives and professionalize sanitation work.
             </p>
           </div>
@@ -69,16 +69,16 @@ export function CSR() {
       </section>
 
       {/* Initiatives Grid */}
-      <section className="py-24 relative">
+      <section className="py-16 md:py-24 relative">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-[#1c2535] text-3xl md:text-4xl font-extrabold mb-4">Our Core CSR Pillars</h2>
+            <h2 className="text-[#1c2535] text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">Our Core CSR Pillars</h2>
             <div className="w-20 h-1.5 bg-[#e8612c] mx-auto rounded-full" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {initiatives.map((item) => (
-              <div key={item.title} className="group bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
+              <div key={item.title} className="group bg-white border border-gray-100 rounded-3xl p-6 sm:p-8 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 shrink-0"
                   style={{ backgroundColor: `${item.color}15`, color: item.color }}
@@ -101,12 +101,12 @@ export function CSR() {
           </div>
 
           {/* Impact Highlight Section */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-[3rem] p-8 md:p-16 border border-gray-100">
+          <div className="grid lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-3xl md:rounded-[3rem] p-5 sm:p-8 md:p-16 border border-gray-100">
             <div>
-              <h2 className="text-[#1c2535] text-3xl md:text-4xl font-black mb-6 leading-tight">
+              <h2 className="text-[#1c2535] text-2xl sm:text-3xl md:text-4xl font-black mb-6 leading-tight">
                 Human-Centric <br /> Mechanization
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10">
                 We believe that technology should serve humanity. By mechanizing hazardous tasks, we are not just providing equipment; we are restoring the dignity of labor for thousands of sanitation workers.
               </p>
 
@@ -126,7 +126,7 @@ export function CSR() {
                 <img
                   src="/images/csr-impact.png"
                   alt="Sanitation Worker Dignity"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[320px] sm:h-[420px] md:h-[500px] object-cover"
                 />
               </div>
               {/* Decorative element */}
@@ -138,18 +138,18 @@ export function CSR() {
       </section>
 
       {/* Final Statement */}
-      <section className="pb-24">
+      <section className="pb-16 md:pb-24">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <div className="bg-[#1c2535] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="bg-[#1c2535] rounded-3xl md:rounded-[3rem] p-8 sm:p-12 md:p-20 text-center relative overflow-hidden">
             {/* Background subtle glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[#1a5c3a]/20 blur-[100px] rounded-full" />
 
             <div className="relative z-10">
-              <Heart size={60} className="mx-auto mb-8 text-[#e8612c] fill-[#e8612c]/20" />
-              <h2 className="text-white text-3xl md:text-5xl font-black max-w-4xl mx-auto mb-8 leading-tight">
+              <Heart size={52} className="mx-auto mb-8 text-[#e8612c] fill-[#e8612c]/20" />
+              <h2 className="text-white text-2xl sm:text-3xl md:text-5xl font-black max-w-4xl mx-auto mb-8 leading-tight">
                 "Mechanization of cleaning operations is central to safer sanitation outcomes."
               </h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+              <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                 Join us in our mission to create a safer, cleaner, and more dignified future for every sanitation worker across the globe.
               </p>
             </div>
