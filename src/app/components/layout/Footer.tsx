@@ -16,7 +16,7 @@ function toProductSlug(name: string) {
     .replace(/(^-|-$)/g, "");
 }
 
-const logoImg = "/mcraygor-logo.jpeg";
+const logoImg = "/logo.jpg";
 
 export function Footer() {
   return (
@@ -28,7 +28,7 @@ export function Footer() {
             <img
               src={logoImg}
               alt="McRAYGOR"
-              className="h-14 w-auto object-contain mb-5"
+              className="h-20 w-auto object-contain mb-5"
             />
             <p className="text-sm text-gray-400 leading-relaxed mb-5">
               Manufacturer of municipal and industrial waste handling equipment
@@ -99,22 +99,21 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
-                "Combined Jetting Cum Suction Machine",
-                "Super Sucker Machine",
-                "Refuse / Garbage Compactor",
-                "Road Sweeper",
-                "Industrial Vacuum Cleaning Machine (IVC - Super Sucker)",
-                "Anti Smog Gun / Fogging System",
-                "Skylift Working Platforms",
-                "Mobile Oil Spill Recovery Unit (MOSR)",
-              ].map((item) => (
-                <li key={item}>
+                { name: "Liquid Waste", description: "Jetting-cum-suction, super sucker, sewer systems" },
+                { name: "Solid Waste", description: "Refuse compactor, litter picker, road sweeper" },
+                { name: "Industrial Vacuum", description: "IVC Super Sucker for high-intensity cleaning" },
+                { name: "Special Purpose", description: "Anti-smog gun, skylift, oil spill recovery" },
+              ].map((category) => (
+                <li key={category.name}>
                   <Link
-                    to={`/products/${toProductSlug(item)}`}
-                    className="text-sm text-gray-400 hover:text-[#e8612c] transition-colors flex items-center gap-1.5"
+                    to="/products"
+                    className="text-sm text-gray-400 hover:text-[#e8612c] transition-colors flex items-start gap-1.5 group"
                   >
-                    <span className="text-[#e8612c] text-xs">›</span>
-                    {item}
+                    <span className="text-[#e8612c] text-xs mt-0.5">›</span>
+                    <div>
+                      <div className="font-medium group-hover:text-[#e8612c]">{category.name}</div>
+                      <div className="text-xs text-gray-500 leading-tight mt-0.5">{category.description}</div>
+                    </div>
                   </Link>
                 </li>
               ))}

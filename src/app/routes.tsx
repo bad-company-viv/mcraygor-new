@@ -6,6 +6,8 @@ import { Vision } from "./pages/Vision";
 import { Legacy } from "./pages/Legacy";
 import { Products } from "./pages/Products";
 import { ProductDetail } from "./pages/ProductDetail";
+import { Industries } from "./pages/Industries";
+import { IndustryDetail } from "./pages/IndustryDetail";
 import { Projects } from "./pages/Projects";
 import { ProjectDetail } from "./pages/ProjectDetail";
 import { Contact } from "./pages/Contact";
@@ -27,6 +29,8 @@ export const router = createBrowserRouter([
       { path: "legacy", Component: Legacy },
       { path: "products", Component: Products },
       { path: "products/:slug", Component: ProductDetail },
+      { path: "industries", Component: Industries },
+      { path: "industries/:industryId", Component: IndustryDetail },
       { path: "projects", Component: Projects },
       { path: "projects/:slug", Component: ProjectDetail },
       { path: "spares", Component: Spares },

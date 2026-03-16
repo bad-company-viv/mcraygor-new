@@ -19,6 +19,15 @@ const productCategories = [
     items: ["Litter Picker", "Refuse / Garbage Compactor", "Road Sweeper"],
   },
   {
+    title: "Industrial Vacuum",
+    items: [
+      "Industrial Vacuum Cleaning Machine (IVC - Super Sucker)",
+      "Chassis Mounted Industrial Vacuum Cleaner",
+      "ATEX Compliant Vacuum Systems",
+      "Material Recovery Systems",
+    ],
+  },
+  {
     title: "Special Purpose Equipment",
     items: ["Anti Smog Gun / Fogging System", "Skylift Working Platforms", "Mobile Oil Spill Recovery Unit (MOSR)"],
   },
@@ -81,7 +90,7 @@ const megaMenuCards = [
   },
 ];
 
-const logoImg = "/mcraygor-logo.jpeg";
+const logoImg = "/logo.jpg";
 
 export function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
@@ -103,13 +112,16 @@ export function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-40">
       {/* Main Header Row */}
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
-        {/* Logo */}
-        <Link to="/" className="flex-shrink-0">
-          <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-10 md:h-12 w-auto object-contain" />
-        </Link>
+        {/* Left: Logos */}
+        <div className="flex items-center gap-1 pl-24">
+          <Link to="/" className="flex-shrink-0">
+            <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-20 md:h-24 w-auto object-contain" />
+          </Link>
+          <img src="/celebration.jpg" alt="Celebration" className="h-8 md:h-10 w-auto object-contain" />
+        </div>
 
         {/* Center: Contact Info */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
           <a href="tel:+918447745599" className="flex items-center gap-2 text-[#1c2535] hover:text-[#e8612c] transition-colors">
             <Phone size={18} className="text-[#e8612c]" />
             <div>
@@ -126,7 +138,7 @@ export function Header() {
           </a>
         </div>
 
-        {/* Right: CTA + Mobile toggle */}
+        {/* Right: CTA + Mobile Menu */}
         <div className="flex items-center gap-3">
           <a
             href="/Brochure.pdf"

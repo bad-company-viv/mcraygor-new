@@ -1,6 +1,8 @@
 import { HeroSlider } from "../components/home/HeroSlider";
 import { StatsSection } from "../components/home/StatsSection";
 import { ProductsShowcase } from "../components/home/ProductsShowcase";
+import { AboutUsSection } from "../components/home/AboutUsSection";
+import { IndustriesWeServe } from "../components/home/IndustriesWeServe";
 import { ClienteleMarquee } from "../components/home/ClienteleMarquee";
 import { ManufacturingSection } from "../components/home/ManufacturingSection";
 import { CTASection } from "../components/home/CTASection";
@@ -17,6 +19,8 @@ export function Home() {
       <HeroSlider />
       <StatsSection />
       <ProductsShowcase />
+      <AboutUsSection />
+      <IndustriesWeServe />
       <CTASection />
       <ClienteleMarquee />
       <ProjectsInstallationsSection />

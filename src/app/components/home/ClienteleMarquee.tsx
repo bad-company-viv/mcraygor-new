@@ -1,66 +1,69 @@
 const clients = [
   // Private Sector Clients
-  { name: "Hindalco", type: "Private" },
-  { name: "Reliance", type: "Private" },
-  { name: "Gannon Dunkerley", type: "Private" },
-  { name: "Unitech", type: "Private" },
-  { name: "Jindal Steel & Power", type: "Private" },
-  { name: "International Red Cross Society", type: "Private" },
-  { name: "L&T", type: "Private" },
-  { name: "DLF", type: "Private" },
-  { name: "Genrobotics", type: "Private" },
-  { name: "G3R", type: "Private" },
-  { name: "NCC", type: "Private" },
-  { name: "ANSAL API", type: "Private" },
-  { name: "BTL EPC", type: "Private" },
+  { name: "Hindalco", type: "Private", logo: "/clients-logo/hindalco.jpg" },
+  { name: "Reliance Industries", type: "Private", logo: "/clients-logo/reliance-industries.jpg" },
+  { name: "Gannon Dunkerley", type: "Private", logo: "/clients-logo/gannon-dunkerley.jpg" },
+  { name: "Unitech", type: "Private", logo: "/clients-logo/unitech.jpg" },
+  { name: "JSW Steel", type: "Private", logo: "/clients-logo/jsw.jpg" },
+  { name: "L&T", type: "Private", logo: "/clients-logo/l&t.jpg" },
+  { name: "DLF", type: "Private", logo: "/clients-logo/dlf-building.jpg" },
+  { name: "Genrobotics", type: "Private", logo: "/clients-logo/gemrobotics.jpg" },
+  { name: "G3R", type: "Private", logo: "/clients-logo/g3r.jpg" },
+  { name: "NCC", type: "Private", logo: "/clients-logo/ncc.jpg" },
+  { name: "ANSAL", type: "Private", logo: "/clients-logo/ansal.jpg" },
+  { name: "BTL EPC", type: "Private", logo: "/clients-logo/btl-epc.jpg" },
+  { name: "ACC Cement", type: "Private", logo: "/clients-logo/acc-cement.jpg" },
+  { name: "Shree Cement", type: "Private", logo: "/clients-logo/shree-cement.jpg" },
+  { name: "Prism Johnson", type: "Private", logo: "/clients-logo/prism-johnson.jpg" },
+  { name: "Bharat Petroleum", type: "Private", logo: "/clients-logo/bharat-petroleum.jpg" },
+  { name: "Vizag Steel", type: "Private", logo: "/clients-logo/vizag-steel.jpg" },
   
   // Government Clients
-  { name: "NDMC", type: "Government" },
-  { name: "PWSSB", type: "Government" },
-  { name: "Sikkim Water Supply and Sanitation", type: "Government" },
-  { name: "DULB Kashmir", type: "Government" },
-  { name: "Dharamshala Municipal Corporation", type: "Government" },
-  { name: "Jal Kal Haridwar", type: "Government" },
-  { name: "HWSSB", type: "Government" },
-  { name: "Vijayawada Municipal Corporation", type: "Government" },
-  { name: "Kurnool Municipal Corporation", type: "Government" },
-  { name: "Tirupati", type: "Government" },
-  { name: "Ordnance Factory Jabalpur", type: "Government" },
-  { name: "AVDI", type: "Government" },
-  { name: "Jabalpur Municipal Corporation", type: "Government" },
-  { name: "Chandrapur Municipal Corporation", type: "Government" },
-  { name: "DCT Phagwara", type: "Government" },
-  { name: "Delhi Jal Board", type: "Government" },
-  { name: "IOCL", type: "Government" },
-  { name: "PHED Haryana", type: "Government" },
-  { name: "DSIDC", type: "Government" },
-  { name: "Uttarakhand Jal Sansthan", type: "Government" },
-  { name: "Jal Kal Kanpur", type: "Government" },
-  { name: "Kerala Water Authority", type: "Government" },
-  { name: "HSVP", type: "Government" },
-  { name: "BHEL", type: "Government" },
-  { name: "Kalyan Dombivli Municipal Corporation", type: "Government" },
-  { name: "Ministry of Defence", type: "Government" },
-  { name: "Indian Army", type: "Government" },
-  { name: "Ludhiana Municipal Corporation", type: "Government" },
-  { name: "BMC", type: "Government" },
+  { name: "Delhi Municipal Council", type: "Government", logo: "/clients-logo/delhi-municipal-council.jpg" },
+  { name: "Delhi PWD", type: "Government", logo: "/clients-logo/delhi-pwd.jpg" },
+  { name: "Delhi Jal Board", type: "Government", logo: "/clients-logo/delhi-jal-board.jpg" },
+  { name: "HWSSB", type: "Government", logo: "/clients-logo/hyderabad-metropolitan-water-supply-and-sewerage-board.jpg" },
+  { name: "Vijayawada Municipal Corporation", type: "Government", logo: "/clients-logo/vijayawada.jpg" },
+  { name: "Kalyan Dombivli Municipal Corporation", type: "Government", logo: "/clients-logo/kalyan-dombivili-municipal-corporation.jpg" },
+  { name: "Kerala Water Authority", type: "Government", logo: "/clients-logo/kerela-water-authority.jpg" },
+  { name: "BHEL", type: "Government", logo: "/clients-logo/bhel.jpg" },
+  { name: "Indian Oil Corporation", type: "Government", logo: "/clients-logo/indian-oil.jpg" },
+  { name: "Indian Army", type: "Government", logo: "/clients-logo/indian-army.jpg" },
+  { name: "BMC", type: "Government", logo: "/clients-logo/bmc.jpg" },
+  { name: "Gurugram Municipal Corporation", type: "Government", logo: "/clients-logo/gurugram-municipal-corporation.jpg" },
+  { name: "GMDA", type: "Government", logo: "/clients-logo/gurugram-metropolitan-development-authority.jpg" },
+  { name: "Vadodara Municipal Corporation", type: "Government", logo: "/clients-logo/vadodara-municipal-corporation.jpg" },
+  { name: "Municipal Council Tadipatri", type: "Government", logo: "/clients-logo/municipal-council-tadipatri.jpg" },
+  { name: "Jammu Municipal Corporation", type: "Government", logo: "/clients-logo/jammu-municipal.jpg" },
+  { name: "RUIDP", type: "Government", logo: "/clients-logo/rajasthan-urban-infrastructure-development-project.jpg" },
+  { name: "United Nations", type: "Government", logo: "/clients-logo/united-nations.jpg" },
+  { name: "International Red Cross", type: "Private", logo: "/clients-logo/comite-international.jpg" },
 ];
 
-function ClientCard({ name, type }: { name: string; type: string }) {
-  const typeColors: Record<string, string> = {
-    Private: "#e8612c",
-    Government: "#1c2535",
-  };
+function ClientCard({ name, type, logo }: { name: string; type: string; logo: string }) {
   return (
-    <div className="flex-shrink-0 mx-4 bg-white border border-gray-100 rounded-xl shadow-sm px-7 py-5 flex flex-col items-center justify-center min-w-[160px] hover:shadow-md transition-shadow">
-      <div
-        className="w-12 h-12 rounded-full flex items-center justify-center mb-2 text-white font-bold text-lg"
-        style={{ backgroundColor: typeColors[type] || "#1c2535" }}
-      >
-        {name.slice(0, 2)}
+    <div className="flex-shrink-0 mx-4 bg-white border border-gray-100 rounded-xl shadow-sm px-6 py-6 flex flex-col items-center justify-center w-[180px] h-[120px] hover:shadow-md transition-shadow">
+      <div className="w-20 h-20 flex items-center justify-center mb-2">
+        <img 
+          src={logo} 
+          alt={`${name} logo`} 
+          className="max-w-full max-h-full object-contain"
+          onError={(e) => {
+            // Fallback to initials if image fails to load
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            const fallback = target.nextElementSibling as HTMLElement;
+            if (fallback) fallback.style.display = 'flex';
+          }}
+        />
+        <div 
+          className="w-12 h-12 rounded-full hidden items-center justify-center text-white font-bold text-lg"
+          style={{ backgroundColor: type === "Private" ? "#e8612c" : "#1c2535" }}
+        >
+          {name.slice(0, 2)}
+        </div>
       </div>
-      <span className="text-[#1c2535] font-semibold text-sm text-center leading-tight">{name}</span>
-      <span className="text-gray-400 text-xs mt-0.5">{type}</span>
+      <span className="text-gray-400 text-xs">{type}</span>
     </div>
   );
 }
@@ -83,7 +86,7 @@ export function ClienteleMarquee() {
       <div className="relative">
         <div className="flex animate-[marquee_30s_linear_infinite] gap-0">
           {[...clients, ...clients].map((client, i) => (
-            <ClientCard key={`${client.name}-${i}`} name={client.name} type={client.type} />
+            <ClientCard key={`${client.name}-${i}`} name={client.name} type={client.type} logo={client.logo} />
           ))}
         </div>
       </div>
@@ -92,7 +95,7 @@ export function ClienteleMarquee() {
       <div className="relative mt-4">
         <div className="flex animate-[marquee-reverse_35s_linear_infinite] gap-0">
           {[...clients.slice().reverse(), ...clients.slice().reverse()].map((client, i) => (
-            <ClientCard key={`rev-${client.name}-${i}`} name={client.name} type={client.type} />
+            <ClientCard key={`rev-${client.name}-${i}`} name={client.name} type={client.type} logo={client.logo} />
           ))}
         </div>
       </div>

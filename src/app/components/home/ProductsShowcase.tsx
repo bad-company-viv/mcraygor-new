@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 const categories = [
   {
@@ -38,54 +38,97 @@ const categories = [
 
 export function ProductsShowcase() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div>
-            <h2 className="text-[#1c2535]" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
-              Our Product Range
-            </h2>
+    <section className="py-24 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="inline-block bg-[#e8612c]/10 text-[#e8612c] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+            PRODUCT CATEGORIES
           </div>
+          <h2 className="text-[#1c2535] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, lineHeight: 1.2 }}>
+            Our Product Range
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
+            Comprehensive solutions for waste management, industrial cleaning, and specialized municipal operations
+          </p>
           <Link
             to="/products"
-            className="flex items-center gap-2 text-[#e8612c] font-semibold hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-6 py-3 rounded-lg font-semibold transition-all hover:gap-3 shadow-lg hover:shadow-xl"
           >
-            View All Products <ArrowRight size={18} />
+            View All Products <ArrowRight size={20} />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat) => (
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-10">
+          {categories.map((cat, index) => (
             <Link
               key={cat.slug}
               to="/products"
-              className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative overflow-hidden h-52">
+              <div className="relative overflow-hidden h-96">
                 <img
                   src={cat.image}
                   alt={cat.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <span
-                  className="absolute top-3 right-3 text-white text-xs font-semibold px-2.5 py-1 rounded-full"
-                  style={{ backgroundColor: cat.color }}
-                >
-                  {cat.count}
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="text-[#1c2535] font-bold mb-2" style={{ fontSize: "1.05rem", lineHeight: 1.4 }}>
-                  {cat.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{cat.description}</p>
-                <span className="flex items-center gap-1.5 text-[#e8612c] text-sm font-semibold group-hover:gap-2.5 transition-all">
-                  Explore Range <ArrowRight size={16} />
-                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                
+                {/* Category Badge */}
+                <div className="absolute top-6 right-6">
+                  <span
+                    className="text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
+                    style={{ backgroundColor: `${cat.color}CC` }}
+                  >
+                    {cat.count}
+                  </span>
+                </div>
+
+                {/* Content Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="font-bold text-3xl mb-3 text-white leading-tight">
+                      {cat.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-white/90 font-semibold group-hover:gap-3 transition-all">
+                      <span className="text-lg">Explore Range</span>
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-colors">
+                        <ArrowRight size={18} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hover Effect Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#e8612c]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16 pt-12 border-t border-gray-200">
+          <p className="text-gray-600 mb-6 text-lg">
+            Need help choosing the right equipment for your requirements?
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-[#1c2535] hover:bg-[#0f1419] text-white px-6 py-3 rounded-lg font-semibold transition-all"
+            >
+              Contact Our Experts
+            </Link>
+            <a
+              href="/Brochure.pdf"
+              download
+              className="inline-flex items-center gap-2 border-2 border-[#e8612c] text-[#e8612c] hover:bg-[#e8612c] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all"
+            >
+              <Download size={18} />
+              Download Catalog
+            </a>
+          </div>
         </div>
       </div>
     </section>

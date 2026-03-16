@@ -15,11 +15,11 @@ export function PreHeader() {
 
   return (
     <div className="bg-[#1c2535] text-white py-2 px-4 md:px-8">
-      <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-end gap-6">
         <div className="relative">
           <button
             onClick={() => setOpen(!open)}
-            className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-300 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md transition-colors border border-white/20"
           >
             <Globe size={14} />
             <span>Region: {region}</span>
@@ -44,7 +44,7 @@ export function PreHeader() {
           href="https://mcraygor-global-big-section.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-300 hover:text-white transition-colors group self-start sm:self-auto"
+          className="flex items-center gap-1.5 text-xs sm:text-sm bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md transition-colors border border-white/20 group"
         >
           Visit Global Website
           <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
