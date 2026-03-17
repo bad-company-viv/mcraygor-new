@@ -111,26 +111,26 @@ export function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40">
       {/* Main Header Row */}
-      <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-1 flex items-center justify-between gap-4">
         {/* Left: Logos */}
         <div className="flex items-center gap-1 pl-24">
           <Link to="/" className="flex-shrink-0">
-            <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-20 md:h-24 w-auto object-contain" />
+            <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
-          <img src="/celebration.jpg" alt="Celebration" className="h-8 md:h-10 w-auto object-contain" />
+          <img src="/celebration.jpg" alt="Celebration" className="h-6 md:h-8 w-auto object-contain" />
         </div>
 
         {/* Center: Contact Info */}
-        <div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
+        <div className="hidden lg:flex items-center gap-6 flex-1 justify-center">
           <a href="tel:+918447745599" className="flex items-center gap-2 text-[#1c2535] hover:text-[#e8612c] transition-colors">
-            <Phone size={18} className="text-[#e8612c]" />
+            <Phone size={16} className="text-[#e8612c]" />
             <div>
               <div className="text-xs text-gray-500">Call Us:</div>
               <div className="text-sm font-semibold">+91 8447745599</div>
             </div>
           </a>
           <a href="mailto:support@mcraygor.com" className="flex items-center gap-2 text-[#1c2535] hover:text-[#e8612c] transition-colors">
-            <Mail size={18} className="text-[#e8612c]" />
+            <Mail size={16} className="text-[#e8612c]" />
             <div>
               <div className="text-xs text-gray-500">Email Us:</div>
               <div className="text-sm font-semibold">support@mcraygor.com</div>
@@ -143,9 +143,9 @@ export function Header() {
           <a
             href="/Brochure.pdf"
             download
-            className="hidden md:flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-4 py-2.5 rounded text-sm font-semibold transition-colors whitespace-nowrap"
+            className="hidden md:flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-3 py-1.5 rounded text-sm font-semibold transition-colors whitespace-nowrap"
           >
-            <Download size={16} />
+            <Download size={15} />
             Download 2026 Company Profile
           </a>
           <button
@@ -180,7 +180,7 @@ export function Header() {
                 {link.hasMega ? (
                   <button
                     onClick={() => setMegaOpen(!megaOpen)}
-                    className={`flex items-center gap-1 px-4 py-4 text-sm font-medium transition-colors whitespace-nowrap
+                    className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap
                       ${megaOpen ? "text-[#e8612c] bg-orange-50" : "text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50"}`}
                   >
                     {link.label}
@@ -189,7 +189,7 @@ export function Header() {
                 ) : (
                   <Link
                     to={link.to}
-                    className="block px-4 py-4 text-sm font-medium text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50 transition-colors whitespace-nowrap"
+                    className="block px-3 py-2 text-sm font-medium text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50 transition-colors whitespace-nowrap"
                     onClick={() => setMegaOpen(false)}
                   >
                     {link.label}

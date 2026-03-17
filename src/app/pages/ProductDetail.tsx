@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router";
-import { Download, MessageSquare, CheckCircle2, ChevronRight } from "lucide-react";
+import { Download, MessageSquare, CheckCircle2, ChevronRight, ChevronLeft, Home, Star, Shield, Truck, Headphones } from "lucide-react";
 import { SEO } from "../components/SEO";
 import { getProductSEO } from "../utils/seo";
+import { Breadcrumb } from "../components/common/Breadcrumb";
 
 type ProductProfile = {
   name: string;
@@ -9,8 +11,12 @@ type ProductProfile = {
   desc: string;
   overview: string;
   image: string;
+  gallery: string[];
   specs: { key: string; value: string }[];
+  detailedSpecs: { category: string; items: { key: string; value: string }[] }[];
   applications: string[];
+  features: string[];
+  benefits: string[];
 };
 
 const commonSpecs = [
@@ -26,125 +32,920 @@ const productData: Record<string, ProductProfile> = {
   "combined-jetting-cum-suction-machine": {
     name: "Combined Jetting Cum Suction Machine",
     category: "Liquid Waste",
-    desc: "Integrated jetting and suction platform for comprehensive sewer maintenance.",
-    overview: "Designed for simultaneous jetting and suction operations to handle choking, desilting, and liquid waste evacuation in one workflow.",
-    image: "/images/products/sewer-jetting-suction-machine2.jpeg",
-    specs: commonSpecs,
-    applications: ["Municipal sewer cleaning", "Drain desilting operations", "Emergency blockage response", "Industrial utility cleaning"],
+    desc: "Integrated jetting and suction platform for comprehensive sewer maintenance and cleaning operations.",
+    overview: "Our Combined Jetting Cum Suction Machine represents the pinnacle of sewer cleaning technology, designed for simultaneous jetting and suction operations. This versatile equipment handles choking, desilting, and liquid waste evacuation in one efficient workflow, making it indispensable for municipal and industrial applications.",
+    image: "/images/products/sewer-jetting-suction-machine.jpeg",
+    gallery: [
+      "/images/products/sewer-jetting-suction-machine.jpeg",
+      "/images/products/sewer-jetting-suction-machine2.jpeg",
+      "/images/products/sewage-suction-tanker.jpeg",
+      "/images/products/power-bucket-machine.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted with integrated systems" },
+      { key: "Operation", value: "Simultaneous jetting and suction" },
+      { key: "Capacity", value: "High-volume liquid waste handling" },
+      { key: "Application", value: "Municipal and industrial cleaning" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "8500 mm" },
+          { key: "Width", value: "2500 mm" },
+          { key: "Height", value: "3200 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Suction Capacity", value: "15000 LPM" },
+          { key: "Jetting Pressure", value: "150 Bar" },
+          { key: "Water Tank", value: "4000 Liters" },
+          { key: "Waste Tank", value: "6000 Liters" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Compliant Diesel" },
+          { key: "Power Output", value: "180 HP" },
+          { key: "Transmission", value: "Manual 6-Speed" }
+        ]
+      }
+    ],
+    applications: [
+      "Municipal sewer cleaning and maintenance",
+      "Drain desilting and blockage removal",
+      "Emergency response for sewer overflows",
+      "Industrial utility cleaning operations",
+      "Storm drain maintenance",
+      "Manhole cleaning and desilting"
+    ],
+    features: [
+      "Simultaneous jetting and suction operation",
+      "High-pressure water jetting system",
+      "Powerful vacuum suction capability",
+      "Integrated waste separation system",
+      "Remote control operation",
+      "Safety interlocks and monitoring"
+    ],
+    benefits: [
+      "Reduced operational time and costs",
+      "Enhanced cleaning efficiency",
+      "Minimal manual intervention required",
+      "Environmentally safe operations",
+      "Versatile application range",
+      "Low maintenance requirements"
+    ]
   },
   "super-sucker-machine": {
     name: "Super Sucker Machine",
     category: "Liquid Waste",
-    desc: "High-suction machine for demanding sludge and slurry handling.",
-    overview: "Built for deep suction and rapid evacuation in severe operating conditions where conventional systems are insufficient.",
-    image: "/images/products/super-sucker-machine2.jpeg",
-    specs: commonSpecs,
-    applications: ["Heavy sludge suction", "Industrial pit cleaning", "Municipal emergency services", "Large-volume recovery tasks"],
+    desc: "High-performance suction machine for demanding sludge and slurry handling applications.",
+    overview: "The Super Sucker Machine is engineered for extreme suction performance, capable of handling the most challenging sludge, slurry, and heavy waste materials. Built for continuous operation in severe conditions where conventional systems fail to deliver.",
+    image: "/images/products/super-sucker-machine.jpeg",
+    gallery: [
+      "/images/products/super-sucker-machine.jpeg",
+      "/images/products/super-sucker-machine2.jpeg",
+      "/images/products/mm-suction-vacuum-pump.jpeg",
+      "/images/products/refuse-compactor.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Heavy-duty truck mounted system" },
+      { key: "Suction Type", value: "High-vacuum deep suction" },
+      { key: "Capacity", value: "Ultra-high volume handling" },
+      { key: "Application", value: "Industrial and municipal heavy-duty" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "9200 mm" },
+          { key: "Width", value: "2550 mm" },
+          { key: "Height", value: "3400 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Suction Capacity", value: "25000 LPM" },
+          { key: "Vacuum Level", value: "85% Vacuum" },
+          { key: "Tank Capacity", value: "10000 Liters" },
+          { key: "Discharge Rate", value: "8000 LPM" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Heavy Duty Diesel" },
+          { key: "Power Output", value: "250 HP" },
+          { key: "Auxiliary Engine", value: "75 HP for suction system" }
+        ]
+      }
+    ],
+    applications: [
+      "Heavy sludge and slurry suction",
+      "Industrial pit and tank cleaning",
+      "Municipal emergency services",
+      "Large-volume waste recovery",
+      "Construction site dewatering",
+      "Oil spill recovery operations"
+    ],
+    features: [
+      "Ultra-high vacuum suction capability",
+      "Heavy-duty construction for extreme conditions",
+      "Large capacity waste tank",
+      "Rapid discharge system",
+      "Advanced filtration system",
+      "Operator safety features"
+    ],
+    benefits: [
+      "Handles materials other machines cannot",
+      "Reduced project completion time",
+      "Lower operational costs per cubic meter",
+      "Reliable performance in harsh conditions",
+      "Minimal downtime and maintenance",
+      "Enhanced safety for operators"
+    ]
   },
   "sewer-grabbing-manhole-desilting-machine": {
     name: "Sewer Grabbing / Manhole Desilting Machine",
     category: "Liquid Waste",
-    desc: "Mechanical desilting support for manholes and sewer chambers.",
-    overview: "Developed for safer removal of settled silt and debris from manholes with reduced manual intervention.",
+    desc: "Mechanical desilting machine designed for safe removal of settled silt and debris from manholes.",
+    overview: "The Sewer Grabbing / Manhole Desilting Machine is specifically engineered for safer and more efficient removal of settled silt and debris from manholes and sewer chambers. This specialized equipment reduces manual intervention and improves operational safety while ensuring thorough cleaning of critical infrastructure points.",
     image: "/images/products/desilting-machine-grab-bucket.jpeg",
-    specs: commonSpecs,
-    applications: ["Manhole desilting", "Sewer chamber cleaning", "Urban sanitation drives", "Preventive maintenance programs"],
+    gallery: [
+      "/images/products/desilting-machine-grab-bucket.jpeg",
+      "/images/products/power-bucket-machine.jpeg",
+      "/images/products/power-bucket-machine2.jpeg",
+      "/images/products/sewer-jetting-suction-machine.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted grabbing system" },
+      { key: "Operation", value: "Mechanical grabbing and lifting" },
+      { key: "Capacity", value: "High-volume debris handling" },
+      { key: "Application", value: "Manhole and chamber cleaning" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "7500 mm" },
+          { key: "Width", value: "2400 mm" },
+          { key: "Height", value: "3000 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Grab Capacity", value: "2.5 Cubic Meters" },
+          { key: "Lifting Height", value: "8 Meters" },
+          { key: "Reach", value: "6 Meters" },
+          { key: "Cycle Time", value: "45 Seconds" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Diesel Engine" },
+          { key: "Power Output", value: "150 HP" },
+          { key: "Hydraulic System", value: "High-pressure hydraulics" }
+        ]
+      }
+    ],
+    applications: [
+      "Manhole desilting operations",
+      "Sewer chamber cleaning",
+      "Urban sanitation maintenance",
+      "Preventive infrastructure care",
+      "Emergency blockage removal",
+      "Municipal drainage support"
+    ],
+    features: [
+      "Mechanical grabbing mechanism",
+      "Precise debris removal control",
+      "Reduced manual intervention",
+      "Safety-focused operation",
+      "Efficient cycle times",
+      "Robust construction"
+    ],
+    benefits: [
+      "Enhanced worker safety",
+      "Improved cleaning efficiency",
+      "Reduced operational risks",
+      "Consistent performance",
+      "Lower maintenance costs",
+      "Environmental compliance"
+    ]
   },
   "gully-suction-emptier-trailer-mounted": {
     name: "Gully Suction Emptier (Trailer Mounted)",
     category: "Liquid Waste",
-    desc: "Trailer-mounted suction solution for narrow and constrained spaces.",
-    overview: "A compact configuration for zones where larger truck-mounted systems cannot be deployed effectively.",
+    desc: "Compact trailer-mounted suction unit designed for narrow access areas and constrained spaces.",
+    overview: "The Gully Suction Emptier (Trailer Mounted) offers a compact and versatile solution for liquid waste suction in areas where larger truck-mounted systems cannot operate effectively. This trailer configuration provides excellent maneuverability while maintaining powerful suction capabilities for various municipal and industrial applications.",
     image: "/images/products/gully-suction-emptier.jpeg",
-    specs: commonSpecs,
-    applications: ["Narrow-lane maintenance", "Gully pit cleaning", "Semi-urban sanitation work", "Localized liquid waste suction"],
+    gallery: [
+      "/images/products/gully-suction-emptier.jpeg",
+      "/images/products/sewage-suction-tanker.jpeg",
+      "/images/products/mm-suction-vacuum-pump.jpeg",
+      "/images/products/sewer-jetting-suction-machine.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Trailer mounted system" },
+      { key: "Mobility", value: "Compact and maneuverable" },
+      { key: "Capacity", value: "Medium-volume suction" },
+      { key: "Application", value: "Narrow access cleaning" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "5500 mm" },
+          { key: "Width", value: "2000 mm" },
+          { key: "Height", value: "2200 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Suction Capacity", value: "8000 LPM" },
+          { key: "Vacuum Level", value: "75% Vacuum" },
+          { key: "Tank Capacity", value: "3000 Liters" },
+          { key: "Discharge Rate", value: "5000 LPM" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "Diesel Engine" },
+          { key: "Power Output", value: "100 HP" },
+          { key: "Drive System", value: "PTO Driven" }
+        ]
+      }
+    ],
+    applications: [
+      "Narrow lane maintenance",
+      "Gully pit cleaning",
+      "Semi-urban sanitation work",
+      "Localized liquid waste suction",
+      "Residential area cleaning",
+      "Emergency response support"
+    ],
+    features: [
+      "Compact trailer design",
+      "Easy maneuverability",
+      "Powerful suction system",
+      "Quick deployment capability",
+      "Cost-effective operation",
+      "Versatile applications"
+    ],
+    benefits: [
+      "Access to restricted areas",
+      "Lower operational costs",
+      "Flexible deployment options",
+      "Reduced infrastructure requirements",
+      "Easy transportation",
+      "Efficient space utilization"
+    ]
   },
   "bucket-type-sewer-cleaning-machine": {
     name: "Bucket Type Sewer Cleaning Machine",
     category: "Liquid Waste",
-    desc: "Mechanical bucket-type arrangement for sewer waste extraction.",
-    overview: "Practical machine architecture for repetitive extraction and cleaning tasks in municipal drainage networks.",
-    image: "/images/products/power-bucket-machine2.jpeg",
-    specs: commonSpecs,
-    applications: ["Sewer pit extraction", "Drain maintenance", "Municipal cleaning fleets", "Periodic sanitation tasks"],
+    desc: "Mechanical bucket-based cleaning solution designed for effective sewer line maintenance and debris removal.",
+    overview: "The Bucket Type Sewer Cleaning Machine utilizes a robust mechanical bucket system for effective removal of solid debris and blockages from sewer lines. This reliable equipment is designed for repetitive cleaning operations in municipal drainage networks, offering consistent performance and durability.",
+    image: "/images/products/power-bucket-machine.jpeg",
+    gallery: [
+      "/images/products/power-bucket-machine.jpeg",
+      "/images/products/power-bucket-machine2.jpeg",
+      "/images/products/desilting-machine-grab-bucket.jpeg",
+      "/images/products/sewer-jetting-suction-machine.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted bucket system" },
+      { key: "Operation", value: "Mechanical bucket cleaning" },
+      { key: "Capacity", value: "Heavy debris handling" },
+      { key: "Application", value: "Sewer line maintenance" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "8000 mm" },
+          { key: "Width", value: "2450 mm" },
+          { key: "Height", value: "3100 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Bucket Capacity", value: "1.5 Cubic Meters" },
+          { key: "Operating Depth", value: "6 Meters" },
+          { key: "Reach", value: "5 Meters" },
+          { key: "Cycle Time", value: "60 Seconds" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Compliant" },
+          { key: "Power Output", value: "160 HP" },
+          { key: "Hydraulic Pressure", value: "200 Bar" }
+        ]
+      }
+    ],
+    applications: [
+      "Sewer pit extraction",
+      "Drain maintenance operations",
+      "Municipal cleaning fleets",
+      "Periodic sanitation tasks",
+      "Solid waste removal",
+      "Infrastructure maintenance"
+    ],
+    features: [
+      "Robust bucket mechanism",
+      "Precise debris handling",
+      "Heavy-duty construction",
+      "Reliable hydraulic system",
+      "Easy operation controls",
+      "Maintenance-friendly design"
+    ],
+    benefits: [
+      "Effective solid waste removal",
+      "Durable construction",
+      "Consistent performance",
+      "Reduced operational downtime",
+      "Cost-effective maintenance",
+      "Long service life"
+    ]
   },
   "sewer-rodding-machine": {
     name: "Sewer Rodding Machine",
     category: "Liquid Waste",
-    desc: "Pipeline rodding machine for clearing underground choke points.",
-    overview: "Used for resolving line blockages through controlled rodding operations in municipal and facility networks.",
+    desc: "Specialized pipeline rodding machine designed for clearing underground blockages and choke points.",
+    overview: "The Sewer Rodding Machine is engineered for resolving line blockages through controlled rodding operations in municipal and facility networks. This specialized equipment uses flexible rods to navigate through pipes and clear obstructions, making it essential for preventive maintenance and emergency response.",
     image: "/images/products/sewer-rodding-machine.jpeg",
-    specs: commonSpecs,
-    applications: ["Underground choke removal", "Drain line restoration", "Preventive line cleaning", "Public utility maintenance"],
+    gallery: [
+      "/images/products/sewer-rodding-machine.jpeg",
+      "/images/products/sewer-jetting-suction-machine.jpeg",
+      "/images/products/power-bucket-machine.jpeg",
+      "/images/products/sewage-suction-tanker.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted rodding system" },
+      { key: "Operation", value: "Flexible rod insertion" },
+      { key: "Capacity", value: "Long-distance pipe cleaning" },
+      { key: "Application", value: "Blockage removal" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "7200 mm" },
+          { key: "Width", value: "2350 mm" },
+          { key: "Height", value: "2800 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Rod Length", value: "100 Meters" },
+          { key: "Rod Diameter", value: "16-25 mm" },
+          { key: "Operating Pressure", value: "150 Bar" },
+          { key: "Feed Rate", value: "Variable Speed" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "Diesel Engine" },
+          { key: "Power Output", value: "120 HP" },
+          { key: "Drive System", value: "Hydraulic Drive" }
+        ]
+      }
+    ],
+    applications: [
+      "Underground choke removal",
+      "Drain line restoration",
+      "Preventive line cleaning",
+      "Public utility maintenance",
+      "Emergency blockage response",
+      "Pipeline inspection support"
+    ],
+    features: [
+      "Flexible rodding system",
+      "Variable speed control",
+      "Multiple rod sizes",
+      "Precise navigation capability",
+      "Robust drive mechanism",
+      "Easy rod handling"
+    ],
+    benefits: [
+      "Effective blockage removal",
+      "Minimal excavation required",
+      "Cost-effective solution",
+      "Quick response capability",
+      "Versatile pipe compatibility",
+      "Reduced service disruption"
+    ]
   },
   "litter-picker": {
     name: "Litter Picker",
     category: "Solid Waste",
-    desc: "Collection system for surface litter handling in public spaces.",
-    overview: "Built for structured litter collection workflows in municipal and institutional cleaning operations.",
+    desc: "Efficient collection system designed for surface litter handling in public spaces and urban areas.",
+    overview: "The Litter Picker is built for structured litter collection workflows in municipal and institutional cleaning operations. This versatile equipment efficiently handles various types of surface waste, making it ideal for maintaining cleanliness in public spaces, parks, and urban environments.",
     image: "/images/products/dumper-placer-container.jpeg",
-    specs: commonSpecs,
-    applications: ["Roadside litter collection", "Campus cleaning", "Municipal route operations", "Public-event cleanup support"],
+    gallery: [
+      "/images/products/dumper-placer-container.jpeg",
+      "/images/products/refuse-compactor.jpeg",
+      "/images/products/refuse-compactor2.jpeg",
+      "/images/products/mobile-toilets.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Mobile collection system" },
+      { key: "Operation", value: "Surface litter collection" },
+      { key: "Capacity", value: "High-volume waste handling" },
+      { key: "Application", value: "Public space cleaning" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "6500 mm" },
+          { key: "Width", value: "2200 mm" },
+          { key: "Height", value: "2600 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Collection Capacity", value: "8 Cubic Meters" },
+          { key: "Loading Height", value: "1.2 Meters" },
+          { key: "Compaction Ratio", value: "3:1" },
+          { key: "Cycle Time", value: "30 Seconds" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Diesel" },
+          { key: "Power Output", value: "140 HP" },
+          { key: "Hydraulic System", value: "Integrated hydraulics" }
+        ]
+      }
+    ],
+    applications: [
+      "Roadside litter collection",
+      "Campus cleaning operations",
+      "Municipal route operations",
+      "Public event cleanup support",
+      "Park and recreation maintenance",
+      "Commercial area cleaning"
+    ],
+    features: [
+      "Efficient collection mechanism",
+      "Large storage capacity",
+      "Easy loading system",
+      "Compact design",
+      "Reliable operation",
+      "Low maintenance requirements"
+    ],
+    benefits: [
+      "Improved public cleanliness",
+      "Efficient waste collection",
+      "Reduced manual labor",
+      "Cost-effective operation",
+      "Enhanced urban aesthetics",
+      "Environmental protection"
+    ]
   },
   "refuse-garbage-compactor": {
     name: "Refuse / Garbage Compactor",
     category: "Solid Waste",
-    desc: "Compactor solution for efficient high-volume waste handling.",
-    overview: "Designed to optimize waste transport efficiency with compaction support for daily municipal collection routes.",
-    image: "/images/products/refuse-compactor2.jpeg",
-    specs: commonSpecs,
-    applications: ["Door-to-door collection support", "Urban transfer operations", "Municipal fleet deployment", "Commercial waste handling"],
+    desc: "High-efficiency compactor solution designed for optimal waste transport and high-volume waste handling.",
+    overview: "The Refuse / Garbage Compactor is designed to optimize waste transport efficiency with advanced compaction technology for daily municipal collection routes. This robust system significantly reduces the volume of collected waste, allowing for more efficient transportation and disposal operations.",
+    image: "/images/products/refuse-compactor.jpeg",
+    gallery: [
+      "/images/products/refuse-compactor.jpeg",
+      "/images/products/refuse-compactor2.jpeg",
+      "/images/products/dumper-placer-container.jpeg",
+      "/images/products/mobile-toilets.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted compactor" },
+      { key: "Operation", value: "Hydraulic compaction" },
+      { key: "Capacity", value: "High-volume compression" },
+      { key: "Application", value: "Municipal waste collection" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "9000 mm" },
+          { key: "Width", value: "2500 mm" },
+          { key: "Height", value: "3200 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Body Capacity", value: "16 Cubic Meters" },
+          { key: "Compaction Ratio", value: "4:1" },
+          { key: "Loading Height", value: "1.4 Meters" },
+          { key: "Compaction Force", value: "25 Tons" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Heavy Duty" },
+          { key: "Power Output", value: "200 HP" },
+          { key: "Hydraulic Pressure", value: "250 Bar" }
+        ]
+      }
+    ],
+    applications: [
+      "Door-to-door collection support",
+      "Urban transfer operations",
+      "Municipal fleet deployment",
+      "Commercial waste handling",
+      "Residential waste collection",
+      "Industrial waste management"
+    ],
+    features: [
+      "High compaction ratio",
+      "Automated loading system",
+      "Robust hydraulic mechanism",
+      "Large capacity body",
+      "Efficient waste compression",
+      "Reliable operation cycle"
+    ],
+    benefits: [
+      "Reduced transportation costs",
+      "Increased collection efficiency",
+      "Lower fuel consumption",
+      "Minimized disposal trips",
+      "Enhanced operational productivity",
+      "Environmental sustainability"
+    ]
   },
   "road-sweeper": {
     name: "Road Sweeper",
     category: "Solid Waste",
-    desc: "Road sweeping machine for urban and industrial environments.",
-    overview: "Configured for regular sweeping cycles to improve city cleanliness and dust control outcomes.",
-    image: "/images/products/refuse-compactor.jpeg",
-    specs: commonSpecs,
-    applications: ["Municipal roads", "Industrial corridors", "Transit zones", "Large-complex maintenance"],
+    desc: "Advanced road sweeping machine designed for comprehensive cleaning of urban and industrial environments.",
+    overview: "The Road Sweeper is configured for regular sweeping cycles to improve city cleanliness and dust control outcomes. This versatile machine effectively removes debris, dust, and litter from roads, making it essential for maintaining clean urban environments and industrial facilities.",
+    image: "/images/products/refuse-compactor2.jpeg",
+    gallery: [
+      "/images/products/refuse-compactor2.jpeg",
+      "/images/products/refuse-compactor.jpeg",
+      "/images/products/dumper-placer-container.jpeg",
+      "/images/products/mobile-toilets.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted sweeping system" },
+      { key: "Operation", value: "Mechanical and suction sweeping" },
+      { key: "Capacity", value: "Large debris collection" },
+      { key: "Application", value: "Road and surface cleaning" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "8500 mm" },
+          { key: "Width", value: "2400 mm" },
+          { key: "Height", value: "3000 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Sweeping Width", value: "3.2 Meters" },
+          { key: "Hopper Capacity", value: "6 Cubic Meters" },
+          { key: "Water Tank", value: "2000 Liters" },
+          { key: "Sweeping Speed", value: "5-25 km/h" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Diesel" },
+          { key: "Power Output", value: "180 HP" },
+          { key: "Auxiliary Engine", value: "50 HP for sweeping" }
+        ]
+      }
+    ],
+    applications: [
+      "Municipal road cleaning",
+      "Industrial corridor maintenance",
+      "Transit zone cleaning",
+      "Large complex maintenance",
+      "Highway cleaning operations",
+      "Airport runway cleaning"
+    ],
+    features: [
+      "Dual sweeping system",
+      "Dust suppression capability",
+      "Large debris collection",
+      "Water spray system",
+      "Adjustable sweeping width",
+      "Efficient filtration system"
+    ],
+    benefits: [
+      "Improved road cleanliness",
+      "Reduced dust pollution",
+      "Enhanced traffic safety",
+      "Cost-effective cleaning",
+      "Environmental compliance",
+      "Extended road surface life"
+    ]
   },
   "industrial-vacuum-cleaning-machine-ivc-super-sucker": {
     name: "Industrial Vacuum Cleaning Machine (IVC - Super Sucker)",
     category: "Industrial Vacuum",
-    desc: "Industrial-grade vacuum cleaning machine for heavy-duty suction needs.",
-    overview: "A specialized system for industrial cleaning and material suction use cases where continuous performance is required.",
+    desc: "Heavy-duty industrial vacuum cleaning platform designed for demanding suction applications and material recovery.",
+    overview: "The Industrial Vacuum Cleaning Machine (IVC - Super Sucker) is a specialized system for industrial cleaning and material suction use cases where continuous high-performance operation is required. This robust equipment handles the most challenging industrial cleaning tasks with exceptional reliability.",
     image: "/images/products/mm-suction-vacuum-pump.jpeg",
-    specs: commonSpecs,
-    applications: ["Factory cleaning", "Material recovery", "Plant housekeeping", "Industrial utility maintenance"],
+    gallery: [
+      "/images/products/mm-suction-vacuum-pump.jpeg",
+      "/images/products/super-sucker-machine.jpeg",
+      "/images/products/sewage-suction-tanker.jpeg",
+      "/images/products/oil-suction-machine.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Heavy-duty industrial vacuum" },
+      { key: "Operation", value: "Continuous high-suction" },
+      { key: "Capacity", value: "Industrial-grade performance" },
+      { key: "Application", value: "Factory and plant cleaning" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "8800 mm" },
+          { key: "Width", value: "2500 mm" },
+          { key: "Height", value: "3300 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Suction Capacity", value: "30000 LPM" },
+          { key: "Vacuum Level", value: "90% Vacuum" },
+          { key: "Tank Capacity", value: "12000 Liters" },
+          { key: "Material Recovery", value: "95% Efficiency" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "Industrial Grade Diesel" },
+          { key: "Power Output", value: "300 HP" },
+          { key: "Auxiliary Systems", value: "100 HP for vacuum" }
+        ]
+      }
+    ],
+    applications: [
+      "Factory floor cleaning",
+      "Material recovery operations",
+      "Plant housekeeping",
+      "Industrial utility maintenance",
+      "Manufacturing facility cleaning",
+      "Heavy-duty suction tasks"
+    ],
+    features: [
+      "Ultra-high suction power",
+      "Industrial-grade construction",
+      "Continuous operation capability",
+      "Advanced filtration system",
+      "Material separation technology",
+      "Robust vacuum pump system"
+    ],
+    benefits: [
+      "Superior cleaning performance",
+      "Reduced operational downtime",
+      "Enhanced workplace safety",
+      "Improved productivity",
+      "Cost-effective operation",
+      "Long-term reliability"
+    ]
   },
   "anti-smog-gun-fogging-system": {
     name: "Anti Smog Gun / Fogging System",
     category: "Special Purpose",
-    desc: "Fogging-based dust suppression and air quality control system.",
-    overview: "Application-driven anti-smog and fogging unit designed for construction, municipal, and industrial dust environments.",
+    desc: "Advanced fogging-based dust suppression and air quality control system for environmental management.",
+    overview: "The Anti Smog Gun / Fogging System is an application-driven solution designed for construction, municipal, and industrial dust environments. This specialized equipment effectively suppresses airborne particles and improves air quality through advanced fogging technology.",
     image: "/images/products/oil-suction-machine.jpeg",
-    specs: commonSpecs,
-    applications: ["Dust suppression", "Construction corridors", "Pollution control drives", "Industrial zones"],
+    gallery: [
+      "/images/products/oil-suction-machine.jpeg",
+      "/images/products/mobile-toilets.jpeg",
+      "/images/products/sewage-suction-tanker.jpeg",
+      "/images/products/mm-suction-vacuum-pump.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted fogging system" },
+      { key: "Operation", value: "High-pressure water fogging" },
+      { key: "Capacity", value: "Large area coverage" },
+      { key: "Application", value: "Dust suppression and air quality" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "7000 mm" },
+          { key: "Width", value: "2300 mm" },
+          { key: "Height", value: "2900 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Water Tank", value: "5000 Liters" },
+          { key: "Throw Range", value: "60 Meters" },
+          { key: "Coverage Area", value: "10000 Sq Meters" },
+          { key: "Operating Pressure", value: "80 Bar" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Diesel" },
+          { key: "Power Output", value: "130 HP" },
+          { key: "Pump System", value: "High-pressure pump" }
+        ]
+      }
+    ],
+    applications: [
+      "Construction site dust suppression",
+      "Industrial pollution control",
+      "Municipal air quality improvement",
+      "Mining dust control",
+      "Event and festival support",
+      "Emergency pollution response"
+    ],
+    features: [
+      "High-pressure fogging system",
+      "Wide coverage capability",
+      "Adjustable spray patterns",
+      "Mobile deployment",
+      "Water-efficient operation",
+      "Remote control capability"
+    ],
+    benefits: [
+      "Effective dust suppression",
+      "Improved air quality",
+      "Environmental compliance",
+      "Health and safety benefits",
+      "Reduced pollution levels",
+      "Cost-effective solution"
+    ]
   },
   "skylift-working-platforms": {
     name: "Skylift Working Platforms",
     category: "Special Purpose",
-    desc: "Elevated platform system for safe access and utility maintenance.",
-    overview: "Purpose-built lifting platform for overhead servicing, maintenance, and municipal utility work.",
+    desc: "Elevated platform system designed for safe access and utility maintenance at various heights.",
+    overview: "The Skylift Working Platforms are purpose-built lifting platforms for overhead servicing, maintenance, and municipal utility work. These versatile platforms provide safe and efficient access to elevated work areas, making them essential for various maintenance and installation tasks.",
     image: "/images/products/mobile-toilets.jpeg",
-    specs: commonSpecs,
-    applications: ["Street-light maintenance", "Public utility access", "Plant maintenance", "Safe elevated operations"],
+    gallery: [
+      "/images/products/mobile-toilets.jpeg",
+      "/images/products/oil-suction-machine.jpeg",
+      "/images/products/sewage-suction-tanker.jpeg",
+      "/images/products/refuse-compactor.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Truck mounted lift platform" },
+      { key: "Operation", value: "Hydraulic elevation system" },
+      { key: "Capacity", value: "Multi-person platform" },
+      { key: "Application", value: "Elevated maintenance work" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "8200 mm" },
+          { key: "Width", value: "2400 mm" },
+          { key: "Height (Stowed)", value: "3100 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Working Height", value: "18 Meters" },
+          { key: "Platform Capacity", value: "300 kg" },
+          { key: "Outreach", value: "8 Meters" },
+          { key: "Platform Size", value: "1.8 x 0.8 Meters" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "BS-VI Diesel" },
+          { key: "Power Output", value: "140 HP" },
+          { key: "Hydraulic System", value: "Precision hydraulics" }
+        ]
+      }
+    ],
+    applications: [
+      "Street light maintenance",
+      "Public utility access",
+      "Building maintenance",
+      "Safe elevated operations",
+      "Tree trimming support",
+      "Installation and repair work"
+    ],
+    features: [
+      "High reach capability",
+      "Stable platform design",
+      "Precise positioning control",
+      "Safety systems integrated",
+      "Multi-directional movement",
+      "Emergency lowering system"
+    ],
+    benefits: [
+      "Enhanced worker safety",
+      "Improved work efficiency",
+      "Reduced setup time",
+      "Versatile positioning",
+      "Cost-effective maintenance",
+      "Compliance with safety standards"
+    ]
   },
   "mobile-oil-spill-recovery-unit-mosr": {
     name: "Mobile Oil Spill Recovery Unit (MOSR)",
     category: "Special Purpose",
-    desc: "Mobile response unit for containment and recovery of oil spills.",
-    overview: "Designed for rapid deployment during spill incidents with practical mobility and response-focused design.",
+    desc: "Specialized mobile response unit designed for rapid containment and recovery of oil spills and hazardous liquids.",
+    overview: "The Mobile Oil Spill Recovery Unit (MOSR) is designed for rapid deployment during spill incidents with practical mobility and response-focused design. This specialized equipment provides immediate response capability for environmental protection and hazardous material recovery operations.",
     image: "/images/products/sewage-suction-tanker.jpeg",
-    specs: commonSpecs,
-    applications: ["Spill response", "Industrial safety operations", "Emergency cleanup", "Environmental protection programs"],
-  },
+    gallery: [
+      "/images/products/sewage-suction-tanker.jpeg",
+      "/images/products/oil-suction-machine.jpeg",
+      "/images/products/super-sucker-machine.jpeg",
+      "/images/products/mm-suction-vacuum-pump.jpeg"
+    ],
+    specs: [
+      { key: "Configuration", value: "Mobile spill recovery system" },
+      { key: "Operation", value: "Rapid spill containment" },
+      { key: "Capacity", value: "High-volume recovery" },
+      { key: "Application", value: "Emergency spill response" }
+    ],
+    detailedSpecs: [
+      {
+        category: "Dimensions",
+        items: [
+          { key: "Length", value: "9500 mm" },
+          { key: "Width", value: "2550 mm" },
+          { key: "Height", value: "3400 mm" }
+        ]
+      },
+      {
+        category: "Performance",
+        items: [
+          { key: "Recovery Capacity", value: "15000 Liters" },
+          { key: "Suction Rate", value: "20000 LPM" },
+          { key: "Separation Efficiency", value: "98%" },
+          { key: "Response Time", value: "< 30 Minutes" }
+        ]
+      },
+      {
+        category: "Engine & Power",
+        items: [
+          { key: "Engine Type", value: "Heavy Duty Diesel" },
+          { key: "Power Output", value: "250 HP" },
+          { key: "Auxiliary Power", value: "Emergency generator" }
+        ]
+      }
+    ],
+    applications: [
+      "Oil spill emergency response",
+      "Industrial safety operations",
+      "Environmental cleanup",
+      "Hazardous liquid recovery",
+      "Marine spill response",
+      "Industrial accident response"
+    ],
+    features: [
+      "Rapid deployment capability",
+      "High-efficiency recovery system",
+      "Oil-water separation technology",
+      "Emergency response equipment",
+      "Mobile command center",
+      "Environmental protection systems"
+    ],
+    benefits: [
+      "Quick emergency response",
+      "Environmental protection",
+      "Regulatory compliance",
+      "Minimized environmental impact",
+      "Cost-effective cleanup",
+      "Professional spill management"
+    ]
+  }
 };
 
 export function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
   const product = slug ? productData[slug] : null;
+  const [activeTab, setActiveTab] = useState<'overview' | 'specs' | 'applications'>('overview');
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
   if (!product) {
     return (
@@ -158,167 +959,453 @@ export function ProductDetail() {
     );
   }
 
+  const nextGalleryImage = () => {
+    setCurrentGalleryIndex((prev) => (prev + 1) % product.gallery.length);
+  };
+
+  const prevGalleryImage = () => {
+    setCurrentGalleryIndex((prev) => (prev - 1 + product.gallery.length) % product.gallery.length);
+  };
+
+  const handleTabClick = (tab: 'overview' | 'specs' | 'applications', e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setActiveTab(tab);
+  };
+
   return (
     <>
       {product && <SEO metadata={getProductSEO(slug!, product.name, product.category, product.desc)} />}
       
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200 py-3">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500">
-          <Link to="/" className="hover:text-[#e8612c]">Home</Link>
-          <ChevronRight size={14} />
-          <Link to="/products" className="hover:text-[#e8612c]">Products</Link>
-          <ChevronRight size={14} />
-          <span className="text-[#1c2535] font-medium break-words">{product.name}</span>
-        </div>
-      </div>
+      {/* Breadcrumb Section with Background Image */}
+      <section 
+        className="relative py-32 bg-gradient-to-r from-[#1c2535]/90 to-[#2d3748]/90 text-white overflow-hidden"
+        style={{
+          backgroundImage: `url(${product.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1c2535]/85 to-[#2d3748]/75"></div>
+        
+        {/* Content */}
+        <div className="relative max-w-[1400px] mx-auto px-4 md:px-8">
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center gap-2 text-sm mb-6" aria-label="Breadcrumb">
+            <Link 
+              to="/" 
+              className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors"
+            >
+              <Home size={16} />
+              Home
+            </Link>
+            <ChevronRight size={16} className="text-gray-400" />
+            <Link 
+              to="/products" 
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Products
+            </Link>
+            <ChevronRight size={16} className="text-gray-400" />
+            <span className="text-white font-medium">{product.name}</span>
+          </nav>
 
-      <section className="py-12 bg-white min-h-screen">
+          {/* Simple Product Title */}
+          <div className="max-w-4xl">
+            <div className="inline-block bg-[#e8612c] text-white text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-wider">
+              {product.category}
+            </div>
+            <h1 className="text-white" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 800, lineHeight: 1.2 }}>
+              {product.name}
+            </h1>
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-10 right-10 w-32 h-32 bg-[#e8612c]/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-[#1a5c3a]/20 rounded-full blur-3xl"></div>
+      </section>
+
+      {/* Main Product Section */}
+      <section className="py-12 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-[440px_1fr] gap-10">
-            {/* Left Column - Image and CTAs */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            {/* Left Column - Product Image */}
             <div>
-              <div className="lg:sticky lg:top-24">
+              {/* Main Image */}
+              <div className="mb-6">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="rounded-2xl w-full h-[280px] sm:h-[360px] object-cover shadow-lg border border-gray-100"
+                  className="w-full h-[400px] object-cover rounded-2xl shadow-lg"
                 />
-                
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 mt-5">
-                  <a
-                    href="/Brochure.pdf"
-                    download
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#1a5c3a] text-white py-3 rounded-lg font-semibold hover:bg-[#14532d] transition-colors text-sm"
-                  >
-                    <Download size={16} /> Download Brochure
-                  </a>
-                  <a
-                    href="#quote"
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#e8612c] text-white py-3 rounded-lg font-semibold hover:bg-[#d4531f] transition-colors text-sm"
-                  >
-                    <MessageSquare size={16} /> Request a Quote
-                  </a>
-                </div>
               </div>
-
-              {/* Product Schema */}
-              <script type="application/ld+json">
-                {JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "Product",
-                  "name": product.name,
-                  "description": product.overview,
-                  "brand": {
-                    "@type": "Brand",
-                    "name": "McRAYGOR"
-                  },
-                  "category": product.category,
-                  "image": `https://www.mcraygor.com${product.image}`
-                })}
-              </script>
             </div>
 
-            {/* Right Column - Content */}
+            {/* Right Column - Product Info */}
             <div>
               {/* Category Badge */}
-              <div className="inline-block border border-gray-300 text-gray-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
-                {product.category.toUpperCase()}
+              <div className="inline-block bg-[#e8612c]/10 text-[#e8612c] text-sm font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-wider">
+                {product.category}
               </div>
+
+              {/* Product Title */}
+              <h1 className="text-[#1c2535] font-bold mb-4" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", lineHeight: 1.2 }}>
+                {product.name}
+              </h1>
 
               {/* Product Description */}
-              <p className="text-gray-700 leading-relaxed mb-8 text-base">
-                {product.overview}
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                {product.desc}
               </p>
 
-              {/* Industrial Grade Performance Badge */}
-              <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-8">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 size={24} className="text-green-600 flex-shrink-0 mt-0.5" />
+              {/* Key Features */}
+              <div className="mb-8">
+                <h3 className="text-[#1c2535] font-bold text-lg mb-4">Key Features</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {product.features.slice(0, 4).map((feature, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <CheckCircle2 size={18} className="text-[#1a5c3a] mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a
+                  href="/Brochure.pdf"
+                  download
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-6 py-4 rounded-lg font-semibold transition-colors"
+                >
+                  <Download size={20} />
+                  Download Brochure
+                </a>
+                <a
+                  href="#quote"
+                  className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-[#1c2535] text-[#1c2535] hover:bg-[#1c2535] hover:text-white px-6 py-4 rounded-lg font-semibold transition-colors"
+                >
+                  <MessageSquare size={20} />
+                  Request Quote
+                </a>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-gray-200">
+                <div className="text-center">
+                  <Shield size={24} className="text-[#1a5c3a] mx-auto mb-2" />
+                  <span className="text-xs text-gray-600">Quality Assured</span>
+                </div>
+                <div className="text-center">
+                  <Truck size={24} className="text-[#1a5c3a] mx-auto mb-2" />
+                  <span className="text-xs text-gray-600">Fast Delivery</span>
+                </div>
+                <div className="text-center">
+                  <Headphones size={24} className="text-[#1a5c3a] mx-auto mb-2" />
+                  <span className="text-xs text-gray-600">24/7 Support</span>
+                </div>
+                <div className="text-center">
+                  <Star size={24} className="text-[#1a5c3a] mx-auto mb-2" />
+                  <span className="text-xs text-gray-600">25+ Years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Detailed Information Tabs */}
+          <div className="border-t border-gray-200 pt-12">
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap gap-1 mb-8 bg-gray-100 p-1 rounded-lg w-fit">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setActiveTab('overview');
+                }}
+                className={`px-6 py-3 rounded-md font-semibold transition-colors ${
+                  activeTab === 'overview' 
+                    ? 'bg-white text-[#1c2535] shadow-sm' 
+                    : 'text-gray-600 hover:text-[#1c2535]'
+                }`}
+              >
+                Overview
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setActiveTab('specs');
+                }}
+                className={`px-6 py-3 rounded-md font-semibold transition-colors ${
+                  activeTab === 'specs' 
+                    ? 'bg-white text-[#1c2535] shadow-sm' 
+                    : 'text-gray-600 hover:text-[#1c2535]'
+                }`}
+              >
+                Specifications
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setActiveTab('applications');
+                }}
+                className={`px-6 py-3 rounded-md font-semibold transition-colors ${
+                  activeTab === 'applications' 
+                    ? 'bg-white text-[#1c2535] shadow-sm' 
+                    : 'text-gray-600 hover:text-[#1c2535]'
+                }`}
+              >
+                Applications
+              </button>
+            </div>
+
+            {/* Tab Content */}
+            <div className="min-h-[400px]">
+              {activeTab === 'overview' && (
+                <div className="grid lg:grid-cols-2 gap-12">
                   <div>
-                    <h4 className="text-[#1c2535] font-bold text-base mb-1">Industrial Grade Performance</h4>
-                    <p className="text-gray-600 text-sm">Engineered for extreme durability and continuous operation.</p>
+                    <h3 className="text-2xl font-bold text-[#1c2535] mb-6">Product Overview</h3>
+                    <p className="text-gray-700 leading-relaxed mb-8">
+                      {product.overview}
+                    </p>
+                    
+                    <h4 className="text-lg font-bold text-[#1c2535] mb-4">Key Benefits</h4>
+                    <div className="space-y-3">
+                      {product.benefits.map((benefit, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <CheckCircle2 size={20} className="text-[#1a5c3a] mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-bold text-[#1c2535] mb-4">Quick Specifications</h4>
+                    <div className="bg-gray-50 rounded-xl p-6">
+                      {product.specs.map((spec, index) => (
+                        <div key={index} className={`flex justify-between py-3 ${index !== product.specs.length - 1 ? 'border-b border-gray-200' : ''}`}>
+                          <span className="text-gray-600 font-medium">{spec.key}</span>
+                          <span className="text-[#1c2535] font-semibold">{spec.value}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
-              {/* Key Specifications */}
-              <div className="mb-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <CheckCircle2 size={20} className="text-[#1a5c3a]" />
-                  <h3 className="text-[#1c2535] font-bold text-lg">Key Specifications</h3>
+              {activeTab === 'specs' && (
+                <div>
+                  <h3 className="text-2xl font-bold text-[#1c2535] mb-6">Detailed Technical Specifications</h3>
+                  <div className="space-y-8">
+                    {product.detailedSpecs.map((category, categoryIndex) => (
+                      <div key={categoryIndex} className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                        <div className="bg-[#1c2535] text-white px-6 py-4">
+                          <h4 className="font-bold text-lg">{category.category}</h4>
+                        </div>
+                        <div className="p-6">
+                          <div className="grid md:grid-cols-2 gap-4">
+                            {category.items.map((item, itemIndex) => (
+                              <div key={itemIndex} className="flex justify-between py-2 border-b border-gray-100 last:border-b-0">
+                                <span className="text-gray-600 font-medium">{item.key}</span>
+                                <span className="text-[#1c2535] font-semibold">{item.value}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="border border-gray-200 rounded-xl overflow-hidden">
-                  {product.specs.map((spec, i) => (
-                    <div
-                      key={spec.key}
-                      className={`grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-1 sm:gap-4 px-5 py-3.5 ${i !== product.specs.length - 1 ? "border-b border-gray-200" : ""}`}
-                    >
-                      <span className="text-gray-600 text-sm font-medium">{spec.key}</span>
-                      <span className="text-[#1c2535] text-sm">{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              )}
 
-              {/* Applications */}
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <CheckCircle2 size={20} className="text-[#1a5c3a]" />
-                  <h3 className="text-[#1c2535] font-bold text-lg">Applications</h3>
+              {activeTab === 'applications' && (
+                <div>
+                  <h3 className="text-2xl font-bold text-[#1c2535] mb-6">Applications & Use Cases</h3>
+                  <p className="text-gray-600 mb-8">
+                    This equipment is ideal for various municipal, industrial, and commercial applications:
+                  </p>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {product.applications.map((application, index) => (
+                      <div key={index} className="bg-[#1a5c3a] text-white p-6 rounded-xl">
+                        <div className="flex items-start gap-3">
+                          <CheckCircle2 size={20} className="flex-shrink-0 mt-0.5" />
+                          <span className="font-medium">{application}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {product.applications.map((app) => (
-                    <div key={app} className="bg-[#1a5c3a] text-white px-4 py-3 rounded-lg text-sm font-medium flex items-center gap-2">
-                      <CheckCircle2 size={14} className="flex-shrink-0" />
-                      {app}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
+      {/* Product Gallery Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#1c2535] mb-4">Product Gallery</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore detailed views of the {product.name} from different angles and operational scenarios
+            </p>
+          </div>
+
+          {/* Large Image Slider */}
+          <div className="relative mb-8">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src={product.gallery[currentGalleryIndex]}
+                alt={`${product.name} - View ${currentGalleryIndex + 1}`}
+                className="w-full h-[500px] md:h-[600px] object-cover"
+              />
+              
+              {/* Navigation Buttons */}
+              {product.gallery.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      prevGalleryImage();
+                    }}
+                    className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+                  >
+                    <ChevronLeft size={24} className="text-[#1c2535]" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      nextGalleryImage();
+                    }}
+                    className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+                  >
+                    <ChevronRight size={24} className="text-[#1c2535]" />
+                  </button>
+                </>
+              )}
+
+              {/* Image Counter */}
+              <div className="absolute bottom-6 right-6 bg-black/70 text-white px-4 py-2 rounded-full backdrop-blur-sm">
+                <span className="text-sm font-medium">
+                  {currentGalleryIndex + 1} / {product.gallery.length}
+                </span>
+              </div>
+
+              {/* Gradient Overlay for Better Text Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Thumbnail Navigation */}
+          {product.gallery.length > 1 && (
+            <div className="flex justify-center gap-3 mb-12 overflow-x-auto pb-2">
+              {product.gallery.map((image, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCurrentGalleryIndex(index);
+                  }}
+                  className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-3 transition-all ${
+                    currentGalleryIndex === index 
+                      ? 'border-[#e8612c] ring-2 ring-[#e8612c]/30 scale-105' 
+                      : 'border-gray-200 hover:border-gray-300 hover:scale-105'
+                  }`}
+                >
+                  <img
+                    src={image}
+                    alt={`${product.name} thumbnail ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
+
+
+        </div>
+      </section>
+
       {/* Quote Form Section */}
-      <section className="py-14 bg-gray-50" id="quote">
-        <div className="max-w-2xl mx-auto px-4 md:px-8">
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-            <h2 className="text-[#1c2535] font-bold text-2xl mb-2">Request a Quote</h2>
-            <p className="text-gray-500 text-sm mb-7">Our experts will get back to you with the best configuration for your needs.</p>
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+      <section className="py-16 bg-gray-50" id="quote">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-[#1c2535] mb-4">Request a Quote</h2>
+              <p className="text-gray-600">Get a customized quote for your specific requirements</p>
+            </div>
+            
+            <form className="grid md:grid-cols-2 gap-6" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label className="block text-sm font-medium text-[#1c2535] mb-2">FULL NAME</label>
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">Full Name *</label>
                 <input
                   type="text"
-                  placeholder="John Doe"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                  placeholder="Enter your full name"
                 />
               </div>
+              
               <div>
-                <label className="block text-sm font-medium text-[#1c2535] mb-2">PHONE NUMBER</label>
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">Email Address *</label>
+                <input
+                  type="email"
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                  placeholder="Enter your email"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">Phone Number *</label>
                 <input
                   type="tel"
-                  placeholder="+1 (555) 000-0000"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                  placeholder="Enter your phone number"
                 />
               </div>
+              
               <div>
-                <label className="block text-sm font-medium text-[#1c2535] mb-2">BRIEF REQUIREMENT</label>
-                <textarea
-                  placeholder="Details about your project..."
-                  rows={4}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c] resize-none"
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">Company</label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                  placeholder="Enter your company name"
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-[#e8612c] hover:bg-[#d4531f] text-white py-3.5 rounded-lg font-semibold text-base transition-colors flex items-center justify-center gap-2"
-              >
-                <MessageSquare size={18} /> Submit Inquiry
-              </button>
+              
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-[#1c2535] mb-2">Requirements</label>
+                <textarea
+                  rows={4}
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#e8612c] focus:ring-1 focus:ring-[#e8612c]"
+                  placeholder="Please describe your specific requirements..."
+                ></textarea>
+              </div>
+              
+              <div className="md:col-span-2">
+                <button
+                  type="submit"
+                  className="w-full bg-[#e8612c] hover:bg-[#d4531f] text-white py-4 rounded-lg font-semibold transition-colors"
+                >
+                  Submit Quote Request
+                </button>
+              </div>
             </form>
           </div>
         </div>

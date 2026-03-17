@@ -16,10 +16,20 @@ export function AboutUsSection() {
           <div className="inline-block bg-[#e8612c]/10 text-[#e8612c] text-sm font-bold px-6 py-3 rounded-full mb-6 uppercase tracking-wider">
             Who We Are
           </div>
-          <h2 className="text-[#1c2535] mb-6 max-w-4xl mx-auto" style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", fontWeight: 800, lineHeight: 1.1 }}>
-            Manufacturing Excellence.{" "}
-            <span className="text-[#1a5c3a] block sm:inline">Global Reliability.</span>
-          </h2>
+          
+          {/* Logo and Title Container */}
+          <div className="flex flex-col items-center gap-6 mb-6">
+            <img 
+              src="/logo.jpg" 
+              alt="McRAYGOR Logo" 
+              className="h-24 md:h-32 w-auto object-contain"
+            />
+            <h2 className="text-[#1c2535] max-w-4xl mx-auto" style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", fontWeight: 800, lineHeight: 1.1 }}>
+              Manufacturing Excellence.{" "}
+              <span className="text-[#1a5c3a] block sm:inline">Global Reliability.</span>
+            </h2>
+          </div>
+          
           <p className="text-gray-600 text-xl leading-relaxed max-w-3xl mx-auto">
             Leading Indian manufacturer of specialized waste handling and industrial cleaning equipment, 
             serving municipal and industrial sectors across 45+ countries with over two decades of engineering excellence.

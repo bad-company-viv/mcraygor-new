@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { Search, Filter, ArrowRight } from "lucide-react";
 import { SEO } from "../components/SEO";
+import { Breadcrumb } from "../components/common/Breadcrumb";
 
 const allProducts = [
   // Liquid Waste
@@ -34,18 +35,14 @@ export function Products() {
   return (
     <>
       <SEO pageKey="products" />
-      {/* Header */}
-      <section className="bg-[#1c2535] text-white py-16">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">Our Equipment</p>
-          <h1 className="text-white mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.2 }}>
-            Products
-          </h1>
-          <p className="text-gray-400 max-w-xl text-sm sm:text-base">
-            A comprehensive equipment portfolio across liquid waste, solid waste, industrial vacuum cleaning, and special purpose applications.
-          </p>
-        </div>
-      </section>
+      
+      {/* Breadcrumb Section */}
+      <Breadcrumb
+        items={[{ label: "Products" }]}
+        title="Our Product Range"
+        subtitle="Comprehensive equipment portfolio across liquid waste, solid waste, industrial vacuum cleaning, and special purpose applications."
+        backgroundImage="/images/manufacturing-facility.png"
+      />
 
       <section className="py-12 bg-gray-50 min-h-screen">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">

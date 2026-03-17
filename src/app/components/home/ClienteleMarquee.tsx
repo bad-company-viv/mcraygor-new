@@ -42,8 +42,8 @@ const clients = [
 
 function ClientCard({ name, type, logo }: { name: string; type: string; logo: string }) {
   return (
-    <div className="flex-shrink-0 mx-4 bg-white border border-gray-100 rounded-xl shadow-sm px-6 py-6 flex flex-col items-center justify-center w-[180px] h-[120px] hover:shadow-md transition-shadow">
-      <div className="w-20 h-20 flex items-center justify-center mb-2">
+    <div className="flex-shrink-0 mx-4 bg-white border border-gray-100 rounded-xl shadow-sm px-8 py-8 flex flex-col items-center justify-center w-[280px] h-[160px] hover:shadow-md transition-shadow">
+      <div className="w-32 h-32 flex items-center justify-center">
         <img 
           src={logo} 
           alt={`${name} logo`} 
@@ -57,13 +57,12 @@ function ClientCard({ name, type, logo }: { name: string; type: string; logo: st
           }}
         />
         <div 
-          className="w-12 h-12 rounded-full hidden items-center justify-center text-white font-bold text-lg"
+          className="w-16 h-16 rounded-full hidden items-center justify-center text-white font-bold text-xl"
           style={{ backgroundColor: type === "Private" ? "#e8612c" : "#1c2535" }}
         >
           {name.slice(0, 2)}
         </div>
       </div>
-      <span className="text-gray-400 text-xs">{type}</span>
     </div>
   );
 }

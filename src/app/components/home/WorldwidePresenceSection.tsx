@@ -49,7 +49,14 @@ export function WorldwidePresenceSection() {
               className="absolute -translate-x-1/2 -translate-y-1/2"
               style={{ top: region.top, left: region.left }}
             >
-              <div className="w-5 h-5 rounded-full bg-[#1a5c3a] border-2 border-white shadow-lg flex items-center justify-center">
+              {/* Concentric pulse rings */}
+              <div className="absolute inset-0 -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute w-5 h-5 rounded-full bg-[#1a5c3a]/30 animate-ping" style={{ animationDuration: '2s' }}></div>
+                <div className="absolute w-5 h-5 rounded-full bg-[#1a5c3a]/20 animate-ping" style={{ animationDuration: '2.5s', animationDelay: '0.3s' }}></div>
+              </div>
+              
+              {/* Main pin */}
+              <div className="relative w-5 h-5 rounded-full bg-[#1a5c3a] border-2 border-white shadow-lg flex items-center justify-center animate-pulse">
                 <MapPin size={11} className="text-white" />
               </div>
             </div>
