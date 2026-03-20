@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { Download, MessageSquare, CheckCircle2, ChevronRight, ChevronLeft, Home, Star, Shield, Truck, Headphones } from "lucide-react";
 import { SEO } from "../components/SEO";
@@ -34,12 +34,12 @@ const productData: Record<string, ProductProfile> = {
     category: "Liquid Waste",
     desc: "Integrated jetting and suction platform for comprehensive sewer maintenance and cleaning operations.",
     overview: "Our Combined Jetting Cum Suction Machine represents the pinnacle of sewer cleaning technology, designed for simultaneous jetting and suction operations. This versatile equipment handles choking, desilting, and liquid waste evacuation in one efficient workflow, making it indispensable for municipal and industrial applications.",
-    image: "/images/products/sewer-jetting-suction-machine.jpeg",
+    image: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
     gallery: [
-      "/images/products/sewer-jetting-suction-machine.jpeg",
-      "/images/products/sewer-jetting-suction-machine2.jpeg",
-      "/images/products/sewage-suction-tanker.jpeg",
-      "/images/products/power-bucket-machine.jpeg"
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-2.jpg",
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-3.jpg",
+      "/images/products/jetting-cum-suction-machine/5172107d-f3a9-4e07-9a9c-515a588b70e1.jpg"
     ],
     specs: [
       { key: "Configuration", value: "Truck mounted with integrated systems" },
@@ -104,12 +104,12 @@ const productData: Record<string, ProductProfile> = {
     category: "Liquid Waste",
     desc: "High-performance suction machine for demanding sludge and slurry handling applications.",
     overview: "The Super Sucker Machine is engineered for extreme suction performance, capable of handling the most challenging sludge, slurry, and heavy waste materials. Built for continuous operation in severe conditions where conventional systems fail to deliver.",
-    image: "/images/products/super-sucker-machine.jpeg",
+    image: "/images/products/super-sucker-machine/13598b45-a0d3-4ee2-a999-15bf1c05f413.jpg",
     gallery: [
+      "/images/products/super-sucker-machine/13598b45-a0d3-4ee2-a999-15bf1c05f413.jpg",
+      "/images/products/super-sucker-machine/1cfc2e43-af82-4fb6-86d4-330a407d6644.jpg",
       "/images/products/super-sucker-machine.jpeg",
-      "/images/products/super-sucker-machine2.jpeg",
-      "/images/products/mm-suction-vacuum-pump.jpeg",
-      "/images/products/refuse-compactor.jpeg"
+      "/images/products/super-sucker-machine2.jpeg"
     ],
     specs: [
       { key: "Configuration", value: "Heavy-duty truck mounted system" },
@@ -314,12 +314,14 @@ const productData: Record<string, ProductProfile> = {
     category: "Liquid Waste",
     desc: "Mechanical bucket-based cleaning solution designed for effective sewer line maintenance and debris removal.",
     overview: "The Bucket Type Sewer Cleaning Machine utilizes a robust mechanical bucket system for effective removal of solid debris and blockages from sewer lines. This reliable equipment is designed for repetitive cleaning operations in municipal drainage networks, offering consistent performance and durability.",
-    image: "/images/products/power-bucket-machine.jpeg",
+    image: "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-1.jpg",
     gallery: [
-      "/images/products/power-bucket-machine.jpeg",
-      "/images/products/power-bucket-machine2.jpeg",
-      "/images/products/desilting-machine-grab-bucket.jpeg",
-      "/images/products/sewer-jetting-suction-machine.jpeg"
+      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-1.jpg",
+      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-2.jpg",
+      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-3.jpg",
+      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-4.jpg",
+      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-5.jpg",
+      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-6.jpg"
     ],
     specs: [
       { key: "Configuration", value: "Truck mounted bucket system" },
@@ -947,6 +949,18 @@ export function ProductDetail() {
   const [activeTab, setActiveTab] = useState<'overview' | 'specs' | 'applications'>('overview');
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
+  // Prevent scroll restoration on state changes
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    return () => {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'auto';
+      }
+    };
+  }, []);
+
   if (!product) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-5">
@@ -959,18 +973,48 @@ export function ProductDetail() {
     );
   }
 
-  const nextGalleryImage = () => {
+  const nextGalleryImage = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const scrollY = window.scrollY;
     setCurrentGalleryIndex((prev) => (prev + 1) % product.gallery.length);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
-  const prevGalleryImage = () => {
+  const prevGalleryImage = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const scrollY = window.scrollY;
     setCurrentGalleryIndex((prev) => (prev - 1 + product.gallery.length) % product.gallery.length);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleTabClick = (tab: 'overview' | 'specs' | 'applications', e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    const scrollY = window.scrollY;
     setActiveTab(tab);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
+  };
+
+  const handleThumbnailClick = (index: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const scrollY = window.scrollY;
+    setCurrentGalleryIndex(index);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   return (
@@ -1121,11 +1165,7 @@ export function ProductDetail() {
             <div className="flex flex-wrap gap-1 mb-8 bg-gray-100 p-1 rounded-lg w-fit">
               <button
                 type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setActiveTab('overview');
-                }}
+                onClick={(e) => handleTabClick('overview', e)}
                 className={`px-6 py-3 rounded-md font-semibold transition-colors ${
                   activeTab === 'overview' 
                     ? 'bg-white text-[#1c2535] shadow-sm' 
@@ -1136,11 +1176,7 @@ export function ProductDetail() {
               </button>
               <button
                 type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setActiveTab('specs');
-                }}
+                onClick={(e) => handleTabClick('specs', e)}
                 className={`px-6 py-3 rounded-md font-semibold transition-colors ${
                   activeTab === 'specs' 
                     ? 'bg-white text-[#1c2535] shadow-sm' 
@@ -1151,11 +1187,7 @@ export function ProductDetail() {
               </button>
               <button
                 type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setActiveTab('applications');
-                }}
+                onClick={(e) => handleTabClick('applications', e)}
                 className={`px-6 py-3 rounded-md font-semibold transition-colors ${
                   activeTab === 'applications' 
                     ? 'bg-white text-[#1c2535] shadow-sm' 
@@ -1273,22 +1305,14 @@ export function ProductDetail() {
                 <>
                   <button
                     type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      prevGalleryImage();
-                    }}
+                    onClick={(e) => prevGalleryImage(e)}
                     className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
                   >
                     <ChevronLeft size={24} className="text-[#1c2535]" />
                   </button>
                   <button
                     type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      nextGalleryImage();
-                    }}
+                    onClick={(e) => nextGalleryImage(e)}
                     className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
                   >
                     <ChevronRight size={24} className="text-[#1c2535]" />
@@ -1315,11 +1339,7 @@ export function ProductDetail() {
                 <button
                   key={index}
                   type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setCurrentGalleryIndex(index);
-                  }}
+                  onClick={(e) => handleThumbnailClick(index, e)}
                   className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-3 transition-all ${
                     currentGalleryIndex === index 
                       ? 'border-[#e8612c] ring-2 ring-[#e8612c]/30 scale-105' 
