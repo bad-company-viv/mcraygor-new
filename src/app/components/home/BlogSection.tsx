@@ -5,16 +5,19 @@ const posts = [
     title: "Mechanized Sanitation and Worker Safety",
     excerpt: "How machine-led operations reduce hazardous manual interventions and improve sanitation worker dignity.",
     category: "TECHNOLOGY",
+    image: "/images/blogs/blog_sanitation_safety.png",
   },
   {
     title: "Choosing the Right Jetting-Cum-Suction Configuration",
     excerpt: "A practical guide for municipalities and industrial teams selecting the right capacity and use-case fit.",
     category: "GUIDE",
+    image: "/images/blogs/blog_jetting_configuration.png",
   },
   {
     title: "Spares Planning for High-Uptime Fleet Operations",
     excerpt: "Essential spare categories and service planning checkpoints to keep waste-handling fleets operational.",
     category: "MAINTENANCE",
+    image: "/images/blogs/blog_spares_planning.png",
   },
 ];
 
@@ -36,8 +39,8 @@ export function BlogSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {posts.map((post) => (
             <article key={post.title} className="group overflow-hidden rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-300">
-              <div className="relative h-48 sm:h-56 overflow-hidden bg-gray-100">
-                {/* Image placeholder - keeping space for future blog images */}
+              <div className="relative h-64 sm:h-[280px] overflow-hidden bg-gray-100">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-5 sm:p-7 bg-[#1c2535] flex-1 flex flex-col">
                 <p className="text-[#e8612c] text-[0.75rem] font-black tracking-[0.1em] uppercase mb-4">

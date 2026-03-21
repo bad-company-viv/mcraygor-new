@@ -35,7 +35,7 @@ export function Products() {
   return (
     <>
       <SEO pageKey="products" />
-      
+
       {/* Breadcrumb Section */}
       <Breadcrumb
         items={[{ label: "Products" }]}

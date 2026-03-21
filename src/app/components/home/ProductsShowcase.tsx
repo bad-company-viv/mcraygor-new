@@ -6,7 +6,7 @@ const categories = [
     slug: "liquid-waste",
     title: "Liquid Waste",
     description: "Combined jetting-cum-suction, super sucker, sewer grabbing, gully suction emptier, bucket type and rodding systems.",
-    image: "/images/products/sewer-jetting-suction-machine.jpeg",
+    image: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-8.jpg",
     count: "Core Range",
     color: "#1a5c3a",
   },
@@ -14,7 +14,7 @@ const categories = [
     slug: "solid-waste",
     title: "Solid Waste",
     description: "Litter picker units, refuse/garbage compactor systems, and road sweeper solutions for municipal operations.",
-    image: "/images/products/refuse-compactor.jpeg",
+    image: "/garbage-compactor.png",
     count: "Municipal Fleet",
     color: "#e8612c",
   },
@@ -22,7 +22,7 @@ const categories = [
     slug: "industrial-vacuum",
     title: "Industrial Vacuum",
     description: "Industrial vacuum cleaning machine (IVC - Super Sucker) for high-intensity cleaning and suction applications.",
-    image: "/images/products/mm-suction-vacuum-pump.jpeg",
+    image: "/industrial-vaccum.png",
     count: "Specialized",
     color: "#1c2535",
   },
@@ -30,7 +30,7 @@ const categories = [
     slug: "special-purpose",
     title: "Special Purpose",
     description: "Anti-smog gun/fogging systems, skylift working platforms, and mobile oil spill recovery unit (MOSR).",
-    image: "/images/products/oil-suction-machine.jpeg",
+    image: "/images/anti-smog.jpg",
     count: "Application Specific",
     color: "#7c3aed",
   },
@@ -75,7 +75,7 @@ export function ProductsShowcase() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                
+
                 {/* Category Badge */}
                 <div className="absolute top-6 right-6">
                   <span
