@@ -135,6 +135,16 @@ export const seoConfig: Record<string, SEOMetadata> = {
     ogImage: DEFAULT_OG_IMAGE,
     ogType: "website",
   },
+  termsOfUse: {
+    title: "Terms of Use | McRAYGOR Mechanicals Infrastructure India",
+    description: "Read the terms and conditions for using the McRAYGOR website and services. Intellectual property rights, prohibited uses, and legal compliance.",
+    keywords: "terms of use, terms and conditions, website policy, legal terms, McRAYGOR policy",
+    canonical: `${BASE_URL}/terms-of-use`,
+    ogTitle: "McRAYGOR Terms of Use",
+    ogDescription: "Terms and conditions for using the official McRAYGOR website and services.",
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: "website",
+  },
   projects: {
     title: "Projects & Applications - Case Studies | McRAYGOR®",
     description: "Explore McRAYGOR's global impact cases across government, private, and international sectors. Real-world applications of municipal and industrial waste handling equipment.",

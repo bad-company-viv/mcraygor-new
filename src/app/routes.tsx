@@ -17,6 +17,7 @@ import { GovernmentTender } from "./pages/GovernmentTender";
 import { Spares } from "./pages/Spares";
 import { Sitemap } from "./pages/Sitemap";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { TermsOfUse } from "./pages/TermsOfUse";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: Contact },
       { path: "sitemap", Component: Sitemap },
       { path: "privacy-policy", Component: PrivacyPolicy },
+      { path: "terms-of-use", Component: TermsOfUse },
     ],
   },
 ]);
