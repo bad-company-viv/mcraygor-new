@@ -136,25 +136,6 @@ export function IndustriesWeServe() {
           })}
         </div>
 
-        {/* Key Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-100">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#1c2535] mb-2">9+</div>
-            <div className="text-gray-500 text-sm">Industries Served</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#1c2535] mb-2">25+</div>
-            <div className="text-gray-500 text-sm">Years Experience</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#1c2535] mb-2">500+</div>
-            <div className="text-gray-500 text-sm">Projects Delivered</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[#1c2535] mb-2">100%</div>
-            <div className="text-gray-500 text-sm">Client Satisfaction</div>
-          </div>
-        </div>
       </div>
     </section>
   );

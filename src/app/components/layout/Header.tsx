@@ -111,17 +111,18 @@ export function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40">
       {/* Main Header Row */}
-      <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-1 flex items-center justify-between gap-4">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-0 flex items-center justify-between gap-4">
         {/* Left: Logos */}
-        <div className="flex items-center gap-1 pl-24">
+        <div className="flex items-center gap-2">
           <Link to="/" className="flex-shrink-0">
-            <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-16 md:h-20 w-auto object-contain" />
+            <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-18 md:h-28 w-auto object-contain" />
           </Link>
+          <div className="h-10 w-px bg-gray-300" />
           <img src="/celebration.jpg" alt="Celebration" className="h-6 md:h-8 w-auto object-contain" />
         </div>
 
         {/* Center: Contact Info */}
-        <div className="hidden lg:flex items-center gap-6 flex-1 justify-center">
+        <div className="hidden lg:flex items-center gap-4 flex-1 justify-center">
           <a href="tel:+918447745599" className="flex items-center gap-2 text-[#1c2535] hover:text-[#e8612c] transition-colors">
             <Phone size={16} className="text-[#e8612c]" />
             <div>
