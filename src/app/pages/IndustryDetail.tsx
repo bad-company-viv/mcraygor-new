@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router";
-import { ArrowLeft, ArrowRight, CheckCircle, Factory, Building2, Droplets, Fuel, Mountain, Zap, HardHat, FlaskConical, Leaf } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle, Factory, Building2, Fuel, Mountain, Zap, HardHat } from "lucide-react";
 import { SEO } from "../components/SEO";
 
 const industriesData = {
@@ -84,49 +84,6 @@ const industriesData = {
       {
         title: "Smart City Initiative",
         description: "Provided integrated waste management solutions for multiple smart city projects across India."
-      }
-    ]
-  },
-  "sewer-sewage": {
-    title: "Sewer & Sewage Network Cleaning",
-    description: "Specialized equipment for comprehensive sewer network maintenance, cleaning, and rehabilitation operations.",
-    icon: Droplets,
-    color: "#1c2535",
-    image: "/images/industries/sewer.jpeg",
-    heroImage: "/images/industries/sewer.jpeg",
-    overview: "Maintaining sewer and sewage networks is critical for public health and environmental protection. Our specialized jetting-cum-suction machines and desilting equipment provide efficient solutions for network cleaning, blockage removal, and preventive maintenance.",
-    applications: [
-      "Sewer line jetting and cleaning",
-      "Pipe blockage removal",
-      "Manhole desilting operations",
-      "Network inspection support",
-      "Emergency response services",
-      "Preventive maintenance programs"
-    ],
-    products: [
-      "Combined Jetting Cum Suction Machine",
-      "Recycler Suction Cum Jetting Machine",
-      "Manhole Desilting Machine (Grabbing Type)",
-      "Bucket Type Sewer Cleaning Machine",
-      "Sewer Rodding Machine",
-      "High-Flow Deep Suction Machine"
-    ],
-    benefits: [
-      "Efficient blockage removal",
-      "Reduced manual intervention",
-      "Improved network flow capacity",
-      "Environmental protection",
-      "Cost-effective maintenance",
-      "Emergency response capability"
-    ],
-    caseStudies: [
-      {
-        title: "Delhi Jal Board Network Maintenance",
-        description: "Comprehensive sewer cleaning operations across Delhi's extensive sewage network using our jetting-cum-suction machines."
-      },
-      {
-        title: "Kerala Water Authority Project",
-        description: "Deployed specialized desilting equipment for coastal area sewer network rehabilitation."
       }
     ]
   },
@@ -293,88 +250,6 @@ const industriesData = {
         description: "Implemented advanced dust suppression systems for large-scale coal handling facilities."
       }
     ]
-  },
-  "chemical-processing": {
-    title: "Chemical Processing Plants",
-    description: "ATEX compliant vacuum systems and specialized cleaning equipment designed for chemical industry applications.",
-    icon: FlaskConical,
-    color: "#0891b2",
-    image: "/images/industries/chemical-plant.jpeg",
-    heroImage: "/images/industries/chemical-plant.jpeg",
-    overview: "Chemical processing plants require specialized equipment that can safely handle hazardous materials and operate in potentially explosive atmospheres. Our ATEX compliant systems provide safe, efficient cleaning and material handling solutions for the chemical industry.",
-    applications: [
-      "Chemical spill cleanup and containment",
-      "Process equipment cleaning",
-      "Hazardous material handling",
-      "Reactor and vessel maintenance",
-      "Safety and emergency response",
-      "Contamination control operations"
-    ],
-    products: [
-      "ATEX Compliant Vacuum Systems",
-      "Chemical-Resistant Cleaning Equipment",
-      "Specialized Spill Recovery Units",
-      "Explosion-Proof Industrial Vacuums"
-    ],
-    benefits: [
-      "ATEX certification for explosive atmospheres",
-      "Chemical-resistant construction materials",
-      "Enhanced safety protocols",
-      "Regulatory compliance support",
-      "Reduced contamination risks",
-      "Emergency response capability"
-    ],
-    caseStudies: [
-      {
-        title: "Petrochemical Plant Safety Operations",
-        description: "Deployed ATEX compliant systems for safe cleaning operations in hazardous chemical processing environments."
-      },
-      {
-        title: "Chemical Spill Response Project",
-        description: "Provided rapid response equipment for chemical spill containment and cleanup operations."
-      }
-    ]
-  },
-  "food-waste": {
-    title: "Food Waste Processing & Organic Waste Facilities",
-    description: "Specialized organic waste handling and processing equipment designed for food industry and waste management applications.",
-    icon: Leaf,
-    color: "#65a30d",
-    image: "/images/industries/food-waste.jpeg",
-    heroImage: "/images/industries/food-waste.jpeg",
-    overview: "Food waste processing and organic waste facilities require specialized equipment to handle biodegradable materials efficiently while maintaining hygiene standards. Our solutions support sustainable waste management practices and help facilities meet environmental regulations.",
-    applications: [
-      "Organic waste collection and processing",
-      "Food processing facility cleanup",
-      "Composting facility maintenance",
-      "Biogas plant operations support",
-      "Waste segregation and handling",
-      "Facility sanitation and hygiene"
-    ],
-    products: [
-      "Organic Waste Handling Systems",
-      "Food-Grade Cleaning Equipment",
-      "Waste Processing Machinery",
-      "Sanitary Vacuum Systems"
-    ],
-    benefits: [
-      "Food-grade materials and construction",
-      "Hygienic design and operation",
-      "Efficient organic waste processing",
-      "Environmental sustainability support",
-      "Reduced waste disposal costs",
-      "Compliance with food safety standards"
-    ],
-    caseStudies: [
-      {
-        title: "Municipal Organic Waste Processing",
-        description: "Implemented comprehensive organic waste handling systems for municipal waste processing facilities."
-      },
-      {
-        title: "Food Processing Plant Solutions",
-        description: "Provided specialized cleaning and waste handling equipment for large-scale food processing operations."
-      }
-    ]
   }
 };
 
@@ -456,7 +331,7 @@ export function IndustryDetail() {
               <img
                 src={industry.image}
                 alt={industry.title}
-                className="w-full h-80 object-cover rounded-xl shadow-2xl"
+                className="w-full h-80 object-cover shadow-2xl"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';

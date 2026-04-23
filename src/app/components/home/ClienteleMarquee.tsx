@@ -42,8 +42,8 @@ const clients = [
 
 function ClientCard({ name, type, logo }: { name: string; type: string; logo: string }) {
   return (
-    <div className="flex-shrink-0 mx-4 bg-white border border-gray-100 rounded-xl shadow-sm px-8 py-8 flex flex-col items-center justify-center w-[280px] h-[160px] hover:shadow-md transition-shadow">
-      <div className="w-32 h-32 flex items-center justify-center">
+    <div className="flex-shrink-0 mx-5 bg-white border border-gray-100 shadow-sm px-12 py-10 flex flex-col items-center justify-center w-[390px] h-[220px] hover:shadow-md transition-shadow">
+      <div className="w-48 h-36 flex items-center justify-center">
         <img 
           src={logo} 
           alt={`${name} logo`} 
@@ -83,7 +83,7 @@ export function ClienteleMarquee() {
 
       {/* Marquee Row 1 */}
       <div className="relative">
-        <div className="flex animate-[marquee_30s_linear_infinite] gap-0">
+        <div className="flex animate-[marquee_20s_linear_infinite] gap-0">
           {[...clients, ...clients].map((client, i) => (
             <ClientCard key={`${client.name}-${i}`} name={client.name} type={client.type} logo={client.logo} />
           ))}
@@ -92,7 +92,7 @@ export function ClienteleMarquee() {
 
       {/* Marquee Row 2 (reverse) */}
       <div className="relative mt-4">
-        <div className="flex animate-[marquee-reverse_35s_linear_infinite] gap-0">
+        <div className="flex animate-[marquee-reverse_25s_linear_infinite] gap-0">
           {[...clients.slice().reverse(), ...clients.slice().reverse()].map((client, i) => (
             <ClientCard key={`rev-${client.name}-${i}`} name={client.name} type={client.type} logo={client.logo} />
           ))}

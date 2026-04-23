@@ -36,7 +36,7 @@ export function Layout() {
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
       <ScrollToTop />
-      <div ref={headerStackRef}>
+      <div ref={headerStackRef} className="sticky top-0 z-50">
         <PreHeader />
         <Header />
       </div>

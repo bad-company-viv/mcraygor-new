@@ -46,7 +46,7 @@ export function ProjectsInstallationsSection() {
         </div>
 
         <div className="grid lg:grid-cols-[minmax(0,1fr)_360px] gap-6 lg:gap-5 items-start">
-          <div className="relative rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[420px] md:min-h-[500px] border border-[#1c2535]/10 shadow-xl bg-[#1c2535]">
+          <div className="relative overflow-hidden min-h-[320px] sm:min-h-[420px] md:min-h-[500px] border border-[#1c2535]/10 shadow-xl bg-[#1c2535]">
             <img
               src={activeProject.images[0]?.url}
               alt={activeProject.images[0]?.alt || activeProject.title}
@@ -96,7 +96,7 @@ export function ProjectsInstallationsSection() {
             </div>
           </div>
 
-          <aside className="bg-white/90 backdrop-blur-sm rounded-2xl border border-[#1c2535]/10 shadow-sm p-3 sm:p-4">
+          <aside className="bg-white/90 backdrop-blur-sm border border-[#1c2535]/10 shadow-sm p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
               <p className="text-xs sm:text-sm font-black text-gray-500 uppercase tracking-[0.12em]">All Projects</p>
               <Link to="/projects" className="text-xs sm:text-sm font-semibold text-[#1a5c3a] hover:text-[#14532d]">

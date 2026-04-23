@@ -59,7 +59,7 @@ export function ManufacturingSection() {
             </div>
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+          <div className="relative overflow-hidden border border-white/10 shadow-2xl">
             <img
               src="/images/manufacturing-facility-branded.png"
               alt="McRAYGOR Advanced Manufacturing Facility"

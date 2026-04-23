@@ -122,7 +122,7 @@ export function CSR() {
             </div>
 
             <div className="relative">
-              <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl">
+              <div className="relative z-10 overflow-hidden shadow-2xl">
                 <img
                   src="/images/csr-impact.png"
                   alt="Sanitation Worker Dignity"

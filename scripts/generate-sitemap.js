@@ -8,13 +8,9 @@ const BASE_URL = 'https://www.mcraygor.com';
 const staticRoutes = [
     '',
     '/about',
-    '/vision',
-    '/legacy',
     '/products',
     '/projects',
     '/spares',
-    '/csr',
-    '/rd',
     '/government-tender',
     '/contact',
     '/sitemap',

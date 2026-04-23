@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { FileText, Package, Wrench, Building2, Heart, Microscope, Phone, Home } from "lucide-react";
+import { FileText, Package, Wrench, Building2, Home } from "lucide-react";
 import { SEO } from "../components/SEO";
 
 const sitemapSections = [
@@ -9,8 +9,6 @@ const sitemapSections = [
     links: [
       { label: "Home", to: "/" },
       { label: "About Us", to: "/about" },
-      { label: "Vision & Mission", to: "/vision" },
-      { label: "Legacy", to: "/legacy" },
       { label: "Contact Us", to: "/contact" },
     ],
   },
@@ -47,8 +45,6 @@ const sitemapSections = [
     title: "Company",
     icon: Building2,
     links: [
-      { label: "Research & Development", to: "/rd" },
-      { label: "CSR Initiatives", to: "/csr" },
       { label: "Privacy Policy", to: "/privacy-policy" },
     ],
   },

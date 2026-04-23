@@ -29,8 +29,8 @@ const commonSpecs = [
 ];
 
 const productData: Record<string, ProductProfile> = {
-  "combined-jetting-cum-suction-machine": {
-    name: "Combined Jetting Cum Suction Machine",
+  "COMBINATOR": {
+    name: "Combined Jetting Cum Suction Machine – COMBINATOR™",
     category: "Liquid Waste",
     desc: "Integrated jetting and suction platform for comprehensive sewer maintenance and cleaning operations.",
     overview: "Our Combined Jetting Cum Suction Machine represents the pinnacle of sewer cleaning technology, designed for simultaneous jetting and suction operations. This versatile equipment handles choking, desilting, and liquid waste evacuation in one efficient workflow, making it indispensable for municipal and industrial applications.",
@@ -99,8 +99,8 @@ const productData: Record<string, ProductProfile> = {
       "Low maintenance requirements"
     ]
   },
-  "super-sucker-machine": {
-    name: "Super Sucker Machine",
+  "HYPERVAC": {
+    name: "Super Sucker Machine – HYPERVAC™",
     category: "Liquid Waste",
     desc: "High-performance suction machine for demanding sludge and slurry handling applications.",
     overview: "The Super Sucker Machine is engineered for extreme suction performance, capable of handling the most challenging sludge, slurry, and heavy waste materials. Built for continuous operation in severe conditions where conventional systems fail to deliver.",
@@ -169,8 +169,8 @@ const productData: Record<string, ProductProfile> = {
       "Enhanced safety for operators"
     ]
   },
-  "sewer-grabbing-manhole-desilting-machine": {
-    name: "Sewer Grabbing / Manhole Desilting Machine",
+  "McGRAB": {
+    name: "Sewer Grabbing / Manhole Desilting Machine – McGRAB™",
     category: "Liquid Waste",
     desc: "Mechanical desilting machine designed for safe removal of settled silt and debris from manholes.",
     overview: "The Sewer Grabbing / Manhole Desilting Machine is specifically engineered for safer and more efficient removal of settled silt and debris from manholes and sewer chambers. This specialized equipment reduces manual intervention and improves operational safety while ensuring thorough cleaning of critical infrastructure points.",
@@ -239,7 +239,33 @@ const productData: Record<string, ProductProfile> = {
       "Environmental compliance"
     ]
   },
-  "gully-suction-emptier-trailer-mounted": {
+  "TRAILER-JETTING-SUCTION": {
+    name: "Sewer Jetting Machine / Jetting Suction Machine (Trailer Mounted)",
+    category: "Liquid Waste",
+    desc: "Compact trailer-mounted jetting and suction solution for versatile sewer maintenance.",
+    overview: "The Trailer Mounted Jetting Suction Machine provides a portable and efficient solution for sewer cleaning in various environments. Its compact design allows for easy transport and operation in areas with limited access, while providing reliable performance for both jetting and suction tasks.",
+    image: "/images/products/sewer-jetting-suction-machine.jpeg",
+    gallery: ["/images/products/sewer-jetting-suction-machine.jpeg"],
+    specs: commonSpecs,
+    detailedSpecs: [],
+    applications: ["Municipal sewer cleaning", "Drain maintenance", "Localized suction tasks"],
+    features: ["Compact design", "Versatile operation", "Easy transport"],
+    benefits: ["Flexible deployment", "Cost-effective", "Reliable performance"]
+  },
+  "McJET": {
+    name: "Sewer Jetting Machine – McJET™",
+    category: "Liquid Waste",
+    desc: "High-pressure jetting system for efficient sewer line cleaning and blockage removal.",
+    overview: "The McJET™ Sewer Jetting Machine is designed for high-performance cleaning of sewer and drain lines. Using high-pressure water jets, it effectively removes blockages, silt, and debris, ensuring clear and functional drainage systems.",
+    image: "/images/products/sewer-jetting-suction-machine.jpeg",
+    gallery: ["/images/products/sewer-jetting-suction-machine.jpeg"],
+    specs: commonSpecs,
+    detailedSpecs: [],
+    applications: ["Sewer line cleaning", "Blockage removal", "Drain maintenance"],
+    features: ["High-pressure jetting", "Robust construction", "Easy operation"],
+    benefits: ["Efficient cleaning", "Reduced manual work", "Long service life"]
+  },
+  "GULLY-SUCTION-EMPTIER": {
     name: "Gully Suction Emptier (Trailer Mounted)",
     category: "Liquid Waste",
     desc: "Compact trailer-mounted suction unit designed for narrow access areas and constrained spaces.",
@@ -309,8 +335,8 @@ const productData: Record<string, ProductProfile> = {
       "Efficient space utilization"
     ]
   },
-  "bucket-type-sewer-cleaning-machine": {
-    name: "Bucket Type Sewer Cleaning Machine",
+  "POWERBUCKET": {
+    name: "Bucket Type Sewer Cleaning Machines – POWERBUCKET™",
     category: "Liquid Waste",
     desc: "Mechanical bucket-based cleaning solution designed for effective sewer line maintenance and debris removal.",
     overview: "The Bucket Type Sewer Cleaning Machine utilizes a robust mechanical bucket system for effective removal of solid debris and blockages from sewer lines. This reliable equipment is designed for repetitive cleaning operations in municipal drainage networks, offering consistent performance and durability.",
@@ -381,8 +407,8 @@ const productData: Record<string, ProductProfile> = {
       "Long service life"
     ]
   },
-  "sewer-rodding-machine": {
-    name: "Sewer Rodding Machine",
+  "McRODDER": {
+    name: "Sewer Rodding Machines – McRODDER™",
     category: "Liquid Waste",
     desc: "Specialized pipeline rodding machine designed for clearing underground blockages and choke points.",
     overview: "The Sewer Rodding Machine is engineered for resolving line blockages through controlled rodding operations in municipal and facility networks. This specialized equipment uses flexible rods to navigate through pipes and clear obstructions, making it essential for preventive maintenance and emergency response.",
@@ -451,8 +477,8 @@ const productData: Record<string, ProductProfile> = {
       "Reduced service disruption"
     ]
   },
-  "litter-picker": {
-    name: "Litter Picker",
+  "VYUK": {
+    name: "Litter Picker – VYUK™",
     category: "Solid Waste",
     desc: "Efficient collection system designed for surface litter handling in public spaces and urban areas.",
     overview: "The Litter Picker is built for structured litter collection workflows in municipal and institutional cleaning operations. This versatile equipment efficiently handles various types of surface waste, making it ideal for maintaining cleanliness in public spaces, parks, and urban environments.",
@@ -521,8 +547,8 @@ const productData: Record<string, ProductProfile> = {
       "Environmental protection"
     ]
   },
-  "refuse-garbage-compactor": {
-    name: "Refuse / Garbage Compactor",
+  "PAC": {
+    name: "Refuse / Garbage Compactor – PAC™",
     category: "Solid Waste",
     desc: "High-efficiency compactor solution designed for optimal waste transport and high-volume waste handling.",
     overview: "The Refuse / Garbage Compactor is designed to optimize waste transport efficiency with advanced compaction technology for daily municipal collection routes. This robust system significantly reduces the volume of collected waste, allowing for more efficient transportation and disposal operations.",
@@ -591,8 +617,8 @@ const productData: Record<string, ProductProfile> = {
       "Environmental sustainability"
     ]
   },
-  "road-sweeper": {
-    name: "Road Sweeper",
+  "McCLEAN": {
+    name: "Road Sweeper – McCLEAN™",
     category: "Solid Waste",
     desc: "Advanced road sweeping machine designed for comprehensive cleaning of urban and industrial environments.",
     overview: "The Road Sweeper is configured for regular sweeping cycles to improve city cleanliness and dust control outcomes. This versatile machine effectively removes debris, dust, and litter from roads, making it essential for maintaining clean urban environments and industrial facilities.",
@@ -661,8 +687,8 @@ const productData: Record<string, ProductProfile> = {
       "Extended road surface life"
     ]
   },
-  "industrial-vacuum-cleaning-machine-ivc-super-sucker": {
-    name: "Industrial Vacuum Cleaning Machine (IVC - Super Sucker)",
+  "HYPERVAC-IVC": {
+    name: "Industrial Vacuum Cleaner (IVC – Super Sucker) – HYPERVAC™ IVC",
     category: "Industrial Vacuum",
     desc: "Heavy-duty industrial vacuum cleaning platform designed for demanding suction applications and material recovery.",
     overview: "The Industrial Vacuum Cleaning Machine (IVC - Super Sucker) is a specialized system for industrial cleaning and material suction use cases where continuous high-performance operation is required. This robust equipment handles the most challenging industrial cleaning tasks with exceptional reliability.",
@@ -731,8 +757,47 @@ const productData: Record<string, ProductProfile> = {
       "Long-term reliability"
     ]
   },
-  "anti-smog-gun-fogging-system": {
-    name: "Anti Smog Gun / Fogging System",
+  "CHASSIS-VACUUM-CLEANER": {
+    name: "Chassis Mounted Industrial Vacuum Cleaner",
+    category: "Industrial Vacuum",
+    desc: "Truck-mounted vacuum cleaner for large-scale industrial and municipal cleaning.",
+    overview: "The Chassis Mounted Industrial Vacuum Cleaner is designed for heavy-duty applications where mobility and high-capacity suction are required. This truck-mounted system provides powerful performance for industrial cleaning, waste recovery, and municipal maintenance projects.",
+    image: "/images/products/mm-suction-vacuum-pump.jpeg",
+    gallery: ["/images/products/mm-suction-vacuum-pump.jpeg"],
+    specs: commonSpecs,
+    detailedSpecs: [],
+    applications: ["Industrial facility cleaning", "Municipal waste handling", "Large-scale material recovery"],
+    features: ["Truck-mounted mobility", "High-capacity suction", "Robust industrial build"],
+    benefits: ["Efficient large-scale cleaning", "Versatile deployment", "Reliable performance"]
+  },
+  "ATEX-VACUUM-SYSTEMS": {
+    name: "ATEX Compliant Vacuum Systems",
+    category: "Industrial Vacuum",
+    desc: "Specialized explosion-proof vacuum systems for hazardous industrial environments.",
+    overview: "Our ATEX Compliant Vacuum Systems are engineered to operate safely in explosive atmospheres. Designed for industries where flammable dust or vapors are present, these systems prioritize safety and compliance without compromising on suction performance.",
+    image: "/images/products/mm-suction-vacuum-pump.jpeg",
+    gallery: ["/images/products/mm-suction-vacuum-pump.jpeg"],
+    specs: commonSpecs,
+    detailedSpecs: [],
+    applications: ["Chemical plant cleaning", "Pharmaceutical manufacturing", "Grain and flour processing"],
+    features: ["ATEX certification", "Explosion-proof design", "Advanced safety interlocks"],
+    benefits: ["Enhanced operational safety", "Regulatory compliance", "Reliable hazardous waste handling"]
+  },
+  "MATERIAL-RECOVERY-SYSTEMS": {
+    name: "Material Recovery Systems",
+    category: "Industrial Vacuum",
+    desc: "High-performance systems designed for the recovery and recycling of industrial materials.",
+    overview: "Material Recovery Systems are specialized industrial vacuum solutions focused on capturing and recycling valuable materials during manufacturing and processing operations. These systems help industries minimize waste and improve operational sustainability.",
+    image: "/images/products/mm-suction-vacuum-pump.jpeg",
+    gallery: ["/images/products/mm-suction-vacuum-pump.jpeg"],
+    specs: commonSpecs,
+    detailedSpecs: [],
+    applications: ["Material recycling", "Production line waste recovery", "Industrial material handling"],
+    features: ["High-efficiency material capture", "Advanced filtration", "Customizable collection points"],
+    benefits: ["Waste reduction", "Material cost savings", "Improved sustainability"]
+  },
+  "McFOGGER": {
+    name: "Anti Smog Gun / Fogging System – McFOGGER™",
     category: "Special Purpose",
     desc: "Advanced fogging-based dust suppression and air quality control system for environmental management.",
     overview: "The Anti Smog Gun / Fogging System is an application-driven solution designed for construction, municipal, and industrial dust environments. This specialized equipment effectively suppresses airborne particles and improves air quality through advanced fogging technology.",
@@ -801,8 +866,8 @@ const productData: Record<string, ProductProfile> = {
       "Cost-effective solution"
     ]
   },
-  "skylift-working-platforms": {
-    name: "Skylift Working Platforms",
+  "McLIFT": {
+    name: "Skylift Working Platform – McLIFT™",
     category: "Special Purpose",
     desc: "Elevated platform system designed for safe access and utility maintenance at various heights.",
     overview: "The Skylift Working Platforms are purpose-built lifting platforms for overhead servicing, maintenance, and municipal utility work. These versatile platforms provide safe and efficient access to elevated work areas, making them essential for various maintenance and installation tasks.",
@@ -871,8 +936,8 @@ const productData: Record<string, ProductProfile> = {
       "Compliance with safety standards"
     ]
   },
-  "mobile-oil-spill-recovery-unit-mosr": {
-    name: "Mobile Oil Spill Recovery Unit (MOSR)",
+  "MOSRU": {
+    name: "Mobile Oil Spill Recovery Unit – MOSRU™",
     category: "Special Purpose",
     desc: "Specialized mobile response unit designed for rapid containment and recovery of oil spills and hazardous liquids.",
     overview: "The Mobile Oil Spill Recovery Unit (MOSR) is designed for rapid deployment during spill incidents with practical mobility and response-focused design. This specialized equipment provides immediate response capability for environmental protection and hazardous material recovery operations.",
@@ -944,7 +1009,9 @@ const productData: Record<string, ProductProfile> = {
 };
 
 export function ProductDetail() {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug: paramSlug } = useParams<{ slug: string }>();
+  // Support both /products/SLUG and /SLUG (trademark direct links)
+  const slug = paramSlug || window.location.pathname.split("/").pop();
   const product = slug ? productData[slug] : null;
   const [activeTab, setActiveTab] = useState<'overview' | 'specs' | 'applications'>('overview');
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
@@ -1083,7 +1150,7 @@ export function ProductDetail() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-[400px] object-cover rounded-2xl shadow-lg"
+                  className="w-full h-[400px] object-cover shadow-lg"
                 />
               </div>
             </div>
@@ -1293,7 +1360,7 @@ export function ProductDetail() {
 
           {/* Large Image Slider */}
           <div className="relative mb-8">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative overflow-hidden shadow-2xl">
               <img
                 src={product.gallery[currentGalleryIndex]}
                 alt={`${product.name} - View ${currentGalleryIndex + 1}`}
@@ -1340,7 +1407,7 @@ export function ProductDetail() {
                   key={index}
                   type="button"
                   onClick={(e) => handleThumbnailClick(index, e)}
-                  className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-3 transition-all ${
+                  className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 overflow-hidden border-3 transition-all ${
                     currentGalleryIndex === index 
                       ? 'border-[#e8612c] ring-2 ring-[#e8612c]/30 scale-105' 
                       : 'border-gray-200 hover:border-gray-300 hover:scale-105'

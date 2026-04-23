@@ -107,7 +107,7 @@ export function RD() {
           {/* Validation Showcase */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+              <div className="relative z-10 overflow-hidden shadow-2xl border-8 border-white">
                 <img
                   src="/images/rd-testing.png"
                   alt="Product Validation & Testing"

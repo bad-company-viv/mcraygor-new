@@ -31,7 +31,7 @@ export function Projects() {
               <Link
                 key={project.id}
                 to={`/projects/${project.slug}`}
-                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex flex-col h-full"
+                className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex flex-col h-full"
               >
                 {/* Project Image */}
                 <div className="relative overflow-hidden h-48 flex-shrink-0">

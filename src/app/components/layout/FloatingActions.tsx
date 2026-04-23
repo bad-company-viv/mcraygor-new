@@ -5,10 +5,10 @@ export function FloatingActions() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/918447745599"
+        href="https://wa.me/918447445599"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform self-end"
         title="Chat on WhatsApp"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -16,13 +16,19 @@ export function FloatingActions() {
         </svg>
       </a>
 
-      {/* Phone */}
+      {/* Phone Badge */}
       <a
-        href="tel:+918447745599"
-        className="w-12 h-12 rounded-full bg-[#e8612c] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        href="tel:+918447445599"
+        className="inline-flex items-center gap-3 rounded-full bg-[#e8612c] text-white pl-4 pr-5 py-3 shadow-lg hover:scale-105 transition-transform self-end"
         title="Call Us"
       >
-        <Phone size={20} />
+        <span className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
+          <Phone size={18} />
+        </span>
+        <span className="flex flex-col leading-none">
+          <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-white/80">Call Us</span>
+          <span className="text-sm font-bold mt-1">8447445599</span>
+        </span>
       </a>
     </div>
   );

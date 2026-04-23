@@ -1,5 +1,24 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Headphones, Wrench } from "lucide-react";
 import { SEO } from "../components/SEO";
+
+const indiaLocations = [
+  {
+    region: "North India",
+    cities: ["Gurugram", "Delhi NCR", "Chandigarh", "Jaipur"],
+  },
+  {
+    region: "West India",
+    cities: ["Mumbai", "Pune", "Ahmedabad", "Vadodara"],
+  },
+  {
+    region: "South India",
+    cities: ["Hyderabad", "Bengaluru", "Chennai", "Kochi"],
+  },
+  {
+    region: "East & Central India",
+    cities: ["Kolkata", "Bhubaneswar", "Patna", "Raipur"],
+  },
+];
 
 export function Contact() {
   return (
@@ -33,7 +52,7 @@ export function Contact() {
                 {
                   icon: Phone,
                   title: "Phone",
-                  lines: ["+91 8447745599", "+91 9812001368"],
+                  lines: ["+91 8447445599", "+91 9812001368"],
                 },
                 {
                   icon: Mail,
@@ -102,14 +121,46 @@ export function Contact() {
         </div>
       </section>
 
-      <section className="h-80 bg-gray-200 relative overflow-hidden">
-        <iframe
-          title="McRAYGOR Plant Location"
-          src="https://maps.google.com/maps?q=Plot%2014,%20Dhumaspur%20Road,%20Sector%2067,%20Badshahpur,%20Gurugram,%20Haryana,%20122101&z=14&output=embed"
-          className="w-full h-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+      <section className="py-14 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+            <div>
+              <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">India Coverage</p>
+              <h2 className="text-[#1c2535] font-bold text-2xl md:text-3xl">Sales & Service Locations</h2>
+              <p className="text-gray-500 mt-3 max-w-2xl text-sm md:text-base">
+                Regional support coverage for machine enquiries, project coordination, commissioning and service response across India.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#e8612c]/10 px-4 py-2 text-sm font-semibold text-[#e8612c]">
+                <Headphones size={16} />
+                Sales Support
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#1a5c3a]/10 px-4 py-2 text-sm font-semibold text-[#1a5c3a]">
+                <Wrench size={16} />
+                Service Support
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+            {indiaLocations.map((location) => (
+              <article key={location.region} className="rounded-2xl border border-gray-100 bg-gray-50 p-6 shadow-sm">
+                <div className="flex items-center gap-2 text-[#e8612c] font-semibold mb-4">
+                  <MapPin size={16} />
+                  {location.region}
+                </div>
+                <div className="space-y-2">
+                  {location.cities.map((city) => (
+                    <div key={city} className="text-sm text-gray-600">
+                      {city}
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );

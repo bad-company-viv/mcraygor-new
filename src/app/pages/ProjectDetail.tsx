@@ -73,7 +73,7 @@ export function ProjectDetail() {
       {project.images && project.images.length > 0 && (
         <section className="bg-white py-8">
           <div className="max-w-[1200px] mx-auto px-4 md:px-8">
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
+            <div className="relative overflow-hidden shadow-lg">
               <img
                 src={project.images[0].url}
                 alt={project.images[0].alt}

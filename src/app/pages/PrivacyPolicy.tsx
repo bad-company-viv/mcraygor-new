@@ -126,7 +126,7 @@ export function PrivacyPolicy() {
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
                   <p className="text-gray-700 font-semibold mb-2">McRAYGOR Mechanicals Infrastructure</p>
                   <p className="text-gray-600 text-sm mb-1">Email: support@mcraygor.com</p>
-                  <p className="text-gray-600 text-sm mb-1">Phone: +91 8447745599</p>
+                  <p className="text-gray-600 text-sm mb-1">Phone: +91 8447445599</p>
                   <p className="text-gray-600 text-sm">Address: Plot 14, Dhumaspur Road, Sector 67, Badshahpur, Gurugram, Haryana, India - 122101</p>
                 </div>
               </div>

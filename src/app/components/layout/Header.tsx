@@ -1,49 +1,58 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
-import { Phone, Mail, Download, Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { 
+  Menu, X, ChevronDown, Phone, Mail, Globe, ExternalLink, Download, 
+  ArrowRight, Building2, Droplets, Trash2, Zap, Settings, ShieldCheck, MapPin 
+} from "lucide-react";
 
 const productCategories = [
   {
     title: "Liquid Waste Handling",
     items: [
-      "Combined Jetting Cum Suction Machine",
-      "Super Sucker Machine",
-      "Sewer Grabbing / Manhole Desilting Machine",
-      "Gully Suction Emptier (Trailer Mounted)",
-      "Bucket Type Sewer Cleaning Machine",
-      "Sewer Rodding Machine",
+      { name: "Combined Jetting Cum Suction Machine – COMBINATOR™", slug: "COMBINATOR" },
+      { name: "Super Sucker Machine – HYPERVAC™", slug: "HYPERVAC" },
+      { name: "Sewer Grabbing / Manhole Desilting Machine – McGRAB™", slug: "McGRAB" },
+      { name: "Gully Suction Emptier (Trailer Mounted)", slug: "GULLY-SUCTION-EMPTIER" },
+      { name: "Sewer Jetting Machine / Jetting Suction Machine (Trailer Mounted)", slug: "TRAILER-JETTING-SUCTION" },
+      { name: "Sewer Jetting Machine – McJET™", slug: "McJET" },
+      { name: "Bucket Type Sewer Cleaning Machines – POWERBUCKET™", slug: "POWERBUCKET" },
+      { name: "Sewer Rodding Machines – McRODDER™", slug: "McRODDER" },
     ],
   },
   {
     title: "Solid Waste Handling",
-    items: ["Litter Picker", "Refuse / Garbage Compactor", "Road Sweeper"],
+    items: [
+      { name: "Litter Picker – VYUK™", slug: "VYUK" },
+      { name: "Refuse / Garbage Compactor – PAC™", slug: "PAC" },
+      { name: "Road Sweeper – McCLEAN™", slug: "McCLEAN" }
+    ],
   },
   {
     title: "Industrial Vacuum",
     items: [
-      "Industrial Vacuum Cleaning Machine (IVC - Super Sucker)",
-      "Chassis Mounted Industrial Vacuum Cleaner",
-      "ATEX Compliant Vacuum Systems",
-      "Material Recovery Systems",
+      { name: "Industrial Vacuum Cleaner (IVC – Super Sucker) – HYPERVAC™ IVC", slug: "HYPERVAC-IVC" },
+      { name: "Chassis Mounted Industrial Vacuum Cleaner", slug: "CHASSIS-VACUUM-CLEANER" },
+      { name: "ATEX Compliant Vacuum Systems", slug: "ATEX-VACUUM-SYSTEMS" },
+      { name: "Material Recovery Systems", slug: "MATERIAL-RECOVERY-SYSTEMS" },
     ],
   },
   {
     title: "Special Purpose Equipment",
-    items: ["Anti Smog Gun / Fogging System", "Skylift Working Platforms", "Mobile Oil Spill Recovery Unit (MOSR)"],
+    items: [
+      { name: "Anti Smog Gun / Fogging System – McFOGGER™", slug: "McFOGGER" },
+      { name: "Skylift Working Platform – McLIFT™", slug: "McLIFT" },
+      { name: "Mobile Oil Spill Recovery Unit – MOSRU™", slug: "MOSRU" }
+    ],
   },
 ];
 
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Vision & Mission", to: "/vision" },
-  { label: "Legacy", to: "/legacy" },
   { label: "Products", to: "/products", hasMega: true },
   { label: "Spares", to: "/spares" },
   { label: "Government & Tender Support", to: "/government-tender" },
   { label: "Projects / Applications", to: "/projects" },
-  { label: "R&D", to: "/rd" },
-  { label: "CSR Initiatives", to: "/csr" },
   { label: "Contact Us", to: "/contact" },
 ];
 
@@ -56,41 +65,41 @@ const megaMenuCards = [
     title: "Vacuum Trucks",
     description: "High-capacity sewer and industrial vacuum trucks for heavy-duty operations.",
     image: "/images/products/sewage-suction-tanker.jpeg",
-    slug: "super-sucker-machine",
+    slug: "HYPERVAC",
   },
   {
     title: "Road Sweepers",
     description: "Truck-mounted and compact sweeping solutions for roads and utility zones.",
     image: "/images/products/refuse-compactor2.jpeg",
-    slug: "road-sweeper",
+    slug: "McCLEAN",
   },
   {
     title: "Jetting Machines",
     description: "High-pressure jetting systems for sewer and drain cleaning workflows.",
     image: "/images/products/sewer-jetting-suction-machine.jpeg",
-    slug: "combined-jetting-cum-suction-machine",
+    slug: "McJET",
   },
   {
     title: "Combination Units",
     description: "Vacuum and jetting combinations for desilting and blockage removal.",
     image: "/images/products/sewer-jetting-suction-machine2.jpeg",
-    slug: "combined-jetting-cum-suction-machine",
+    slug: "COMBINATOR",
   },
   {
     title: "Industrial Cleaners",
     description: "Specialized industrial vacuum cleaning platforms for demanding use cases.",
     image: "/images/products/mm-suction-vacuum-pump.jpeg",
-    slug: "industrial-vacuum-cleaning-machine-ivc-super-sucker",
+    slug: "HYPERVAC-IVC",
   },
   {
     title: "Custom Solutions",
     description: "Application-specific equipment tailored for municipal and industrial requirements.",
     image: "/images/products/desilting-machine-grab-bucket.jpeg",
-    slug: "mobile-oil-spill-recovery-unit-mosr",
+    slug: "MOSRU",
   },
 ];
 
-const logoImg = "/logo.jpg";
+const logoImg = "/mcraygor-header-logo.png";
 
 export function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
@@ -109,34 +118,22 @@ export function Header() {
   }, []);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-40">
+    <header className="bg-white shadow-sm">
       {/* Main Header Row */}
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-0 flex items-center justify-between gap-4">
         {/* Left: Logos */}
-        <div className="flex items-center gap-2">
-          <Link to="/" className="flex-shrink-0">
-            <img src={logoImg} alt="McRAYGOR Mechanicals Infrastructure" className="h-18 md:h-28 w-auto object-contain" />
+        <div className="flex items-center gap-2 md:gap-6 py-2">
+          <Link to="/" className="flex-shrink-0 flex items-center">
+            <img
+              src={logoImg}
+              alt="McRAYGOR Mechanicals Infrastructure"
+              className="h-12 md:h-20 lg:h-24 w-auto max-w-[500px] md:max-w-[650px] lg:max-w-[750px] object-contain"
+            />
           </Link>
-          <div className="h-10 w-px bg-gray-300" />
-          <img src="/celebration.jpg" alt="Celebration" className="h-6 md:h-8 w-auto object-contain" />
-        </div>
-
-        {/* Center: Contact Info */}
-        <div className="hidden lg:flex items-center gap-4 flex-1 justify-center">
-          <a href="tel:+918447745599" className="flex items-center gap-2 text-[#1c2535] hover:text-[#e8612c] transition-colors">
-            <Phone size={16} className="text-[#e8612c]" />
-            <div>
-              <div className="text-xs text-gray-500">Call Us:</div>
-              <div className="text-sm font-semibold">+91 8447745599</div>
-            </div>
-          </a>
-          <a href="mailto:support@mcraygor.com" className="flex items-center gap-2 text-[#1c2535] hover:text-[#e8612c] transition-colors">
-            <Mail size={16} className="text-[#e8612c]" />
-            <div>
-              <div className="text-xs text-gray-500">Email Us:</div>
-              <div className="text-sm font-semibold">support@mcraygor.com</div>
-            </div>
-          </a>
+          <div className="h-8 md:h-14 w-px bg-gray-200" />
+          <div className="flex items-center h-full">
+            <img src="/celebration.jpg" alt="25 Years Celebration" className="h-8 md:h-14 lg:h-16 w-auto object-contain" />
+          </div>
         </div>
 
         {/* Right: CTA + Mobile Menu */}
@@ -144,10 +141,10 @@ export function Header() {
           <a
             href="/Brochure.pdf"
             download
-            className="hidden md:flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-3 py-1.5 rounded text-sm font-semibold transition-colors whitespace-nowrap"
+            className="hidden md:flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-4 py-2.5 rounded-none text-sm font-black uppercase tracking-widest transition-all shadow-lg hover:-translate-y-0.5 active:translate-y-0"
           >
-            <Download size={15} />
-            Download 2026 Company Profile
+            <Download size={16} />
+            Download Company Profile
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -158,19 +155,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile quick contact strip */}
-      <div className="lg:hidden border-t border-gray-100 bg-[#f8fafc]">
-        <div className="max-w-[1600px] mx-auto px-4 py-2 flex items-center justify-between gap-3">
-          <a href="tel:+918447745599" className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1c2535] hover:text-[#e8612c] transition-colors">
-            <Phone size={14} className="text-[#e8612c]" />
-            +91 8447745599
-          </a>
-          <a href="mailto:support@mcraygor.com" className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1c2535] hover:text-[#e8612c] transition-colors">
-            <Mail size={14} className="text-[#e8612c]" />
-            support@mcraygor.com
-          </a>
-        </div>
-      </div>
+
 
       {/* Navigation Bar */}
       <nav ref={megaRef} className="hidden lg:block border-t border-gray-100 bg-white relative">
@@ -225,14 +210,14 @@ export function Header() {
                         </h4>
                         <ul className="space-y-2.5">
                           {category.items.map((item) => (
-                            <li key={item}>
+                            <li key={item.slug}>
                               <Link
-                                to={`/products/${toProductSlug(item)}`}
+                                to={`/products/${item.slug}`}
                                 onClick={() => setMegaOpen(false)}
                                 className="text-gray-700 hover:text-[#e8612c] transition-colors text-sm flex items-start gap-2 group leading-snug"
                               >
                                 <span className="text-[#e8612c] text-xs group-hover:translate-x-1 transition-transform">›</span>
-                                {item}
+                                {item.name}
                               </Link>
                             </li>
                           ))}
@@ -288,12 +273,12 @@ export function Header() {
                             <div className="text-xs font-bold text-[#1a5c3a] uppercase tracking-wide px-3 py-1">{cat.title}</div>
                             {cat.items.map((item) => (
                               <Link
-                                key={item}
-                                to={`/products/${toProductSlug(item)}`}
+                                key={item.slug}
+                                to={`/products/${item.slug}`}
                                 onClick={() => setMobileOpen(false)}
                                 className="block px-3 py-1.5 text-sm text-gray-600 hover:text-[#e8612c] leading-snug"
                               >
-                                {item}
+                                {item.name}
                               </Link>
                             ))}
                           </div>
@@ -313,8 +298,8 @@ export function Header() {
               </div>
             ))}
             <div className="pt-3 border-t border-gray-100 space-y-2">
-              <a href="tel:+918447745599" className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c2535]">
-                <Phone size={16} className="text-[#e8612c]" />+91 8447745599
+              <a href="tel:+918447445599" className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c2535]">
+                <Phone size={16} className="text-[#e8612c]" />+91 8447445599
               </a>
               <a href="mailto:support@mcraygor.com" className="flex items-center gap-2 px-3 py-2 text-sm text-[#1c2535] break-all">
                 <Mail size={16} className="text-[#e8612c]" />support@mcraygor.com

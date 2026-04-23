@@ -67,7 +67,7 @@ export function Vision() {
       {/* Narrative Section: Transforming Sanitation */}
       <section className="py-24 md:py-32">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <div className="bg-[#1c2535] rounded-[3rem] p-12 md:p-24 relative overflow-hidden flex flex-col lg:flex-row items-center gap-16 shadow-2xl">
+          <div className="bg-[#1c2535] p-12 md:p-24 relative overflow-hidden flex flex-col lg:flex-row items-center gap-16 shadow-2xl">
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
               <img src="/images/manufacturing-facility-branded.png" alt="" className="w-full h-full object-cover grayscale" />
             </div>

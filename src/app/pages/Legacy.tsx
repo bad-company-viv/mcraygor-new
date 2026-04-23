@@ -96,7 +96,7 @@ export function Legacy() {
               <img
                 src="/images/manufacturing-facility.png"
                 alt="McRAYGOR Manufacturing Legacy"
-                className="rounded-2xl w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover shadow-xl"
+                className="w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover shadow-xl"
               />
             </div>
           </div>
