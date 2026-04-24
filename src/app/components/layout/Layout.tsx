@@ -36,11 +36,15 @@ export function Layout() {
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
       <ScrollToTop />
-      <div ref={headerStackRef} className="sticky top-0 z-50">
+      <div 
+        ref={headerStackRef} 
+        className="fixed top-0 left-0 w-full z-[100] flex-shrink-0 will-change-transform"
+        style={{ transform: 'translateZ(0)' }}
+      >
         <PreHeader />
         <Header />
       </div>
-      <main className="flex-1">
+      <main className="flex-1" style={{ paddingTop: 'var(--site-header-height)' }}>
         <Outlet />
       </main>
       <Footer />

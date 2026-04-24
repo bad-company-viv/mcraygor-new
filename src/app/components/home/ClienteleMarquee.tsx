@@ -17,6 +17,7 @@ const clients = [
   { name: "Prism Johnson", type: "Private", logo: "/clients-logo/prism-johnson.jpg" },
   { name: "Bharat Petroleum", type: "Private", logo: "/clients-logo/bharat-petroleum.jpg" },
   { name: "Vizag Steel", type: "Private", logo: "/clients-logo/vizag-steel.jpg" },
+  { name: "Industrial Infrastructure Partner", type: "Private", logo: "/clients-logo/12.jpg" },
   
   // Government Clients
   { name: "Delhi Municipal Council", type: "Government", logo: "/clients-logo/delhi-municipal-council.jpg" },
@@ -35,21 +36,20 @@ const clients = [
   { name: "Vadodara Municipal Corporation", type: "Government", logo: "/clients-logo/vadodara-municipal-corporation.jpg" },
   { name: "Municipal Council Tadipatri", type: "Government", logo: "/clients-logo/municipal-council-tadipatri.jpg" },
   { name: "Jammu Municipal Corporation", type: "Government", logo: "/clients-logo/jammu-municipal.jpg" },
-  { name: "RUIDP", type: "Government", logo: "/clients-logo/rajasthan-urban-infrastructure-development-project.jpg" },
+  { name: "RUIDP", type: "Government", logo: "/clients-logo/rajasthan-urban-infrastructure-development-project.png" },
   { name: "United Nations", type: "Government", logo: "/clients-logo/united-nations.jpg" },
   { name: "International Red Cross", type: "Private", logo: "/clients-logo/comite-international.jpg" },
 ];
 
 function ClientCard({ name, type, logo }: { name: string; type: string; logo: string }) {
   return (
-    <div className="flex-shrink-0 mx-5 bg-white border border-gray-100 shadow-sm px-12 py-10 flex flex-col items-center justify-center w-[390px] h-[220px] hover:shadow-md transition-shadow">
-      <div className="w-48 h-36 flex items-center justify-center">
+    <div className="flex-shrink-0 mx-2 md:mx-4 bg-white border border-gray-100 shadow-sm px-6 py-4 md:px-12 md:py-10 flex flex-col items-center justify-center w-[160px] h-[100px] md:w-[400px] md:h-[240px] hover:shadow-md transition-shadow">
+      <div className="w-24 h-16 md:w-56 md:h-40 flex items-center justify-center">
         <img 
           src={logo} 
-          alt={`${name} logo`} 
+          alt={`McRAYGOR Client: ${name} logo`} 
           className="max-w-full max-h-full object-contain"
           onError={(e) => {
-            // Fallback to initials if image fails to load
             const target = e.target as HTMLImageElement;
             target.style.display = 'none';
             const fallback = target.nextElementSibling as HTMLElement;
@@ -57,7 +57,7 @@ function ClientCard({ name, type, logo }: { name: string; type: string; logo: st
           }}
         />
         <div 
-          className="w-16 h-16 rounded-full hidden items-center justify-center text-white font-bold text-xl"
+          className="w-10 h-10 md:w-16 md:h-16 rounded-full hidden items-center justify-center text-white font-bold text-base md:text-2xl"
           style={{ backgroundColor: type === "Private" ? "#e8612c" : "#1c2535" }}
         >
           {name.slice(0, 2)}
@@ -68,6 +68,10 @@ function ClientCard({ name, type, logo }: { name: string; type: string; logo: st
 }
 
 export function ClienteleMarquee() {
+  // Split clients into two rows for better variety
+  const row1 = clients.slice(0, 19);
+  const row2 = clients.slice(19);
+
   return (
     <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-12">
@@ -82,18 +86,18 @@ export function ClienteleMarquee() {
       </div>
 
       {/* Marquee Row 1 */}
-      <div className="relative">
-        <div className="flex animate-[marquee_20s_linear_infinite] gap-0">
-          {[...clients, ...clients].map((client, i) => (
+      <div className="relative flex overflow-hidden group">
+        <div className="flex animate-[marquee_60s_linear_infinite] min-w-max flex-nowrap group-hover:[animation-play-state:paused]">
+          {[...row1, ...row1, ...row1].map((client, i) => (
             <ClientCard key={`${client.name}-${i}`} name={client.name} type={client.type} logo={client.logo} />
           ))}
         </div>
       </div>
 
       {/* Marquee Row 2 (reverse) */}
-      <div className="relative mt-4">
-        <div className="flex animate-[marquee-reverse_25s_linear_infinite] gap-0">
-          {[...clients.slice().reverse(), ...clients.slice().reverse()].map((client, i) => (
+      <div className="relative mt-4 flex overflow-hidden group">
+        <div className="flex animate-[marquee-reverse_70s_linear_infinite] min-w-max flex-nowrap group-hover:[animation-play-state:paused]">
+          {[...row2, ...row2, ...row2].map((client, i) => (
             <ClientCard key={`rev-${client.name}-${i}`} name={client.name} type={client.type} logo={client.logo} />
           ))}
         </div>

@@ -14,14 +14,28 @@ export function Spares() {
   return (
     <>
       <SEO pageKey="spares" />
-      <section className="bg-[#1c2535] text-white py-16">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <p className="text-[#e8612c] text-sm font-semibold uppercase tracking-widest mb-3">After-Sales</p>
-          <h1 className="text-white mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.2 }}>
-            Spares & Service
+      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 bg-[#0a0f18] overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/spare-parts-background.png" 
+            alt="Spare Parts Background" 
+            className="w-full h-full object-cover opacity-90 scale-105"
+          />
+          {/* Horizontal Gradient Overlay for Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1c2535] via-[#1c2535]/60 to-transparent" />
+        </div>
+        
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
+          <div className="inline-flex items-center gap-2 text-[#e8612c] mb-6">
+            <span className="w-10 h-[2px] bg-[#e8612c]"></span>
+            <span className="text-xs font-black uppercase tracking-[0.3em]">After-Sales Excellence</span>
+          </div>
+          <h1 className="text-white mb-6 tracking-tighter" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeights: 900, lineHeight: 1.1 }}>
+            SPARES & <br />
+            <span className="text-[#e8612c]">SERVICE</span>
           </h1>
-          <p className="text-gray-400 max-w-xl">
-            Comprehensive spare part catalog with optimized logistics and direct enquiry support.
+          <p className="text-gray-300 max-w-2xl text-lg md:text-xl font-medium leading-relaxed">
+            Genuine components and engineering support designed to maximize the operational uptime of your waste management fleet.
           </p>
         </div>
       </section>

@@ -118,8 +118,17 @@ export function Footer() {
         </div>
 
         {/* Final Row: Copyright & Legal */}
-        <div className="border-t border-white mt-6 pt-8 text-center md:text-left">
-          <span className="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-[0.2em]">© McRAYGOR Mechanicals Infrastructure. All Rights Reserved.</span>
+        <div className="border-t border-white mt-6 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <img 
+              src="/mcraygor-header-logo.png" 
+              alt="McRAYGOR" 
+              className="h-8 md:h-10 w-auto object-contain"
+            />
+            <span className="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-[0.2em]">
+              © McRAYGOR Mechanicals Infrastructure. All Rights Reserved.
+            </span>
+          </div>
         </div>
 
         {/* Disclaimer Section */}

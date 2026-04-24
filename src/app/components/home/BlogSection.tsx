@@ -1,27 +1,9 @@
 import { ArrowRight } from "lucide-react";
-
-const posts = [
-  {
-    title: "Mechanized Sanitation and Worker Safety",
-    excerpt: "How machine-led operations reduce hazardous manual interventions and improve sanitation worker dignity.",
-    category: "TECHNOLOGY",
-    image: "/images/blogs/blog_sanitation_safety.png",
-  },
-  {
-    title: "Choosing the Right Jetting-Cum-Suction Configuration",
-    excerpt: "A practical guide for municipalities and industrial teams selecting the right capacity and use-case fit.",
-    category: "GUIDE",
-    image: "/images/blogs/blog_jetting_configuration.png",
-  },
-  {
-    title: "Spares Planning for High-Uptime Fleet Operations",
-    excerpt: "Essential spare categories and service planning checkpoints to keep waste-handling fleets operational.",
-    category: "MAINTENANCE",
-    image: "/images/blogs/blog_spares_planning.png",
-  },
-];
+import { Link } from "react-router";
+import { blogPosts } from "../../data/blogData";
 
 export function BlogSection() {
+  const posts = blogPosts;
   return (
     <section className="py-24 bg-white">
       <div className="max-w-[1400px] mx-auto px-4">
@@ -39,7 +21,11 @@ export function BlogSection() {
 
         <div className="grid md:grid-cols-3 gap-8 md:gap-10">
           {posts.map((post) => (
-            <article key={post.title} className="group relative bg-[#f8fafc] overflow-hidden border border-gray-100 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2">
+            <Link 
+              key={post.slug} 
+              to={`/blog/${post.slug}`} 
+              className="group relative bg-[#f8fafc] overflow-hidden border border-gray-100 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2"
+            >
               <div className="relative h-72 overflow-hidden">
                 <img 
                   src={post.image} 
@@ -64,16 +50,16 @@ export function BlogSection() {
                 </p>
                 
                 <div className="flex items-center justify-between mt-auto">
-                  <button className="flex items-center gap-3 text-[#1c2535] font-black uppercase text-xs tracking-widest group/btn">
+                  <div className="flex items-center gap-3 text-[#1c2535] font-black uppercase text-xs tracking-widest group/btn">
                     Read Article
                     <div className="w-8 h-8 rounded-full border-2 border-gray-100 flex items-center justify-center group-hover/btn:bg-[#e8612c] group-hover/btn:border-[#e8612c] group-hover/btn:text-white transition-all">
                       <ArrowRight size={14} />
                     </div>
-                  </button>
-                  <span className="text-gray-300 text-[10px] font-bold uppercase tracking-widest">5 Min Read</span>
+                  </div>
+                  <span className="text-gray-300 text-[10px] font-bold uppercase tracking-widest">{post.readTime}</span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

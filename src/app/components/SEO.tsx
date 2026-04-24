@@ -17,9 +17,6 @@ export function SEO({ metadata, pageKey }: SEOProps) {
     if (seoData) {
       updatePageSEO(seoData);
     }
-
-    // Scroll to top on route change
-    window.scrollTo(0, 0);
   }, [location.pathname, metadata, pageKey]);
 
   return null;

@@ -37,10 +37,10 @@ export function ProjectsInstallationsSection() {
           <p className="text-[#1a5c3a] text-xs sm:text-sm font-bold uppercase tracking-[0.14em] mb-3">
             Projects & Installations
           </p>
-          <h2 className="text-[#1c2535] mb-4" style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.2 }}>
-            Global <span className="text-[#1a5c3a]">Success Stories</span>
+          <h2 className="text-[#1c2535] mb-4" style={{ fontSize: "clamp(1.8rem, 6vw, 3.5rem)", fontWeight: 800, lineHeight: 1.1 }}>
+            Landmark <span className="text-[#1a5c3a]">Projects</span>
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Selected installations showcasing McRAYGOR equipment in action across municipal, private, and international applications.
           </p>
         </div>

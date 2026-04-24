@@ -32,71 +32,69 @@ const productData: Record<string, ProductProfile> = {
   "COMBINATOR": {
     name: "Combined Jetting Cum Suction Machine – COMBINATOR™",
     category: "Liquid Waste",
-    desc: "Integrated jetting and suction platform for comprehensive sewer maintenance and cleaning operations.",
-    overview: "Our Combined Jetting Cum Suction Machine represents the pinnacle of sewer cleaning technology, designed for simultaneous jetting and suction operations. This versatile equipment handles choking, desilting, and liquid waste evacuation in one efficient workflow, making it indispensable for municipal and industrial applications.",
+    desc: "Truck chassis mounted suction-cum-jetting machine available in multiple volumetric capacities for sewer cleaning.",
+    overview: "The Combined Jetting Cum Suction Machine (COMBINATOR™) is a truck chassis mounted suction-cum-jetting combination machine available in multiple volumetric capacities of clean water and sludge collection tank. The Heavy Duty Truck Mounted Vacuum Loader with High Pressure Jetting System is suitable for dislodging the Silt/Sludge settled in the trunk sewer lines and for suctioning the free flowing sludge and slurry for De-silting the trunk Sewer Pipelines.\n\nThis equipment is one of the most efficient and powerful machine of its kind available in the International Market, incorporating state-of-art Filter System, positive displacement Vacuum Pump driven through an Auxiliary Engine, Jetting Pump and Control System.\n\nThese equipments are capable of efficiently working in sewer lines of diameters ranging from 200-1000 mm. Siphoning the liquid and solid effluents into the equipment's sludge collection tank under high vacuum, from surcharged manhole chambers, sewer and storm water drain lines, septic/sump tanks and gully pits and transporting the same to any desired disposal site for emptying under gravity/positive pressure/tipping of sludge tank. De-choking and de-silting of the sewer and drain water lines and chambers by high pressure jetting through suitably dimensioned jetting hoses and nozzles aspirating the dislodged effluent and transporting the same to any desired disposal site for emptying under gravity/positive pressure/tipping of sludge tank.\n\nFor detailed information refer the Product Catalogue by Clicking Product Catalogue button.",
     image: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
     gallery: [
       "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
       "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-2.jpg",
       "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-3.jpg",
-      "/images/products/jetting-cum-suction-machine/5172107d-f3a9-4e07-9a9c-515a588b70e1.jpg"
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-4.jpg",
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-5.jpg",
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-6.jpg",
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-7.jpg",
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-8.jpg",
+      "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-9.jpg"
     ],
     specs: [
-      { key: "Configuration", value: "Truck mounted with integrated systems" },
-      { key: "Operation", value: "Simultaneous jetting and suction" },
-      { key: "Capacity", value: "High-volume liquid waste handling" },
-      { key: "Application", value: "Municipal and industrial cleaning" }
+      { key: "Mounting", value: "Truck Chassis Mounted" },
+      { key: "Sewer Dia", value: "200 mm to 1000 mm" },
+      { key: "System Type", value: "Suction-cum-Jetting Combination" },
+      { key: "Vacuum Pump", value: "Positive Displacement (Aux Engine Driven)" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
+        category: "System Capabilities",
         items: [
-          { key: "Length", value: "8500 mm" },
-          { key: "Width", value: "2500 mm" },
-          { key: "Height", value: "3200 mm" }
+          { key: "Operation", value: "Simultaneous Jetting & Suction" },
+          { key: "Sewer Range", value: "200mm - 1000mm Diameter" },
+          { key: "Discharge", value: "Gravity / Positive Pressure / Tipping" },
+          { key: "Suction Depth", value: "Deep Reach High Vacuum" }
         ]
       },
       {
-        category: "Performance",
+        category: "Power & Pump",
         items: [
-          { key: "Suction Capacity", value: "15000 LPM" },
-          { key: "Jetting Pressure", value: "150 Bar" },
-          { key: "Water Tank", value: "4000 Liters" },
-          { key: "Waste Tank", value: "6000 Liters" }
-        ]
-      },
-      {
-        category: "Engine & Power",
-        items: [
-          { key: "Engine Type", value: "BS-VI Compliant Diesel" },
-          { key: "Power Output", value: "180 HP" },
-          { key: "Transmission", value: "Manual 6-Speed" }
+          { key: "Vacuum Pump", value: "Positive Displacement Type" },
+          { key: "Drive System", value: "Dedicated Auxiliary Engine" },
+          { key: "Jetting Pump", value: "High Pressure Plunger Pump" },
+          { key: "Filter System", value: "State-of-the-art Multi-stage" }
         ]
       }
     ],
     applications: [
-      "Municipal sewer cleaning and maintenance",
-      "Drain desilting and blockage removal",
-      "Emergency response for sewer overflows",
-      "Industrial utility cleaning operations",
-      "Storm drain maintenance",
-      "Manhole cleaning and desilting"
+      "Trunk sewer line de-silting",
+      "Surcharged manhole chamber cleaning",
+      "Storm water drain maintenance",
+      "Septic and sump tank evacuation",
+      "Gully pit cleaning",
+      "Emergency blockage removal"
     ],
     features: [
-      "Simultaneous jetting and suction operation",
-      "High-pressure water jetting system",
-      "Powerful vacuum suction capability",
-      "Integrated waste separation system",
-      "Remote control operation",
-      "Safety interlocks and monitoring"
+      "State-of-the-art filtration system",
+      "Auxiliary engine driven vacuum pump",
+      "High-pressure jetting technology",
+      "Multiple volumetric capacity options",
+      "Heavy-duty vacuum loader system",
+      "Advanced control and monitoring"
     ],
     benefits: [
-      "Reduced operational time and costs",
-      "Enhanced cleaning efficiency",
-      "Minimal manual intervention required",
-      "Environmentally safe operations",
-      "Versatile application range",
-      "Low maintenance requirements"
+      "Highest efficiency in international market",
+      "Versatile range (200-1000mm sewer lines)",
+      "Reduced manual intervention",
+      "Rapid material recovery and disposal",
+      "Reliable performance in extreme conditions",
+      "Lower operational maintenance costs"
     ]
   },
   "HYPERVAC": {
@@ -255,226 +253,276 @@ const productData: Record<string, ProductProfile> = {
   "McJET": {
     name: "Sewer Jetting Machine – McJET™",
     category: "Liquid Waste",
-    desc: "High-pressure jetting system for efficient sewer line cleaning and blockage removal.",
-    overview: "The McJET™ Sewer Jetting Machine is designed for high-performance cleaning of sewer and drain lines. Using high-pressure water jets, it effectively removes blockages, silt, and debris, ensuring clear and functional drainage systems.",
-    image: "/images/products/sewer-jetting-suction-machine.jpeg",
-    gallery: ["/images/products/sewer-jetting-suction-machine.jpeg"],
-    specs: commonSpecs,
-    detailedSpecs: [],
-    applications: ["Sewer line cleaning", "Blockage removal", "Drain maintenance"],
-    features: ["High-pressure jetting", "Robust construction", "Easy operation"],
-    benefits: ["Efficient cleaning", "Reduced manual work", "Long service life"]
-  },
-  "GULLY-SUCTION-EMPTIER": {
-    name: "Gully Suction Emptier (Trailer Mounted)",
-    category: "Liquid Waste",
-    desc: "Compact trailer-mounted suction unit designed for narrow access areas and constrained spaces.",
-    overview: "The Gully Suction Emptier (Trailer Mounted) offers a compact and versatile solution for liquid waste suction in areas where larger truck-mounted systems cannot operate effectively. This trailer configuration provides excellent maneuverability while maintaining powerful suction capabilities for various municipal and industrial applications.",
-    image: "/images/products/gully-suction-emptier.jpeg",
+    desc: "Truck-mounted high-pressure jetting system for dislodging and removing sewer line obstructions and blockages.",
+    overview: "The equipment is a Truck Mounted Mobile Unit suitable for dislodging and removing obstructions and blockages from sewer lines by a High Pressure Water Jetting System. Engineered for high-performance cleaning of sewer and drain lines, McJET™ uses concentrated high-pressure water jets to effectively clear silt, debris, and stubborn blockages, ensuring optimal flow and functional drainage systems.",
+    image: "/images/products/sewer-jetting-machine/sewer-jetting-machine-1.png",
     gallery: [
-      "/images/products/gully-suction-emptier.jpeg",
-      "/images/products/sewage-suction-tanker.jpeg",
-      "/images/products/mm-suction-vacuum-pump.jpeg",
-      "/images/products/sewer-jetting-suction-machine.jpeg"
+      "/images/products/sewer-jetting-machine/sewer-jetting-machine-1.png",
+      "/images/products/sewer-jetting-machine/sewer-jetting-machine-2.png",
+      "/images/products/sewer-jetting-machine/sewer-jetting-machine-3.png",
+      "/images/products/sewer-jetting-machine/sewer-jetting-machine-4.png",
+      "/images/products/sewer-jetting-machine/sewer-jetting-machine-5.png",
+      "/images/products/sewer-jetting-machine/sewer-jetting-machine-6.png"
     ],
     specs: [
-      { key: "Configuration", value: "Trailer mounted system" },
-      { key: "Mobility", value: "Compact and maneuverable" },
-      { key: "Capacity", value: "Medium-volume suction" },
-      { key: "Application", value: "Narrow access cleaning" }
+      { key: "Mounting", value: "Truck Mounted Mobile Unit" },
+      { key: "System Type", value: "High Pressure Water Jetting" },
+      { key: "Application", value: "Sewer & Drain Line Cleaning" },
+      { key: "Capability", value: "Obstruction & Blockage Removal" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
+        category: "Jetting System",
         items: [
-          { key: "Length", value: "5500 mm" },
-          { key: "Width", value: "2000 mm" },
-          { key: "Height", value: "2200 mm" }
+          { key: "Pump Type", value: "High-Pressure Triplex Plunger Pump" },
+          { key: "Pressure Range", value: "150 - 250 Bar" },
+          { key: "Flow Rate", value: "150 - 300 LPM" },
+          { key: "Drive", value: "PTO Driven / Auxiliary Engine" }
         ]
       },
       {
-        category: "Performance",
+        category: "Tank & Storage",
         items: [
-          { key: "Suction Capacity", value: "8000 LPM" },
-          { key: "Vacuum Level", value: "75% Vacuum" },
-          { key: "Tank Capacity", value: "3000 Liters" },
-          { key: "Discharge Rate", value: "5000 LPM" }
-        ]
-      },
-      {
-        category: "Engine & Power",
-        items: [
-          { key: "Engine Type", value: "Diesel Engine" },
-          { key: "Power Output", value: "100 HP" },
-          { key: "Drive System", value: "PTO Driven" }
+          { key: "Water Tank Capacity", value: "4000 - 8000 Liters" },
+          { key: "Tank Material", value: "Mild Steel (Epoxy Coated) / Stainless Steel" },
+          { key: "Hose Reel", value: "Hydraulically Operated Swiveling Type" },
+          { key: "Hose Length", value: "Up to 100 Meters" }
         ]
       }
     ],
     applications: [
-      "Narrow lane maintenance",
-      "Gully pit cleaning",
-      "Semi-urban sanitation work",
-      "Localized liquid waste suction",
-      "Residential area cleaning",
-      "Emergency response support"
+      "Municipal sewer line maintenance",
+      "Removal of stubborn blockages and obstructions",
+      "Cleaning of underground drain networks",
+      "Culvert and storm drain cleaning",
+      "Industrial pipeline maintenance",
+      "Preventive sewer desilting"
     ],
     features: [
-      "Compact trailer design",
-      "Easy maneuverability",
-      "Powerful suction system",
-      "Quick deployment capability",
-      "Cost-effective operation",
-      "Versatile applications"
+      "High-pressure concentrated water jetting",
+      "Precision engineered jetting nozzles",
+      "Robust truck-mounted configuration",
+      "Hydraulic hose reel for easy operation",
+      "Operator-friendly control panel",
+      "Durable heavy-duty construction"
     ],
     benefits: [
-      "Access to restricted areas",
-      "Lower operational costs",
-      "Flexible deployment options",
-      "Reduced infrastructure requirements",
-      "Easy transportation",
-      "Efficient space utilization"
+      "Highly effective obstruction removal",
+      "Rapid restoration of pipeline flow",
+      "Minimal manual intervention required",
+      "Versatile for various pipe diameters",
+      "Reduced maintenance downtime",
+      "Long-term operational reliability"
+    ]
+  },
+  "GULLY-SUCTION-EMPTIER": {
+    name: "Gully Suction Emptier – McVAC™",
+    category: "Liquid Waste",
+    desc: "Tractor trailer or truck-mounted vacuum suction unit designed for efficient sludge and slurry recovery from gully pits and septic tanks.",
+    overview: "McRAYGOR’s McVAC™ is a versatile tractor-trailer or truck-mounted mobile unit specifically designed for suctioning sludge and slurry from sewer manholes, gully pits, and septic tanks. Utilizing a high-performance vacuum suction system, the McVAC™ can efficiently collect and discharge sludge through a specialized blow-back arrangement. For optimized disposal workflows, the collected waste can be transferred to a truck-mounted Suction Dump Tanker equipped with a cyclone system for final transport to dumping grounds or processing plants.",
+    image: "/images/products/gully-suction-emptier/gully-suction-emptier-1.png",
+    gallery: [
+      "/images/products/gully-suction-emptier/gully-suction-emptier-1.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-2.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-3.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-4.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-5.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-6.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-7.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-8.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-9.png",
+      "/images/products/gully-suction-emptier/gully-suction-emptier-10.png"
+    ],
+    specs: [
+      { key: "Series", value: "McVAC™ series" },
+      { key: "Mounting", value: "Tractor Trailer / Truck Mounted" },
+      { key: "Discharge", value: "Gravity / Blow-back Arrangement" },
+      { key: "System Type", value: "High-Performance Vacuum Suction" }
+    ],
+    detailedSpecs: [
+      {
+        category: "System Capabilities",
+        items: [
+          { key: "Suction Medium", value: "Sludge, Slurry, Liquid Waste" },
+          { key: "Suction Type", value: "Deep Vacuum Suction" },
+          { key: "Discharge Method", value: "Positive Pressure Blow-back" }
+        ]
+      },
+      {
+        category: "Operational Compatibility",
+        items: [
+          { key: "Disposal Workflow", value: "Compatible with Suction Dump Tankers" },
+          { key: "Filtration", value: "Integrated Cyclone System Support" },
+          { key: "Maneuverability", value: "Optimized for Narrow Urban Access" }
+        ]
+      }
+    ],
+    applications: [
+      "Sewer manhole and gully pit cleaning",
+      "Septic tank cleaning and maintenance",
+      "Industrial liquid waste recovery",
+      "Cesspool emptying operations",
+      "Municipal sanitation and urban drainage",
+      "Sludge transport to disposal grounds"
+    ],
+    features: [
+      "Dual mounting options (Tractor or Truck)",
+      "High-efficiency vacuum suction system",
+      "Alternative blow-back discharge capability",
+      "Compatible with cyclone-equipped dump tankers",
+      "Robust tank construction for heavy sludge",
+      "Easy-access maintenance points"
+    ],
+    benefits: [
+      "Versatile deployment in diverse urban settings",
+      "Rapid suction and discharge cycles",
+      "Reliable performance for heavy liquid waste",
+      "Cost-effective municipal cleaning solution",
+      "Reduced operational turnaround time",
+      "Environmentally safe waste handling"
     ]
   },
   "POWERBUCKET": {
     name: "Bucket Type Sewer Cleaning Machines – POWERBUCKET™",
     category: "Liquid Waste",
-    desc: "Mechanical bucket-based cleaning solution designed for effective sewer line maintenance and debris removal.",
-    overview: "The Bucket Type Sewer Cleaning Machine utilizes a robust mechanical bucket system for effective removal of solid debris and blockages from sewer lines. This reliable equipment is designed for repetitive cleaning operations in municipal drainage networks, offering consistent performance and durability.",
-    image: "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-1.jpg",
+    desc: "Heavy-duty dual-machine set for mechanical desilting and cleaning of underground sewers using high-torque wire rope winches.",
+    overview: "McRAYGOR’s POWERBUCKET™ system is a comprehensive cleaning solution consisting of a set of two mobile, power-driven bucket type machines. Designed for cleaning and de-silting underground sewers of diameter 100 mm and above, the system utilizes various buckets and specialized tools. These machines are engineered for extreme tropical conditions (up to 46°C and 100% humidity) and generally conform to I.S. 10595:1983. Each unit is powered by a high-performance 20.00 HP double-cylinder, air-cooled diesel engine, capable of 8-12 hours of continuous duty. The system features a sophisticated speed control throttle and a clutch-controlled winding drum, with a hand-drive backup arrangement to ensure operation even in case of engine failure.",
+    image: "/images/products/power-bucket/power-bucket-machine-1.jpeg",
     gallery: [
-      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-1.jpg",
-      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-2.jpg",
-      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-3.jpg",
-      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-4.jpg",
-      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-5.jpg",
-      "/images/products/bucket-type-sewer-cleaning-machine/bucket-type-sewer-cleaning-machine-6.jpg"
+      "/images/products/power-bucket/power-bucket-machine-1.jpeg",
+      "/images/products/power-bucket/power-bucket-machine-2.png",
+      "/images/products/power-bucket/power-bucket-machine-3.png",
+      "/images/products/power-bucket/power-bucket-machine-4.png",
+      "/images/products/power-bucket/power-bucket-machine-5.png",
+      "/images/products/power-bucket/power-bucket-machine-6.png",
+      "/images/products/power-bucket/power-bucket-machine-7.png",
+      "/images/products/power-bucket/power-bucket-machine-8.png"
     ],
     specs: [
-      { key: "Configuration", value: "Truck mounted bucket system" },
-      { key: "Operation", value: "Mechanical bucket cleaning" },
-      { key: "Capacity", value: "Heavy debris handling" },
-      { key: "Application", value: "Sewer line maintenance" }
+      { key: "System Type", value: "Set of Two Mobile Units" },
+      { key: "Engine", value: "20 HP Double Cylinder Diesel" },
+      { key: "Sewer Dia", value: "100 mm and Above" },
+      { key: "Standard", value: "IS 10595:1983 Compliant" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
-        items: [
-          { key: "Length", value: "8000 mm" },
-          { key: "Width", value: "2450 mm" },
-          { key: "Height", value: "3100 mm" }
-        ]
-      },
-      {
-        category: "Performance",
-        items: [
-          { key: "Bucket Capacity", value: "1.5 Cubic Meters" },
-          { key: "Operating Depth", value: "6 Meters" },
-          { key: "Reach", value: "5 Meters" },
-          { key: "Cycle Time", value: "60 Seconds" }
-        ]
-      },
-      {
         category: "Engine & Power",
         items: [
-          { key: "Engine Type", value: "BS-VI Compliant" },
-          { key: "Power Output", value: "160 HP" },
-          { key: "Hydraulic Pressure", value: "200 Bar" }
+          { key: "Engine Type", value: "Air-Cooled Diesel Engine" },
+          { key: "Power Output", value: "20.00 HP @ 1500 RPM" },
+          { key: "Configuration", value: "Double Cylinder" },
+          { key: "Duty Cycle", value: "8-12 Hours Continuous" }
+        ]
+      },
+      {
+        category: "Winch & Drive",
+        items: [
+          { key: "Mechanism", value: "Wire Rope Winches" },
+          { key: "Drive Control", value: "Clutch Engaging/Disengaging" },
+          { key: "Backup", value: "Manual Hand-Drive Arrangement" },
+          { key: "Speed Control", value: "Variable Throttle Arrangement" }
+        ]
+      },
+      {
+        category: "Environmental",
+        items: [
+          { key: "Max Temp", value: "46°C in Shade" },
+          { key: "Humidity", value: "100% Relative Humidity" },
+          { key: "Design", value: "Optimized for Tropical Conditions" }
         ]
       }
     ],
     applications: [
-      "Sewer pit extraction",
-      "Drain maintenance operations",
-      "Municipal cleaning fleets",
-      "Periodic sanitation tasks",
-      "Solid waste removal",
-      "Infrastructure maintenance"
+      "Heavy desilting of deep sewer lines",
+      "Cleaning sewers of 100mm diameter & above",
+      "Removal of settled solids and debris",
+      "Municipal drain maintenance programs",
+      "Large-scale urban sanitation projects",
+      "Industrial pipeline clearing and cleaning"
     ],
     features: [
-      "Robust bucket mechanism",
-      "Precise debris handling",
-      "Heavy-duty construction",
-      "Reliable hydraulic system",
-      "Easy operation controls",
-      "Maintenance-friendly design"
+      "Integrated dual-machine coordination",
+      "High-torque mechanical bucket system",
+      "Variable throttle speed control",
+      "Reliable air-cooled diesel performance",
+      "Emergency hand-drive manual backup",
+      "Compliance with IS 10595:1983 standards"
     ],
     benefits: [
-      "Effective solid waste removal",
-      "Durable construction",
-      "Consistent performance",
-      "Reduced operational downtime",
-      "Cost-effective maintenance",
-      "Long service life"
+      "Consistent performance in extreme heat",
+      "Highly effective for solid waste removal",
+      "Zero-downtime with manual backup",
+      "Fuel-efficient diesel power unit",
+      "Durable construction for 12-hour shifts",
+      "Complete cleaning of varying pipe diameters"
     ]
   },
   "McRODDER": {
     name: "Sewer Rodding Machines – McRODDER™",
     category: "Liquid Waste",
-    desc: "Specialized pipeline rodding machine designed for clearing underground blockages and choke points.",
-    overview: "The Sewer Rodding Machine is engineered for resolving line blockages through controlled rodding operations in municipal and facility networks. This specialized equipment uses flexible rods to navigate through pipes and clear obstructions, making it essential for preventive maintenance and emergency response.",
-    image: "/images/products/sewer-rodding-machine.jpeg",
+    desc: "High-strength diesel-powered rodding system featuring special Chromo-flex spring steel rods for navigating and clearing stubborn pipeline blockages.",
+    overview: "The McRODDER™ series represents a highly portable and powerful solution for underground pipeline maintenance. The equipment features a series of 100 specialized Chromo-flex spring steel rods, each approximately 8mm x 900mm long, crafted from high-strength oil-tempered steel with LH/RH nuts and couplings conforming to IS 4454:1981. These rods are coupled and wrapped on a reel mounted on a stable stand. The rotation is driven by a unit powered by a 4.8hp Greaves Diesel Engine (@ 1500 rpm, conforming to IS 11170:1985). The entire power unit is mounted on a trolley, ensuring the unit is easily transportable across various municipal and industrial sites.",
+    image: "/images/products/sewer-rodding-machine/sewer-rodding-machine.png",
     gallery: [
-      "/images/products/sewer-rodding-machine.jpeg",
-      "/images/products/sewer-jetting-suction-machine.jpeg",
-      "/images/products/power-bucket-machine.jpeg",
-      "/images/products/sewage-suction-tanker.jpeg"
+      "/images/products/sewer-rodding-machine/sewer-rodding-machine.png"
     ],
     specs: [
-      { key: "Configuration", value: "Truck mounted rodding system" },
-      { key: "Operation", value: "Flexible rod insertion" },
-      { key: "Capacity", value: "Long-distance pipe cleaning" },
-      { key: "Application", value: "Blockage removal" }
+      { key: "Rod Material", value: "Chromo-flex Spring Steel" },
+      { key: "Engine", value: "4.8hp Greaves Diesel" },
+      { key: "Compliance", value: "IS 4454:1981 / IS 11170:1985" },
+      { key: "Rod Count", value: "100 Rods (900mm each)" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
+        category: "Rod Specifications",
         items: [
-          { key: "Length", value: "7200 mm" },
-          { key: "Width", value: "2350 mm" },
-          { key: "Height", value: "2800 mm" }
+          { key: "Material", value: "High-Strength Oil Tempered Steel" },
+          { key: "Dimensions", value: "8mm Diameter x 900mm Length" },
+          { key: "Total Length", value: "90 Meters (Combined)" },
+          { key: "Couplings", value: "LH/RH Nuts (IS 4454:1981)" }
         ]
       },
       {
-        category: "Performance",
+        category: "Power Unit",
         items: [
-          { key: "Rod Length", value: "100 Meters" },
-          { key: "Rod Diameter", value: "16-25 mm" },
-          { key: "Operating Pressure", value: "150 Bar" },
-          { key: "Feed Rate", value: "Variable Speed" }
+          { key: "Engine Type", value: "Greaves Diesel Engine" },
+          { key: "Power Output", value: "4.8hp @ 1500 rpm" },
+          { key: "Standard", value: "IS 11170:1985 Compliant" },
+          { key: "Mounting", value: "Reel-mounted on Trolley" }
         ]
       },
       {
-        category: "Engine & Power",
+        category: "Portability",
         items: [
-          { key: "Engine Type", value: "Diesel Engine" },
-          { key: "Power Output", value: "120 HP" },
-          { key: "Drive System", value: "Hydraulic Drive" }
+          { key: "Transport", value: "Easily Mobile Trolley System" },
+          { key: "Weight", value: "Optimized for Manual Maneuvering" },
+          { key: "Footprint", value: "Compact for Narrow Access" }
         ]
       }
     ],
     applications: [
-      "Underground choke removal",
-      "Drain line restoration",
-      "Preventive line cleaning",
-      "Public utility maintenance",
-      "Emergency blockage response",
-      "Pipeline inspection support"
+      "Clearing underground sewer blockages",
+      "Navigating stubborn pipeline chokes",
+      "Restoring flow in municipal drain lines",
+      "Industrial facility pipeline maintenance",
+      "Preventive pipeline rodding operations",
+      "Emergency blockage removal in narrow lanes"
     ],
     features: [
-      "Flexible rodding system",
-      "Variable speed control",
-      "Multiple rod sizes",
-      "Precise navigation capability",
-      "Robust drive mechanism",
-      "Easy rod handling"
+      "Oil-tempered Chromo-flex rod system",
+      "High-torque diesel-powered unit",
+      "Trolley-mounted for maximum portability",
+      "Reel-mounted rod storage for organization",
+      "Compliance with multiple IS quality standards",
+      "Easy-to-operate mechanical coupling"
     ],
     benefits: [
-      "Effective blockage removal",
-      "Minimal excavation required",
-      "Cost-effective solution",
-      "Quick response capability",
-      "Versatile pipe compatibility",
-      "Reduced service disruption"
+      "Navigate bends other machines cannot",
+      "Durable spring steel prevents rod breakage",
+      "Independent power source (Diesel)",
+      "Low maintenance and long service life",
+      "Highly mobile for rapid response",
+      "Proven reliability in municipal sanitation"
     ]
   },
   "VYUK": {
@@ -550,71 +598,68 @@ const productData: Record<string, ProductProfile> = {
   "PAC": {
     name: "Refuse / Garbage Compactor – PAC™",
     category: "Solid Waste",
-    desc: "High-efficiency compactor solution designed for optimal waste transport and high-volume waste handling.",
-    overview: "The Refuse / Garbage Compactor is designed to optimize waste transport efficiency with advanced compaction technology for daily municipal collection routes. This robust system significantly reduces the volume of collected waste, allowing for more efficient transportation and disposal operations.",
-    image: "/images/products/refuse-compactor.jpeg",
+    desc: "Versatile solid waste collection and compaction system designed for high-efficiency urban sanitation and waste transport.",
+    overview: "The PAC™ Refuse Compactor Vehicles are high-performance solid waste collection units designed for lifting, unloading, and compacting garbage from various bins and containers. Available in container volumes of 8 Cu.m., 14 Cu.m., and 18 Cu.m., these units are mounted on standard truck chassis ranging from 11 to 25 Ton GVW. All models are equipped with a Universal Bin Lifter capable of handling 240L, 660L, and 1100L bins. The larger 14 Cu.m. and 18 Cu.m. variants are further enhanced with Dumper Placer Arms and stabilizers, allowing them to unload large 3500L bins with ease.",
+    image: "/images/products/garbage-refuse-compactor/garbage-refuse-compactor-1.jpeg",
     gallery: [
-      "/images/products/refuse-compactor.jpeg",
-      "/images/products/refuse-compactor2.jpeg",
-      "/images/products/dumper-placer-container.jpeg",
-      "/images/products/mobile-toilets.jpeg"
+      "/images/products/garbage-refuse-compactor/garbage-refuse-compactor-1.jpeg",
+      "/images/products/garbage-refuse-compactor/garbage-refuse-compactor-2.png"
     ],
     specs: [
-      { key: "Configuration", value: "Truck mounted compactor" },
-      { key: "Operation", value: "Hydraulic compaction" },
-      { key: "Capacity", value: "High-volume compression" },
-      { key: "Application", value: "Municipal waste collection" }
+      { key: "Container Volumes", value: "8, 14, & 18 Cu.m." },
+      { key: "Truck Chassis", value: "11, 16, & 25 Ton GVW" },
+      { key: "Bin Lifter", value: "Universal (240L to 1100L)" },
+      { key: "Special Ops", value: "Dumper Placer Arms (14/18 Cu.m.)" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
+        category: "Container Capacity",
         items: [
-          { key: "Length", value: "9000 mm" },
-          { key: "Width", value: "2500 mm" },
-          { key: "Height", value: "3200 mm" }
+          { key: "Small Unit", value: "8 Cubic Meters" },
+          { key: "Medium Unit", value: "14 Cubic Meters" },
+          { key: "Large Unit", value: "18 Cubic Meters" }
         ]
       },
       {
-        category: "Performance",
+        category: "Chassis Compatibility",
         items: [
-          { key: "Body Capacity", value: "16 Cubic Meters" },
-          { key: "Compaction Ratio", value: "4:1" },
-          { key: "Loading Height", value: "1.4 Meters" },
-          { key: "Compaction Force", value: "25 Tons" }
+          { key: "8 Cu.m. Model", value: "11 Ton GVW Chassis" },
+          { key: "14 Cu.m. Model", value: "16 Ton GVW Chassis" },
+          { key: "18 Cu.m. Model", value: "25 Ton GVW Chassis" }
         ]
       },
       {
-        category: "Engine & Power",
+        category: "Lifting Capability",
         items: [
-          { key: "Engine Type", value: "BS-VI Heavy Duty" },
-          { key: "Power Output", value: "200 HP" },
-          { key: "Hydraulic Pressure", value: "250 Bar" }
+          { key: "Standard Bins", value: "240L, 660L, 1100L" },
+          { key: "Large Bins (14/18m³)", value: "Up to 3500L (Dumper Placer)" },
+          { key: "Lifter Type", value: "Hydraulic Universal Bin Lifter" }
         ]
       }
     ],
     applications: [
-      "Door-to-door collection support",
-      "Urban transfer operations",
-      "Municipal fleet deployment",
-      "Commercial waste handling",
-      "Residential waste collection",
-      "Industrial waste management"
+      "Municipal solid waste collection",
+      "Door-to-door garbage collection",
+      "Urban transfer station operations",
+      "Commercial and industrial waste handling",
+      "Residential township sanitation",
+      "High-volume waste compaction and transport"
     ],
     features: [
-      "High compaction ratio",
-      "Automated loading system",
-      "Robust hydraulic mechanism",
-      "Large capacity body",
-      "Efficient waste compression",
-      "Reliable operation cycle"
+      "Universal bin lifter for multiple bin sizes",
+      "Integrated dumper placer arms (selected models)",
+      "Powerful hydraulic compaction mechanism",
+      "Heavy-duty stabilizers for safe operation",
+      "Leachate collection and drainage system",
+      "Rear-loading configuration for urban efficiency"
     ],
     benefits: [
-      "Reduced transportation costs",
-      "Increased collection efficiency",
-      "Lower fuel consumption",
-      "Minimized disposal trips",
-      "Enhanced operational productivity",
-      "Environmental sustainability"
+      "Optimized waste transport costs",
+      "Versatile handling of various bin types",
+      "Significant reduction in waste volume",
+      "Durable construction for daily routes",
+      "Reduced manual labor and handling",
+      "High operational safety standards"
     ]
   },
   "McCLEAN": {
@@ -799,211 +844,194 @@ const productData: Record<string, ProductProfile> = {
   "McFOGGER": {
     name: "Anti Smog Gun / Fogging System – McFOGGER™",
     category: "Special Purpose",
-    desc: "Advanced fogging-based dust suppression and air quality control system for environmental management.",
-    overview: "The Anti Smog Gun / Fogging System is an application-driven solution designed for construction, municipal, and industrial dust environments. This specialized equipment effectively suppresses airborne particles and improves air quality through advanced fogging technology.",
-    image: "/images/products/oil-suction-machine.jpeg",
+    desc: "Advanced Anti Smog Machine and Mist Gun for superior dust suppression in industrial and municipal environments.",
+    overview: "The McFOGGER™ Fog Cannon has been designed to tackle the problem of airborne dust particles generated by open mining activities, general demolition work and bulk material handling. Fog Cannon has been shown to suppress up to 95% of airborne dust particles. The smaller units are ideal for suppressing dust where it is generated in high concentrations at easily defined point sources such as discharging onto stockpiles, discharging into ships, reclaiming from stockpiles, dumping, crushing and loading/unloading trucks. The larger units are unique as they are able to suppress general airborne open area dust through fogging the general area, and are capable of suppressing high volume events such as blasting with their extensive throw distance.",
+    image: "/images/products/anti-smog/anti-smog-machine-1.jpg",
     gallery: [
-      "/images/products/oil-suction-machine.jpeg",
-      "/images/products/mobile-toilets.jpeg",
-      "/images/products/sewage-suction-tanker.jpeg",
-      "/images/products/mm-suction-vacuum-pump.jpeg"
+      "/images/products/anti-smog/anti-smog-machine-1.jpg",
+      "/images/products/anti-smog/anti-smog-machine-2.png"
     ],
     specs: [
-      { key: "Configuration", value: "Truck mounted fogging system" },
-      { key: "Operation", value: "High-pressure water fogging" },
-      { key: "Capacity", value: "Large area coverage" },
-      { key: "Application", value: "Dust suppression and air quality" }
+      { key: "Series", value: "McFOGGER™ Professional" },
+      { key: "Efficiency", value: "Up to 95% Dust Suppression" },
+      { key: "Operation", value: "Point Source & Open Area Fogging" },
+      { key: "Variants", value: "Compact & High-Volume Units" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
+        category: "Performance Metrics",
         items: [
-          { key: "Length", value: "7000 mm" },
-          { key: "Width", value: "2300 mm" },
-          { key: "Height", value: "2900 mm" }
+          { key: "Throw Range", value: "Up to 100+ Meters (Model Dependent)" },
+          { key: "Water Consumption", value: "Optimized Low-Volume Flow" },
+          { key: "Particle Size", value: "Fine Mist (10-50 microns)" },
+          { key: "Suppression Rate", value: "95% of airborne particles" }
         ]
       },
       {
-        category: "Performance",
+        category: "Deployment",
         items: [
-          { key: "Water Tank", value: "5000 Liters" },
-          { key: "Throw Range", value: "60 Meters" },
-          { key: "Coverage Area", value: "10000 Sq Meters" },
-          { key: "Operating Pressure", value: "80 Bar" }
-        ]
-      },
-      {
-        category: "Engine & Power",
-        items: [
-          { key: "Engine Type", value: "BS-VI Diesel" },
-          { key: "Power Output", value: "130 HP" },
-          { key: "Pump System", value: "High-pressure pump" }
+          { key: "Mounting", value: "Truck, Trailer or Skid Mounted" },
+          { key: "Control", value: "Remote / Manual Operation" },
+          { key: "Rotation", value: "360° Horizontal Swing" }
         ]
       }
     ],
     applications: [
-      "Construction site dust suppression",
-      "Industrial pollution control",
-      "Municipal air quality improvement",
-      "Mining dust control",
-      "Event and festival support",
-      "Emergency pollution response"
+      "Open mining activities and quarrying",
+      "General demolition and construction work",
+      "Bulk material handling and stockpiles",
+      "Ship discharging and port operations",
+      "Crushing and screening plants",
+      "High-volume blasting dust suppression",
+      "Truck loading and unloading zones"
     ],
     features: [
-      "High-pressure fogging system",
-      "Wide coverage capability",
-      "Adjustable spray patterns",
-      "Mobile deployment",
-      "Water-efficient operation",
-      "Remote control capability"
+      "Point-source dust suppression",
+      "Long-throw distance for large areas",
+      "Low water consumption technology",
+      "High-pressure mist generation",
+      "Robust all-weather construction",
+      "Extensive coverage for blasting events"
     ],
     benefits: [
-      "Effective dust suppression",
-      "Improved air quality",
-      "Environmental compliance",
-      "Health and safety benefits",
-      "Reduced pollution levels",
-      "Cost-effective solution"
+      "95% reduction in airborne dust",
+      "Improved site visibility and safety",
+      "Regulatory environmental compliance",
+      "Reduced water wastage",
+      "Protects nearby communities",
+      "Minimal maintenance required"
     ]
   },
   "McLIFT": {
     name: "Skylift Working Platform – McLIFT™",
     category: "Special Purpose",
-    desc: "Elevated platform system designed for safe access and utility maintenance at various heights.",
-    overview: "The Skylift Working Platforms are purpose-built lifting platforms for overhead servicing, maintenance, and municipal utility work. These versatile platforms provide safe and efficient access to elevated work areas, making them essential for various maintenance and installation tasks.",
-    image: "/images/products/mobile-toilets.jpeg",
+    desc: "Precision-engineered articulated boom platform for safe and efficient high-altitude utility and maintenance work.",
+    overview: "The McLIFT™ series features articulated booms fabricated of light but stiff M.S. box sections, engineered for maximum stability at height. The structure is fitted with wide pivot bushes and EN-9/S.S pins for both booms and hydraulic cylinders, all mounted on a heavy-duty slewing bearing for smooth rotation. It incorporates precision-engineered double-acting hydraulic RAMs with induction-hardened, chrome-plated piston rods for corrosion resistance and long service life. For safety, the unit is equipped with powerful double-acting hydraulically operated stabilizers with wide footprints, including swivel pads and over-travel capability to level the vehicle on uneven ground.",
+    image: "/images/products/sky-lift/skylift-working-platform.png",
     gallery: [
-      "/images/products/mobile-toilets.jpeg",
-      "/images/products/oil-suction-machine.jpeg",
-      "/images/products/sewage-suction-tanker.jpeg",
-      "/images/products/refuse-compactor.jpeg"
+      "/images/products/sky-lift/skylift-working-platform.png"
     ],
     specs: [
-      { key: "Configuration", value: "Truck mounted lift platform" },
-      { key: "Operation", value: "Hydraulic elevation system" },
-      { key: "Capacity", value: "Multi-person platform" },
-      { key: "Application", value: "Elevated maintenance work" }
+      { key: "Structure", value: "Articulated MS Box Section" },
+      { key: "Hydraulics", value: "Double Acting RAMs" },
+      { key: "Safety", value: "Hydraulic Stabilizers" },
+      { key: "Mounting", value: "Heavy-Duty Slewing Bearing" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
+        category: "Boom Structure",
         items: [
-          { key: "Length", value: "8200 mm" },
-          { key: "Width", value: "2400 mm" },
-          { key: "Height (Stowed)", value: "3100 mm" }
+          { key: "Material", value: "Stiff M.S. Box Section" },
+          { key: "Pivot Pins", value: "EN-9 / Stainless Steel" },
+          { key: "Rotation", value: "360° Continuous Slewing" }
         ]
       },
       {
-        category: "Performance",
+        category: "Hydraulic System",
         items: [
-          { key: "Working Height", value: "18 Meters" },
-          { key: "Platform Capacity", value: "300 kg" },
-          { key: "Outreach", value: "8 Meters" },
-          { key: "Platform Size", value: "1.8 x 0.8 Meters" }
+          { key: "RAM Type", value: "Double Acting Precision Honed" },
+          { key: "Piston Rods", value: "Induction Hardened EN-8" },
+          { key: "Protection", value: "Deep Grounded Chrome Plating" }
         ]
       },
       {
-        category: "Engine & Power",
+        category: "Stabilization",
         items: [
-          { key: "Engine Type", value: "BS-VI Diesel" },
-          { key: "Power Output", value: "140 HP" },
-          { key: "Hydraulic System", value: "Precision hydraulics" }
+          { key: "Quantity", value: "Two/Four Hydraulic Stabilizers" },
+          { key: "Features", value: "Wide Footprint & Swivel Pads" },
+          { key: "Levelling", value: "Over-travel for Uneven Ground" }
         ]
       }
     ],
     applications: [
-      "Street light maintenance",
-      "Public utility access",
-      "Building maintenance",
-      "Safe elevated operations",
-      "Tree trimming support",
-      "Installation and repair work"
+      "Street light and utility maintenance",
+      "Building façade and glass cleaning",
+      "Tree trimming and horticultural work",
+      "CCTV and signage installation",
+      "Industrial facility maintenance",
+      "Aviation and hanger operations"
     ],
     features: [
-      "High reach capability",
-      "Stable platform design",
-      "Precise positioning control",
-      "Safety systems integrated",
-      "Multi-directional movement",
-      "Emergency lowering system"
+      "Lightweight yet stiff M.S. box structure",
+      "Corrosion-resistant hydraulic rods",
+      "Flush-mounted stabilizers when retracted",
+      "Wide pivot bushes for reduced wear",
+      "Dual controls (Platform and Ground)",
+      "Emergency manual lowering system"
     ],
     benefits: [
-      "Enhanced worker safety",
-      "Improved work efficiency",
-      "Reduced setup time",
-      "Versatile positioning",
-      "Cost-effective maintenance",
-      "Compliance with safety standards"
+      "Superior stability at maximum height",
+      "Long component life and durability",
+      "Safe operation on uneven surfaces",
+      "Low maintenance MS structure",
+      "Rapid deployment and leveling",
+      "Smooth, precise positioning"
     ]
   },
   "MOSRU": {
-    name: "Mobile Oil Spill Recovery Unit – MOSRU™",
+    name: "Mobile Oil Spill Recovery Unit – Mc MOSRU™",
     category: "Special Purpose",
-    desc: "Specialized mobile response unit designed for rapid containment and recovery of oil spills and hazardous liquids.",
-    overview: "The Mobile Oil Spill Recovery Unit (MOSR) is designed for rapid deployment during spill incidents with practical mobility and response-focused design. This specialized equipment provides immediate response capability for environmental protection and hazardous material recovery operations.",
-    image: "/images/products/sewage-suction-tanker.jpeg",
+    desc: "Advanced vehicle-mounted suction unit featuring Spark-Proof Suction Technology (SPST™) for safe recovery of hydrocarbons and liquid waste.",
+    overview: "McRAYGOR's Mc MOSRU™ series represents a specialized class of Mobile Oil Spill Units, engineered for high-performance vacuum recovery in hazardous environments. This vehicle-mounted system is specifically designed to syphon out oil, water, grit, and liquid hydrocarbons from slope tanks and leaking pipelines, capable of reaching a suction depth of up to 9 meters. A key differentiator is its proprietary SPST™ (Spark-Proof Suction Technology), which allows the unit to operate safely in oil refineries and petroleum industries, suctioning fuels and undefined fluids without the risk of ignition. The system is designed for operational efficiency, requiring only a small crew, and can be mounted on various heavy-duty chassis including TATA, Ashok Leyland, MAHINDRA, and Eicher.",
+    image: "/images/products/mobile-oil-spill-recovery-unit/mobile-oil-spill-recovery-unit-1.png",
     gallery: [
-      "/images/products/sewage-suction-tanker.jpeg",
-      "/images/products/oil-suction-machine.jpeg",
-      "/images/products/super-sucker-machine.jpeg",
-      "/images/products/mm-suction-vacuum-pump.jpeg"
+      "/images/products/mobile-oil-spill-recovery-unit/mobile-oil-spill-recovery-unit-1.png"
     ],
     specs: [
-      { key: "Configuration", value: "Mobile spill recovery system" },
-      { key: "Operation", value: "Rapid spill containment" },
-      { key: "Capacity", value: "High-volume recovery" },
-      { key: "Application", value: "Emergency spill response" }
+      { key: "Technology", value: "SPST™ (Spark-Proof)" },
+      { key: "Suction Depth", value: "Up to 9 Meters" },
+      { key: "Safety Class", value: "Refinery & Petroleum Grade" },
+      { key: "Mounting", value: "TATA / Ashok Leyland / Eicher" }
     ],
     detailedSpecs: [
       {
-        category: "Dimensions",
+        category: "Suction Performance",
         items: [
-          { key: "Length", value: "9500 mm" },
-          { key: "Width", value: "2550 mm" },
-          { key: "Height", value: "3400 mm" }
+          { key: "Max Depth", value: "9 Meters" },
+          { key: "Materials", value: "Oil, Hydrocarbons, Slurry" },
+          { key: "Vacuum System", value: "High-Efficiency Syphon" }
         ]
       },
       {
-        category: "Performance",
+        category: "Safety Features",
         items: [
-          { key: "Recovery Capacity", value: "15000 Liters" },
-          { key: "Suction Rate", value: "20000 LPM" },
-          { key: "Separation Efficiency", value: "98%" },
-          { key: "Response Time", value: "< 30 Minutes" }
+          { key: "Spark Protection", value: "SPST™ Integrated" },
+          { key: "Atmosphere", value: "Hazardous Zone Compatible" },
+          { key: "Fluid Handling", value: "Undefined Fuels & Hydrocarbons" }
         ]
       },
       {
-        category: "Engine & Power",
+        category: "Vehicle Integration",
         items: [
-          { key: "Engine Type", value: "Heavy Duty Diesel" },
-          { key: "Power Output", value: "250 HP" },
-          { key: "Auxiliary Power", value: "Emergency generator" }
+          { key: "Chassis Options", value: "TATA, Ashok Leyland, Mahindra" },
+          { key: "Compliance", value: "RTO & Manufacturer Standards" },
+          { key: "Crew Requirement", value: "1 Driver + 2 Helpers" }
         ]
       }
     ],
     applications: [
-      "Oil spill emergency response",
-      "Industrial safety operations",
-      "Environmental cleanup",
-      "Hazardous liquid recovery",
-      "Marine spill response",
-      "Industrial accident response"
+      "Oil refinery cleaning and maintenance",
+      "Petroleum pipeline leak recovery",
+      "Hazardous liquid hydrocarbon suction",
+      "Slope tank desilting and recovery",
+      "Emergency oil spill response",
+      "Industrial fuel tank cleaning"
     ],
     features: [
-      "Rapid deployment capability",
-      "High-efficiency recovery system",
-      "Oil-water separation technology",
-      "Emergency response equipment",
-      "Mobile command center",
-      "Environmental protection systems"
+      "Proprietary SPST™ Spark-Proof technology",
+      "High-power 9-meter deep suction",
+      "Multi-chassis mounting compatibility",
+      "Integrated safety interlocks",
+      "Corrosion-resistant tank and fittings",
+      "Efficient operational workflow"
     ],
     benefits: [
-      "Quick emergency response",
-      "Environmental protection",
-      "Regulatory compliance",
-      "Minimized environmental impact",
-      "Cost-effective cleanup",
-      "Professional spill management"
+      "Zero-fire-risk operation in refineries",
+      "Deep-reach suction for difficult tanks",
+      "Universal chassis integration",
+      "Minimal crew requirements",
+      "Rapid deployment for emergency spills",
+      "Compliant with industrial safety standards"
     ]
   }
 };
@@ -1015,6 +1043,11 @@ export function ProductDetail() {
   const product = slug ? productData[slug] : null;
   const [activeTab, setActiveTab] = useState<'overview' | 'specs' | 'applications'>('overview');
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+
+  // Reset gallery index when product changes
+  useEffect(() => {
+    setCurrentGalleryIndex(0);
+  }, [slug]);
 
   // Prevent scroll restoration on state changes
   useEffect(() => {
@@ -1150,7 +1183,7 @@ export function ProductDetail() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-[400px] object-cover shadow-lg"
+                  className="w-full h-[400px] md:h-[500px] object-contain bg-gray-50 shadow-lg rounded-xl"
                 />
               </div>
             </div>
@@ -1193,7 +1226,7 @@ export function ProductDetail() {
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-6 py-4 rounded-lg font-semibold transition-colors"
                 >
                   <Download size={20} />
-                  Download Brochure
+                  Product Catalogue
                 </a>
                 <a
                   href="#quote"
@@ -1362,9 +1395,9 @@ export function ProductDetail() {
           <div className="relative mb-8">
             <div className="relative overflow-hidden shadow-2xl">
               <img
-                src={product.gallery[currentGalleryIndex]}
+                src={product.gallery[currentGalleryIndex] || product.image}
                 alt={`${product.name} - View ${currentGalleryIndex + 1}`}
-                className="w-full h-[500px] md:h-[600px] object-cover"
+                className="w-full h-[500px] md:h-[750px] object-contain bg-gray-50"
               />
               
               {/* Navigation Buttons */}

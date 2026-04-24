@@ -14,6 +14,7 @@ import { Spares } from "./pages/Spares";
 import { Sitemap } from "./pages/Sitemap";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { TermsOfUse } from "./pages/TermsOfUse";
+import { BlogDetail } from "./pages/BlogDetail";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,7 @@ export const router = createBrowserRouter([
       { path: "spares", Component: Spares },
       { path: "government-tender", Component: GovernmentTender },
       { path: "contact", Component: Contact },
+      { path: "blog/:slug", Component: BlogDetail },
       { path: "sitemap", Component: Sitemap },
       { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "terms-of-use", Component: TermsOfUse },

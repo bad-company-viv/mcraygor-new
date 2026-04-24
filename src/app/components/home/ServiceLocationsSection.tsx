@@ -62,7 +62,7 @@ export function ServiceLocationsSection() {
             <div className="inline-block bg-[#e8612c] px-6 py-2 rounded-full mb-8">
               <span className="text-white text-xs font-black uppercase tracking-[0.2em]">Live Network</span>
             </div>
-            <h3 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8">
+            <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8">
               All India<br /><span className="text-[#e8612c]">Operational</span><br />Presence
             </h3>
             <p className="text-gray-400 max-w-sm text-base leading-relaxed font-medium">

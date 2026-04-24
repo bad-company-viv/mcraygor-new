@@ -1,3 +1,64 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+html, body {
+  height: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+/* Blog Rich Content Custom Styling */
+.blog-rich-content h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-rich-content p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-rich-content blockquote {
+  margin: 3rem 0;
+  position: relative;
+}
+
+.blog-rich-content blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 80px;
+  color: #e8612c;
+  opacity: 0.1;
+  font-family: serif;
+}
+
+.blog-rich-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 2rem 0;
+}
+
+.blog-rich-content ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-rich-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 12px;
+  height: 2px;
+  background-color: #e8612c;
+}
