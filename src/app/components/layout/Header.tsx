@@ -53,6 +53,7 @@ const navLinks = [
   { label: "Spares", to: "/spares" },
   { label: "Government & Tender Support", to: "/government-tender" },
   { label: "Projects / Applications", to: "/projects" },
+  { label: "Insights", to: "/blog" },
   { label: "Contact Us", to: "/contact" },
 ];
 

@@ -134,11 +134,10 @@ export function About() {
         <div className="flex flex-col md:flex-row items-stretch min-h-[700px] bg-[#f8fafc]">
           <div className="w-full md:w-[50%] relative overflow-hidden min-h-[400px]">
             <img
-              src="/hero/hero3.png"
+              src="/hero/hero2.png"
               alt="Infrastructure Impact"
-              className="absolute inset-0 w-full h-full object-cover grayscale opacity-80"
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-[#1c2535]/20" />
           </div>
           <div className="w-full md:w-[50%] flex flex-col justify-center px-8 py-20 md:px-16 lg:px-24">
             <div className="max-w-[550px]">

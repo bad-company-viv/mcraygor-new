@@ -64,13 +64,13 @@ export function BlogSection() {
         </div>
 
         <div className="mt-20 text-center">
-          <a 
-            href="#" 
+          <Link 
+            to="/blog" 
             className="inline-flex items-center gap-4 bg-[#1c2535] text-white px-10 py-5 rounded-2xl text-sm font-black uppercase tracking-widest hover:bg-[#e8612c] transition-all shadow-xl"
           >
             Explore All Insights
             <ArrowRight size={20} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

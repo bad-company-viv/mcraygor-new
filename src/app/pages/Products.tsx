@@ -7,7 +7,7 @@ import { Breadcrumb } from "../components/common/Breadcrumb";
 const allProducts = [
   // Liquid Waste
   { id: 1, slug: "COMBINATOR", name: "Combined Jetting Cum Suction Machine – COMBINATOR™", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg", desc: "Truck chassis mounted suction-cum-jetting combination machine for trunk sewer maintenance.", capacity: "Model Dependent", featured: true },
-  { id: 2, slug: "HYPERVAC", name: "Super Sucker Machine – HYPERVAC™", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/super-sucker-machine.jpeg", desc: "High suction performance machine for sludge, slurry, and heavy waste evacuation.", capacity: "Model Dependent", featured: true },
+  { id: 2, slug: "HYPERVAC", name: "Super Sucker Machine – HYPERVAC™", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/super-sucker-machine/super-sucker-1.jpg", desc: "High suction performance machine for sludge, slurry, and heavy waste evacuation.", capacity: "Model Dependent", featured: true },
   { id: 3, slug: "McGRAB", name: "Sewer Grabbing / Manhole Desilting Machine – McGRAB™", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/desilting-machine-grab-bucket.jpeg", desc: "Designed for desilting manholes and grabbing settled sewer waste safely.", capacity: "Model Dependent", featured: false },
   { id: 4, slug: "GULLY-SUCTION-EMPTIER", name: "Gully Suction Emptier – McVAC™", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/gully-suction-emptier/gully-suction-emptier-1.png", desc: "Trailer-mounted suction unit for compact and narrow-access operations.", capacity: "Model Dependent", featured: false },
   { id: 5, slug: "TRAILER-JETTING-SUCTION", name: "Sewer Jetting Machine / Jetting Suction Machine (Trailer Mounted)", category: "liquid-waste", categoryLabel: "Liquid Waste", image: "/images/products/sewer-jetting-suction-machine.jpeg", desc: "Compact trailer-mounted jetting and suction solution.", capacity: "Model Dependent", featured: false },
@@ -17,7 +17,7 @@ const allProducts = [
   
   // Solid Waste
   { id: 9, slug: "VYUK", name: "Litter Picker – VYUK™", category: "solid-waste", categoryLabel: "Solid Waste", image: "/images/products/dumper-placer-container.jpeg", desc: "Efficient litter collection system for urban cleaning applications.", capacity: "Model Dependent", featured: false },
-  { id: 10, slug: "PAC", name: "Refuse / Garbage Compactor – PAC™", category: "solid-waste", categoryLabel: "Solid Waste", image: "/images/products/refuse-compactor.jpeg", desc: "Compactor solution for high-volume municipal solid waste collection.", capacity: "Model Dependent", featured: true },
+  { id: 10, slug: "PAC", name: "Refuse / Garbage Compactor – PAC™", category: "solid-waste", categoryLabel: "Solid Waste", image: "/images/products/garbage-refuse-compactor/garbage-refuse-compactor-1.jpeg", desc: "Compactor solution for high-volume municipal solid waste collection.", capacity: "Model Dependent", featured: true },
   { id: 11, slug: "McCLEAN", name: "Road Sweeper – McCLEAN™", category: "solid-waste", categoryLabel: "Solid Waste", image: "/images/products/refuse-compactor2.jpeg", desc: "Road sweeping machine for municipal roads and industrial campuses.", capacity: "Model Dependent", featured: true },
   
   // Industrial Vacuum
@@ -29,7 +29,7 @@ const allProducts = [
   // Special Purpose
   { id: 13, slug: "McFOGGER", name: "Anti Smog Gun / Fogging System – McFOGGER™", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/anti-smog/anti-smog-machine-1.jpg", desc: "Fogging system for dust suppression and environment control applications.", capacity: "Model Dependent", featured: true },
   { id: 14, slug: "McLIFT", name: "Skylift Working Platform – McLIFT™", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/sky-lift/skylift-working-platform.png", desc: "Elevated working platforms for maintenance and utility operations.", capacity: "Model Dependent", featured: false },
-  { id: 15, slug: "MOSRU", name: "Mobile Oil Spill Recovery Unit – MOSRU™", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/sewage-suction-tanker.jpeg", desc: "Mobile solution for rapid oil spill containment and recovery operations.", capacity: "Model Dependent", featured: false },
+  { id: 15, slug: "MOSRU", name: "Mobile Oil Spill Recovery Unit – MOSRU™", category: "special-purpose", categoryLabel: "Special Purpose", image: "/images/products/mobile-oil-spill-recovery-unit/mobile-oil-spill-recovery-unit-1.png", desc: "Mobile solution for rapid oil spill containment and recovery operations.", capacity: "Model Dependent", featured: false },
 ];
 
 export function Products() {

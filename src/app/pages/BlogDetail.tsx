@@ -241,27 +241,7 @@ export function BlogDetail() {
 
             {/* Sidebar */}
             <aside className="space-y-10">
-              {/* Author / Source Card */}
-              <div className="bg-[#1c2535] rounded-[2rem] p-8 text-white relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#e8612c] opacity-10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10">
-                      <img src="/mcraygor-header-logo.png" alt="McRAYGOR" className="w-10 h-auto invert" />
-                    </div>
-                    <div>
-                      <p className="text-[#e8612c] text-[10px] font-black uppercase tracking-widest">Published By</p>
-                      <h4 className="font-bold text-lg">McRAYGOR Engineering</h4>
-                    </div>
-                  </div>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                    Insights from India's leading Original Equipment Manufacturer of high-performance waste handling solutions.
-                  </p>
-                  <button className="w-full bg-[#e8612c] text-white py-4 rounded-xl font-black uppercase text-xs tracking-widest hover:bg-white hover:text-[#1c2535] transition-all shadow-xl shadow-orange-500/10">
-                    Follow Updates
-                  </button>
-                </div>
-              </div>
+
 
               {/* Related Posts Sidebar */}
               <div className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)]">

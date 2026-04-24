@@ -15,6 +15,7 @@ import { Sitemap } from "./pages/Sitemap";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { TermsOfUse } from "./pages/TermsOfUse";
 import { BlogDetail } from "./pages/BlogDetail";
+import { Blogs } from "./pages/Blogs";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,7 @@ export const router = createBrowserRouter([
       { path: "spares", Component: Spares },
       { path: "government-tender", Component: GovernmentTender },
       { path: "contact", Component: Contact },
+      { path: "blog", Component: Blogs },
       { path: "blog/:slug", Component: BlogDetail },
       { path: "sitemap", Component: Sitemap },
       { path: "privacy-policy", Component: PrivacyPolicy },
