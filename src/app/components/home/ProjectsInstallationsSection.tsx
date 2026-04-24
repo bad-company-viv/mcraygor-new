@@ -117,11 +117,10 @@ export function ProjectsInstallationsSection() {
                     key={project.slug}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`w-full text-left rounded-xl px-3 py-3 transition-all border ${
-                      selected
+                    className={`w-full text-left rounded-xl px-3 py-3 transition-all border ${selected
                         ? "bg-[#136f3a] text-white border-[#136f3a] shadow-md"
                         : "bg-white text-[#1c2535] border-gray-100 hover:border-[#1a5c3a]/30"
-                    }`}
+                      }`}
                   >
                     <div className={`text-sm font-black mb-1 ${selected ? "text-[#a7f3d0]" : "text-[#1a5c3a]"}`}>
                       {formatIndex(index)}

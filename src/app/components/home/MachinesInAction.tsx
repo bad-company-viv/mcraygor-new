@@ -1,21 +1,21 @@
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
-import superSuckerVideo from "../../../assets/videos/super-sucker.mov";
+import antiSmogVideo from "../../../assets/videos/anti-smog.mov";
 
 const actionVideos = [
   {
-    id: "super-sucker",
-    title: "High-Flow Super Sucker",
-    category: "Industrial Cleaning",
-    video: superSuckerVideo,
-    thumbnail: "/images/machines/super-sucker-thumb.jpg",
-    description: "Watch our high-flow super sucker in action, delivering unmatched suction power for deep sewer desilting."
+    id: "anti-smog-gun",
+    title: "Anti-Smog Gun (Mist Cannon)",
+    category: "Environmental Control",
+    video: antiSmogVideo,
+    thumbnail: "/images/machines/anti-smog-thumb.jpg",
+    description: "Advanced atmospheric misting technology for localized dust suppression and air quality management."
   },
   {
     id: "jetting-unit",
     title: "Combined Jetting Unit",
     category: "Municipal Waste",
-    video: superSuckerVideo, // Placeholder
+    video: antiSmogVideo, // Placeholder
     thumbnail: "/images/machines/jetting-unit-thumb.jpg",
     description: "Simultaneous high-pressure jetting and vacuum suction for efficient sewer line maintenance."
   },
@@ -23,7 +23,7 @@ const actionVideos = [
     id: "refuse-compactor",
     title: "Refuse Compactor",
     category: "Solid Waste",
-    video: superSuckerVideo, // Placeholder
+    video: antiSmogVideo, // Placeholder
     thumbnail: "/images/machines/compactor-thumb.jpg",
     description: "High-efficiency solid waste collection and compaction for urban environments."
   }
@@ -82,12 +82,12 @@ export function MachinesInAction() {
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             />
-            
+
             {/* Video Controls Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12 right-8 md:right-12 flex items-center justify-between">
                 <div className="flex items-center gap-6">
-                  <button 
+                  <button
                     onClick={togglePlay}
                     className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#e8612c] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-xl"
                   >
@@ -98,9 +98,9 @@ export function MachinesInAction() {
                     <h4 className="text-2xl md:text-4xl font-black uppercase tracking-tight">{activeVideo.title}</h4>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
-                  <button 
+                  <button
                     onClick={() => setIsMuted(!isMuted)}
                     className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-white/20 transition-colors"
                   >

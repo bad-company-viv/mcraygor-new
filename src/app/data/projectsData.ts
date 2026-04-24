@@ -51,7 +51,7 @@ export const projectsData: Project[] = [
     ],
     results: "Successfully completed comprehensive engineering survey and system design for Delhi NCR. Established McRAYGOR as the primary choice for Delhi Jal Board and state government for all sewer-related issues. Long-term partnership continues with consistent high-quality service delivery.",
     images: [
-      { 
+      {
         url: "/images/projects/delhi-jal-board-sewage-treatment.jpeg",
         alt: "Delhi Jal Board mass sewage treatment project equipment"
       }
@@ -204,7 +204,7 @@ export function validateProject(project: Partial<Project>): boolean {
     'projectType', 'categoryBadge', 'categoryTags', 'description',
     'challenge', 'solution', 'equipmentUsed', 'results', 'images'
   ];
-  
+
   return requiredFields.every(field => {
     const value = project[field];
     if (Array.isArray(value)) return value.length > 0;
@@ -237,6 +237,6 @@ export function validateProductLink(productSlug: string): boolean {
     'skylift-working-platforms',
     'mobile-oil-spill-recovery-unit-mosr'
   ];
-  
+
   return validProducts.includes(productSlug);
 }
