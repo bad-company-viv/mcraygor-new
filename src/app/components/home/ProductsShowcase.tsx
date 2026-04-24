@@ -63,14 +63,14 @@ export function ProductsShowcase() {
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end items-start">
                 <div className="relative z-10 w-full">
                   <div className="flex items-center gap-4 mb-3">
-                     <span className="text-[#e8612c] text-base md:text-lg font-black tracking-tighter">0{index + 1}</span>
-                     <div className="h-[1px] w-8 bg-white/30 group-hover:w-16 transition-all duration-500" />
+                    <span className="text-[#e8612c] text-base md:text-lg font-black tracking-tighter">0{index + 1}</span>
+                    <div className="h-[1px] w-8 bg-white/30 group-hover:w-16 transition-all duration-500" />
                   </div>
-                  
+
                   <h3 className="text-white font-black uppercase tracking-tighter leading-none mb-6 drop-shadow-md" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                     {cat.title}
                   </h3>
-                  
+
                   <div className="flex items-center gap-4 text-white font-bold uppercase tracking-[0.2em] text-xs transition-all duration-500 group-hover:gap-6">
                     <span className="border-b border-white/50 pb-2 group-hover:border-[#e8612c] transition-colors">Discover Fleet</span>
                     <ArrowRight size={18} className="text-[#e8612c]" />
