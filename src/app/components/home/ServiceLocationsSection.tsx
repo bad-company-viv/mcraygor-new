@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import { InteractiveIndiaMap } from "./InteractiveIndiaMap";
 
 const coverageLocations = [
   {
@@ -43,35 +44,26 @@ export function ServiceLocationsSection() {
     <section className="bg-white border-t border-gray-100 overflow-hidden">
       <div className="flex flex-col lg:flex-row items-stretch min-h-[600px]">
         {/* Left Side: Network Visualization */}
-        <div className="w-full lg:w-[40%] relative min-h-[400px] lg:min-h-auto bg-[#1c2535] overflow-hidden flex flex-col justify-center p-12 lg:p-20">
-          {/* Stylized Network Background */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <svg width="100%" height="100%" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M100 100 L300 150 L350 400 L150 500 L50 350 Z" stroke="#e8612c" strokeWidth="1" />
-              <circle cx="100" cy="100" r="4" fill="#e8612c" />
-              <circle cx="300" cy="150" r="4" fill="#e8612c" />
-              <circle cx="350" cy="400" r="4" fill="#e8612c" />
-              <circle cx="150" cy="500" r="4" fill="#e8612c" />
-              <circle cx="50" cy="350" r="4" fill="#e8612c" />
-              <path d="M100 100 L150 500" stroke="#e8612c" strokeWidth="0.5" strokeDasharray="4 4" />
-              <path d="M300 150 L50 350" stroke="#e8612c" strokeWidth="0.5" strokeDasharray="4 4" />
-            </svg>
-          </div>
-
-          <div className="relative z-10">
+        <div className="w-full lg:w-[45%] relative min-h-[500px] lg:min-h-auto bg-[#1c2535] overflow-hidden flex flex-col justify-center p-8 lg:p-12">
+          <div className="relative z-10 mb-10">
             <div className="inline-block bg-[#e8612c] px-6 py-2 rounded-full mb-8">
               <span className="text-white text-xs font-black uppercase tracking-[0.2em]">Live Network</span>
             </div>
-            <h3 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8">
+            <h3 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
               All India<br /><span className="text-[#e8612c]">Operational</span><br />Presence
             </h3>
             <p className="text-gray-400 max-w-sm text-base leading-relaxed font-medium">
               Real-time support and technical deployment across every major industrial hub in India.
             </p>
           </div>
+          
+          <div className="relative z-10 w-full">
+            <InteractiveIndiaMap />
+          </div>
         </div>
 
         {/* Right Side: Network Info */}
+
         <div className="w-full lg:w-[60%] flex flex-col justify-center bg-[#f8fafc] px-8 py-16 md:px-16 lg:px-24">
           <div className="max-w-[900px]">
             <h2 className="text-[#1c2535] text-4xl md:text-5xl font-black tracking-tighter uppercase mb-12">

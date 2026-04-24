@@ -35,13 +35,13 @@ export function ProjectsInstallationsSection() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <p className="text-[#1a5c3a] text-xs sm:text-sm font-bold uppercase tracking-[0.14em] mb-3">
-            Projects & Installations
+            Projects & Applications
           </p>
           <h2 className="text-[#1c2535] mb-4" style={{ fontSize: "clamp(1.8rem, 6vw, 3.5rem)", fontWeight: 800, lineHeight: 1.1 }}>
             Landmark <span className="text-[#1a5c3a]">Projects</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Selected installations showcasing McRAYGOR equipment in action across municipal, private, and international applications.
+            Selected applications and installations showcasing McRAYGOR equipment in action across various industrial hubs.
           </p>
         </div>
 
@@ -54,9 +54,14 @@ export function ProjectsInstallationsSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#081421]/90 via-[#081421]/55 to-transparent" />
 
-            <div className="absolute top-4 right-4 bg-[#1a5c3a] text-white inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
-              <CalendarDays size={14} />
-              {activeProject.year}
+            <div className="absolute top-4 left-4 flex gap-2">
+              <div className="bg-[#e8612c] text-white inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                Landmark
+              </div>
+              <div className="bg-[#1a5c3a] text-white inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+                <CalendarDays size={14} />
+                {activeProject.year}
+              </div>
             </div>
 
             <button
