@@ -10,6 +10,7 @@ type HeroSlide = {
   secondaryCta: { label: string; to: string };
   imageClassName?: string;
   imagePosition?: string;
+  mobileImagePosition?: string;
 };
 
 const slides: HeroSlide[] = [
@@ -19,6 +20,8 @@ const slides: HeroSlide[] = [
     subtext: "McRAYGOR Mechanicals Infrastructure - clean cities, safe workers, mechanized sanitation.",
     primaryCta: { label: "Explore Products", to: "/products" },
     secondaryCta: { label: "Request a Quote", to: "/contact" },
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
   },
   {
     image: "/hero/hero2-fullbleed.jpg",
@@ -27,6 +30,7 @@ const slides: HeroSlide[] = [
     primaryCta: { label: "Our Story", to: "/about" },
     secondaryCta: { label: "Contact Us", to: "/contact" },
     imagePosition: "center center",
+    mobileImagePosition: "center center",
   },
   {
     image: "/hero/hero3.png",
@@ -34,6 +38,8 @@ const slides: HeroSlide[] = [
     subtext: "From jetting-cum-suction systems to special-purpose platforms for municipal and industrial applications.",
     primaryCta: { label: "View Solutions", to: "/products#applications" },
     secondaryCta: { label: "Get a Quote", to: "/contact" },
+    imagePosition: "right center",
+    mobileImagePosition: "center center",
   },
 ];
 
@@ -74,14 +80,27 @@ export function HeroSlider() {
         <div
           key={i}
           className={`absolute inset-0 transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
+          style={{
+            ['--obj-pos' as any]: s.imagePosition || "center",
+            ['--obj-pos-mobile' as any]: s.mobileImagePosition || s.imagePosition || "center"
+          }}
         >
           <img
             src={s.image}
             alt=""
-            className={`w-full h-full object-cover ${s.imageClassName ?? ""}`}
-            style={s.imagePosition ? { objectPosition: s.imagePosition } : undefined}
+            className={`w-full h-full hero-img-${i} ${s.image.endsWith('.png') ? 'object-contain md:object-cover' : 'object-cover'} ${s.imageClassName ?? ""}`}
+            style={{
+              objectPosition: 'var(--obj-pos-mobile)'
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20" />
+          <style>{`
+            @media (min-width: 768px) {
+              .hero-img-${i} {
+                object-position: var(--obj-pos) !important;
+              }
+            }
+          `}</style>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent md:from-black/75 md:via-black/50 md:to-black/20" />
         </div>
       ))}
 

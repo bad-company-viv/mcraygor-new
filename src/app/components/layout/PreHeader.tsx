@@ -14,14 +14,25 @@ export function PreHeader() {
   };
 
   return (
-    <div className="bg-[#1c2535] text-white py-2 px-4 md:px-8 border-b border-white/5">
-      <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
+    <div className="bg-[#1c2535] text-white py-2 px-4 md:px-6 border-b border-white/5 relative z-[110]">
+      <div className="max-w-[1700px] mx-auto flex items-center justify-between gap-4">
         {/* Left Side: Region & Global */}
-        <div className="flex items-center gap-4 md:gap-6">
+        <div className="flex items-center gap-3 md:gap-4 ml-24">
+          <a
+            href="https://mcraygor-global-big-section.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex items-center gap-2 text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-white border border-white/30 px-2 md:px-3 py-1.5 rounded-none hover:bg-white/10 transition-all active:scale-95"
+          >
+            <span className="hidden md:inline">Visit Global Website</span>
+            <span className="md:hidden">Global</span>
+            <ArrowUpRight size={12} className="text-[#e8612c]" />
+          </a>
+
           <div className="relative">
             <button
               onClick={() => setOpen(!open)}
-              className="flex items-center gap-2 text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-gray-400 border border-white/10 px-2 md:px-3 py-1 md:py-1.5 rounded-none hover:bg-white/5 transition-colors"
+              className="flex items-center gap-2 text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-white border border-white/30 px-2 md:px-3 py-1.5 rounded-none hover:bg-white/10 transition-all active:scale-95"
             >
               <Globe size={11} className="text-[#e8612c]" />
               <span>{region}</span>
@@ -41,17 +52,6 @@ export function PreHeader() {
               </div>
             )}
           </div>
-
-          <a
-            href="https://mcraygor-global-big-section.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
-          >
-            <span className="hidden md:inline">Visit Global Website</span>
-            <span className="md:hidden">Global</span>
-            <ArrowUpRight size={12} className="text-[#e8612c]" />
-          </a>
         </div>
 
         {/* Right Side: Contact Info */}

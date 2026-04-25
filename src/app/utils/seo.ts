@@ -115,6 +115,26 @@ export const seoConfig: Record<string, SEOMetadata> = {
     ogImage: DEFAULT_OG_IMAGE,
     ogType: "website",
   },
+  industries: {
+    title: "Industries We Serve - Waste Handling Solutions | McRAYGOR®",
+    description: "Specialized waste handling solutions for Municipalities, Industrial Plants, Oil & Gas, and Hospitality sectors. Engineered for high performance in demanding environments.",
+    keywords: "municipal waste handling, industrial cleaning, oil and gas waste management, hospitality sanitation, waste management sectors",
+    canonical: `${BASE_URL}/industries`,
+    ogTitle: "Industries We Serve | McRAYGOR®",
+    ogDescription: "Customized waste handling equipment for diverse industrial and municipal sectors.",
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: "website",
+  },
+  blog: {
+    title: "Insights & Updates - Waste Handling Technology | McRAYGOR®",
+    description: "Stay updated with the latest in municipal waste handling technology, industrial cleaning innovations, and McRAYGOR company news.",
+    keywords: "waste management blog, sanitation technology news, industrial cleaning insights, McRAYGOR news",
+    canonical: `${BASE_URL}/blog`,
+    ogTitle: "McRAYGOR Insights | Industry News & Technology Updates",
+    ogDescription: "Expert insights and the latest updates on waste handling and industrial cleaning technology.",
+    ogImage: DEFAULT_OG_IMAGE,
+    ogType: "website",
+  },
 };
 
 // Product-specific SEO metadata generator

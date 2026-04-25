@@ -26,7 +26,8 @@ export function Blogs() {
         metadata={{
           title: "Industrial Insights & Engineering News | McRAYGOR",
           description: "Explore the latest updates in waste management technology, municipal engineering, and sustainable sanitation solutions from India's leading OEM.",
-          keywords: "McRAYGOR blog, sanitation technology, municipal waste news, engineering insights"
+          keywords: "McRAYGOR blog, sanitation technology, municipal waste news, engineering insights",
+          canonical: "https://www.mcraygor.com/blog"
         }}
       />
 

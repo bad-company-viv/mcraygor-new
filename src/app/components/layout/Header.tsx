@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
-import { 
-  Menu, X, ChevronDown, Phone, Mail, Globe, ExternalLink, Download, 
-  ArrowRight, Building2, Droplets, Trash2, Zap, Settings, ShieldCheck, MapPin 
+import {
+  Menu, X, ChevronDown, Phone, Mail, Globe, ExternalLink, Download,
+  ArrowRight, Building2, Droplets, Trash2, Zap, Settings, ShieldCheck, MapPin
 } from "lucide-react";
 
 const productCategories = [
@@ -119,33 +119,61 @@ export function Header() {
   }, []);
 
   return (
-    <header className="bg-white shadow-sm">
+    <header ref={megaRef} className="bg-white shadow-sm relative z-[100]">
       {/* Main Header Row */}
-      <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-0 flex items-center justify-between gap-4">
+      <div className="max-w-[1700px] mx-auto px-4 md:px-6 flex items-center justify-between gap-4 lg:gap-8">
         {/* Left: Logos */}
-        <div className="flex items-center gap-2 md:gap-6 py-2">
+        <div className="flex items-center gap-3 md:gap-4 py-2">
           <Link to="/" className="flex-shrink-0 flex items-center">
             <img
               src={logoImg}
               alt="McRAYGOR Mechanicals Infrastructure"
-              className="h-12 md:h-20 lg:h-24 w-auto max-w-[500px] md:max-w-[650px] lg:max-w-[750px] object-contain"
+              className="h-14 md:h-20 lg:h-24 w-auto object-contain"
             />
           </Link>
-          <div className="h-8 md:h-14 w-px bg-gray-200" />
-          <div className="flex items-center h-full">
-            <img src="/celebration.jpg" alt="25 Years Celebration" className="h-8 md:h-14 lg:h-16 w-auto object-contain" />
+          <div className="h-10 md:h-14 w-px bg-gray-200 hidden sm:block" />
+          <div className="hidden sm:flex items-center h-full">
+            <img src="/celebration.jpg" alt="25 Years Celebration" className="h-10 md:h-14 lg:h-16 w-auto object-contain" />
           </div>
         </div>
+
+        {/* Center: Desktop Navigation */}
+        <nav className="hidden lg:block flex-1">
+          <ul className="flex items-center justify-center gap-1 xl:gap-2">
+            {navLinks.map((link) => (
+              <li key={link.label} className="relative group">
+                {link.hasMega ? (
+                  <button
+                    onClick={() => setMegaOpen(!megaOpen)}
+                    className={`flex items-center gap-1 px-2 xl:px-3 py-5 text-[12px] xl:text-sm font-bold transition-all whitespace-nowrap border-b-2
+                      ${megaOpen ? "text-[#e8612c] border-[#e8612c] bg-orange-50/50" : "text-[#1c2535] border-transparent hover:text-[#e8612c]"}`}
+                  >
+                    {link.label}
+                    <ChevronDown size={14} className={`transition-transform ${megaOpen ? "rotate-180" : ""}`} />
+                  </button>
+                ) : (
+                  <Link
+                    to={link.to}
+                    className="block px-2 xl:px-3 py-5 text-[12px] xl:text-sm font-bold text-[#1c2535] hover:text-[#e8612c] border-b-2 border-transparent hover:border-[#e8612c] transition-all whitespace-nowrap"
+                    onClick={() => setMegaOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         {/* Right: CTA + Mobile Menu */}
         <div className="flex items-center gap-3">
           <a
             href="/Brochure.pdf"
             download
-            className="hidden md:flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-4 py-2.5 rounded-none text-sm font-black uppercase tracking-widest transition-all shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+            className="hidden xl:flex items-center gap-2 bg-[#e8612c] hover:bg-[#d4531f] text-white px-4 py-2.5 rounded-none text-[10px] font-black uppercase tracking-widest transition-all shadow-md hover:-translate-y-0.5 active:translate-y-0"
           >
-            <Download size={16} />
-            Download Company Profile
+            <Download size={14} />
+            Download Profile
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -156,101 +184,70 @@ export function Header() {
         </div>
       </div>
 
-
-
-      {/* Navigation Bar */}
-      <nav ref={megaRef} className="hidden lg:block border-t border-gray-100 bg-white relative">
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8">
-          <ul className="flex items-center justify-center gap-1">
-            {navLinks.map((link) => (
-              <li key={link.label} className="relative">
-                {link.hasMega ? (
-                  <button
-                    onClick={() => setMegaOpen(!megaOpen)}
-                    className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap
-                      ${megaOpen ? "text-[#e8612c] bg-orange-50" : "text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50"}`}
-                  >
-                    {link.label}
-                    <ChevronDown size={14} className={`transition-transform ${megaOpen ? "rotate-180" : ""}`} />
-                  </button>
-                ) : (
+      {/* Mega Menu */}
+      {megaOpen && (
+        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[min(96vw,1700px)] bg-[#f1f2f5] border border-gray-200 z-50 rounded-b-2xl shadow-[0_22px_48px_rgba(0,0,0,0.16)] overflow-hidden">
+          <div className="p-6 xl:p-8">
+            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(260px,320px)] gap-6 xl:gap-7 items-start">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+                  <p className="text-sm font-bold tracking-wider text-gray-500 uppercase">Product Categories</p>
                   <Link
-                    to={link.to}
-                    className="block px-3 py-2 text-sm font-medium text-[#1c2535] hover:text-[#e8612c] hover:bg-gray-50 transition-colors whitespace-nowrap"
+                    to="/products"
                     onClick={() => setMegaOpen(false)}
+                    className="inline-flex items-center gap-2 text-[#166534] text-[1.2rem] leading-none font-semibold hover:text-[#14532d] transition-colors"
                   >
-                    {link.label}
+                    View All Products <ArrowRight size={22} />
                   </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {megaOpen && (
-          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[min(96vw,1700px)] bg-[#f1f2f5] border border-gray-200 z-50 rounded-b-2xl shadow-[0_22px_48px_rgba(0,0,0,0.16)] overflow-hidden">
-            <div className="p-6 xl:p-8">
-              <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(260px,320px)] gap-6 xl:gap-7 items-start">
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-                    <p className="text-sm font-bold tracking-wider text-gray-500 uppercase">Product Categories</p>
-                    <Link
-                      to="/products"
-                      onClick={() => setMegaOpen(false)}
-                      className="inline-flex items-center gap-2 text-[#166534] text-[1.2rem] leading-none font-semibold hover:text-[#14532d] transition-colors"
-                    >
-                      View All Products <ArrowRight size={22} />
-                    </Link>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7">
-                    {productCategories.map((category) => (
-                      <div key={category.title} className="min-w-0">
-                        <h4 className="text-[#1a5c3a] font-bold text-base mb-4 pb-2 border-b-2 border-[#1a5c3a]/20">
-                          {category.title}
-                        </h4>
-                        <ul className="space-y-2.5">
-                          {category.items.map((item) => (
-                            <li key={item.slug}>
-                              <Link
-                                to={`/products/${item.slug}`}
-                                onClick={() => setMegaOpen(false)}
-                                className="text-gray-700 hover:text-[#e8612c] transition-colors text-sm flex items-start gap-2 group leading-snug"
-                              >
-                                <span className="text-[#e8612c] text-xs group-hover:translate-x-1 transition-transform">›</span>
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                <div className="bg-[#0a2540] rounded-3xl p-5 xl:p-6 text-white flex flex-col shadow-xl w-full xl:max-w-[320px] xl:justify-self-end">
-                  <h3 className="text-[1.75rem] xl:text-[2.1rem] font-bold mb-3 xl:mb-4 leading-tight">Need Help Choosing?</h3>
-                  <p className="text-[0.98rem] xl:text-base text-gray-300 leading-relaxed mb-5 xl:mb-6">
-                    Our experts can help you find the right equipment for your specific requirements.
-                  </p>
-                  <Link
-                    to="/contact"
-                    onClick={() => setMegaOpen(false)}
-                    className="w-full bg-[#ff6b35] hover:bg-[#ff7a4d] text-white rounded-xl py-3 xl:py-3.5 text-base xl:text-lg font-semibold inline-flex items-center justify-center gap-2.5 transition-all hover:shadow-lg"
-                  >
-                    Contact Sales <ArrowRight size={22} />
-                  </Link>
-                  <div className="mt-5 xl:mt-6 pt-4 xl:pt-5 border-t border-white/10 flex justify-center">
-                    <a href="/Brochure.pdf" download className="text-white text-base xl:text-[1.02rem] font-medium hover:text-gray-200 transition-colors inline-block text-center">
-                      Download Product Catalog
-                    </a>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7">
+                  {productCategories.map((category) => (
+                    <div key={category.title} className="min-w-0">
+                      <h4 className="text-[#1a5c3a] font-bold text-base mb-4 pb-2 border-b-2 border-[#1a5c3a]/20">
+                        {category.title}
+                      </h4>
+                      <ul className="space-y-2.5">
+                        {category.items.map((item) => (
+                          <li key={item.slug}>
+                            <Link
+                              to={`/products/${item.slug}`}
+                              onClick={() => setMegaOpen(false)}
+                              className="text-gray-700 hover:text-[#e8612c] transition-colors text-sm flex items-start gap-2 group leading-snug"
+                            >
+                              <span className="text-[#e8612c] text-xs group-hover:translate-x-1 transition-transform">›</span>
+                              {item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-[#0a2540] rounded-3xl p-5 xl:p-6 text-white flex flex-col shadow-xl w-full xl:max-w-[320px] xl:justify-self-end">
+                <h3 className="text-[1.75rem] xl:text-[2.1rem] font-bold mb-3 xl:mb-4 leading-tight">Need Help Choosing?</h3>
+                <p className="text-[0.98rem] xl:text-base text-gray-300 leading-relaxed mb-5 xl:mb-6">
+                  Our experts can help you find the right equipment for your specific requirements.
+                </p>
+                <Link
+                  to="/contact"
+                  onClick={() => setMegaOpen(false)}
+                  className="w-full bg-[#ff6b35] hover:bg-[#ff7a4d] text-white rounded-xl py-3 xl:py-3.5 text-base xl:text-lg font-semibold inline-flex items-center justify-center gap-2.5 transition-all hover:shadow-lg"
+                >
+                  Contact Sales <ArrowRight size={22} />
+                </Link>
+                <div className="mt-5 xl:mt-6 pt-4 xl:pt-5 border-t border-white/10 flex justify-center">
+                  <a href="/Brochure.pdf" download className="text-white text-base xl:text-[1.02rem] font-medium hover:text-gray-200 transition-colors inline-block text-center">
+                    Download Product Catalog
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
 
       {/* Mobile Menu */}
       {mobileOpen && (

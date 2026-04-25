@@ -64,9 +64,12 @@ export function Industries() {
   return (
     <>
       <SEO 
-        title="Industries We Serve - McRAYGOR Mechanicals"
-        description="Specialized waste management and industrial cleaning solutions across diverse sectors including oil & gas, municipal, cement, steel plants, and more."
-        keywords="industrial vacuum systems, waste management equipment, sewer cleaning, municipal equipment, industrial cleaning solutions"
+        metadata={{
+          title: "Industries We Serve - McRAYGOR® Solutions",
+          description: "Specialized waste management and industrial cleaning solutions across diverse sectors including oil & gas, municipal, cement, steel plants, and more.",
+          keywords: "industrial vacuum systems, waste management equipment, sewer cleaning, municipal equipment, industrial cleaning solutions",
+          canonical: "https://www.mcraygor.com/industries"
+        }}
       />
       
       {/* Hero Section */}

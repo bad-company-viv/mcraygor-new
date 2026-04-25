@@ -81,14 +81,50 @@ export function BlogDetail() {
   ];
 
   const seoMetadata = useMemo(() => ({
-    title: `${post.title} | McRAYGOR Insights`,
+    title: `${post.title} | McRAYGOR® Insights`,
     description: post.excerpt,
-    keywords: `McRAYGOR, ${post.category}, industrial cleaning, waste management`
-  }), [post.title, post.excerpt, post.category]);
+    keywords: `McRAYGOR, ${post.category}, industrial cleaning, waste management, municipal engineering`,
+    ogTitle: `${post.title} | McRAYGOR® Insights`,
+    ogDescription: post.excerpt,
+    ogImage: post.image,
+    ogType: 'article',
+    canonical: `https://www.mcraygor.com/blog/${post.slug}`
+  }), [post.title, post.excerpt, post.category, post.image, post.slug]);
+
+  // JSON-LD Structured Data for Blog Post
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": [post.image],
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": [{
+        "@type": "Organization",
+        "name": "McRAYGOR® Mechanicals",
+        "url": "https://www.mcraygor.com"
+      }],
+    "description": post.excerpt,
+    "publisher": {
+      "@type": "Organization",
+      "name": "McRAYGOR®",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.mcraygor.com/mcraygor-logo.jpeg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": typeof window !== 'undefined' ? window.location.href : `https://www.mcraygor.com/blog/${post.slug}`
+    }
+  };
 
   return (
     <div className="bg-white">
       <SEO metadata={seoMetadata} />
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+      </script>
 
       {/* Reading Progress Bar */}
       <div

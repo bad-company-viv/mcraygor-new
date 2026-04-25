@@ -22,7 +22,7 @@ const categories = [
     slug: "industrial-vacuum",
     title: "Industrial Vacuum",
     description: "Industrial vacuum cleaning machine (IVC - Super Sucker) for high-intensity cleaning and suction applications.",
-    image: "/industrial-vaccum.png",
+    image: "/images/products/vaccum.png",
     count: "Specialized",
     color: "#1c2535",
   },
@@ -30,7 +30,7 @@ const categories = [
     slug: "special-purpose",
     title: "Special Purpose",
     description: "Anti-smog gun/fogging systems, skylift working platforms, and mobile oil spill recovery unit (MOSR).",
-    image: "/images/products/sky-lift/skylift-working-platform.png",
+    image: "/images/products/anti-smog/anti-smog.png",
     count: "Application Specific",
     color: "#7c3aed",
   },
@@ -54,6 +54,7 @@ export function ProductsShowcase() {
                   src={cat.image}
                   alt={cat.title}
                   className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105"
+                  loading="lazy"
                 />
                 {/* Minimalist Overlay - only darkens bottom for readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />

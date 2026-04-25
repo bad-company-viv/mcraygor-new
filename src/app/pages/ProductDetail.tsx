@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router";
-import { Download, MessageSquare, CheckCircle2, ChevronRight, ChevronLeft, Home, Star, Shield, Truck, Headphones } from "lucide-react";
+import { Download, MessageSquare, CheckCircle2, ChevronRight, ChevronLeft, Home, Star, Shield, Truck, Headphones, ArrowRight } from "lucide-react";
 import { SEO } from "../components/SEO";
 import { getProductSEO } from "../utils/seo";
 import { Breadcrumb } from "../components/common/Breadcrumb";
@@ -1470,6 +1470,63 @@ export function ProductDetail() {
           )}
 
 
+        </div>
+      </section>
+
+      {/* Target Industries Section */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8">
+          <h2 className="text-2xl font-bold text-[#1c2535] mb-8">Target Industries</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { label: "Municipal", to: "/industries/municipal" },
+              { label: "Oil & Gas", to: "/industries/oil-gas" },
+              { label: "Steel Plants", to: "/industries/steel-plants" },
+              { label: "Refineries", to: "/industries/oil-refineries" },
+              { label: "Cement", to: "/industries/cement" },
+              { label: "Power Plants", to: "/industries/power-plants" },
+            ].map((industry) => (
+              <Link
+                key={industry.label}
+                to={industry.to}
+                className="flex items-center justify-center p-4 border border-gray-200 rounded-xl hover:border-[#e8612c] hover:text-[#e8612c] transition-all text-sm font-medium text-center"
+              >
+                {industry.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Products Section */}
+      <section className="py-16 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-[#1c2535]">Related Equipment</h2>
+            <Link to="/products" className="text-[#e8612c] font-semibold flex items-center gap-2 hover:underline">
+              View All Products <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {Object.values(productData)
+              .filter(p => p.category === product.category && p.name !== product.name)
+              .slice(0, 3)
+              .map((p) => (
+                <Link
+                  key={p.name}
+                  to={`/products/${Object.keys(productData).find(key => productData[key] === p)}`}
+                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group"
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-[#1c2535] group-hover:text-[#e8612c] transition-colors line-clamp-1">{p.name}</h3>
+                    <p className="text-gray-500 text-xs mt-2 line-clamp-2">{p.desc}</p>
+                  </div>
+                </Link>
+              ))}
+          </div>
         </div>
       </section>
 

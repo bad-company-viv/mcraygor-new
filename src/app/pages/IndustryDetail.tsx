@@ -277,9 +277,13 @@ export function IndustryDetail() {
   return (
     <>
       <SEO 
-        title={`${industry.title} Solutions - McRAYGOR Mechanicals`}
-        description={industry.description}
-        keywords={`${industry.title.toLowerCase()}, industrial vacuum systems, waste management equipment, specialized cleaning solutions`}
+        metadata={{
+          title: `${industry.title} Solutions | McRAYGOR® Mechanicals`,
+          description: industry.description,
+          keywords: `${industry.title.toLowerCase()}, industrial vacuum systems, waste management equipment, specialized cleaning solutions`,
+          canonical: `https://www.mcraygor.com/industries/${industryId}`,
+          ogImage: industry.image
+        }}
       />
 
       {/* Hero Section */}
@@ -375,12 +379,44 @@ export function IndustryDetail() {
             <div>
               <h3 className="text-2xl font-bold text-[#1c2535] mb-6">Relevant Products</h3>
               <div className="space-y-3">
-                {industry.products.map((product, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="text-[#e8612c] mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600">{product}</span>
-                  </div>
-                ))}
+                {industry.products.map((productName, index) => {
+                  // Attempt to find the product slug
+                  const productsMap: Record<string, string> = {
+                    "Combined Jetting Cum Suction Machine – COMBINATOR™": "COMBINATOR",
+                    "Combined Jetting Cum Suction Machine": "COMBINATOR",
+                    "IVC Super Sucker - Industrial Vacuum Cleaner": "HYPERVAC-IVC",
+                    "IVC Super Sucker - Heavy Duty": "HYPERVAC-IVC",
+                    "High-Flow Deep Suction Machine": "HYPERVAC",
+                    "Super Sucker Machine – HYPERVAC™": "HYPERVAC",
+                    "Truck Mounted Road Sweeping Machine": "McCLEAN",
+                    "Garbage Compactor Systems": "PAC",
+                    "Refuse / Garbage Compactor – PAC™": "PAC",
+                    "Litter Picker Machines": "VYUK",
+                    "Combined Jetting Cum Suction Machine": "COMBINATOR",
+                    "Sewer Rodding Machine": "McRODDER",
+                    "Anti-Smog Gun / Fog Cannon": "McFOGGER",
+                    "Anti-Smog Gun / Fog Cannon Systems": "McFOGGER",
+                    "Mobile Oil Spill Recovery Unit (MOSR)": "MOSRU",
+                    "Industrial Vacuum Cleaner Trucks": "HYPERVAC-IVC",
+                    "Material Recovery Systems": "MATERIAL-RECOVERY-SYSTEMS",
+                    "Industrial Dust Suppression Systems": "McFOGGER",
+                    "Heavy-Duty Vacuum Cleaners": "HYPERVAC-IVC",
+                    "Heavy-Duty Industrial Vacuum Systems": "HYPERVAC-IVC",
+                    "Coal Handling Equipment": "HYPERVAC-IVC"
+                  };
+                  const slug = productsMap[productName] || "COMBINATOR"; // Fallback to Combinator if not found
+                  
+                  return (
+                    <Link 
+                      key={index} 
+                      to={`/products/${slug}`}
+                      className="flex items-start gap-3 p-3 rounded-lg hover:bg-white hover:shadow-sm transition-all group"
+                    >
+                      <CheckCircle size={20} className="text-[#e8612c] mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 group-hover:text-[#e8612c] font-medium">{productName}</span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>

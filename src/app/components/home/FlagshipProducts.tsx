@@ -35,7 +35,8 @@ export function FlagshipProducts() {
             <img
               src={product.image}
               alt={`McRAYGOR ${product.title} - Heavy-Duty Industrial Cleaning Machine`}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              className="absolute inset-0 w-full h-full object-contain transition-transform duration-1000 hover:scale-105"
+              loading="lazy"
             />
             {/* Subtle shadow overlay on mobile */}
             <div className="absolute inset-0 bg-black/10 md:hidden" />
