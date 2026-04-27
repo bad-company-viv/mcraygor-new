@@ -6,7 +6,8 @@ const categories = [
     slug: "liquid-waste",
     title: "Liquid Waste",
     description: "Combined jetting-cum-suction, super sucker, sewer grabbing, gully suction emptier, bucket type and rodding systems.",
-    image: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
+    image: "/images/liquid-waste.png",
+    mobileImage: "/images/liquid-waste-mobile.png",
     count: "Core Range",
     color: "#1a5c3a",
   },
@@ -15,6 +16,7 @@ const categories = [
     title: "Solid Waste",
     description: "Litter picker units, refuse/garbage compactor systems, and road sweeper solutions for municipal operations.",
     image: "/garbage-compactor.png",
+    mobileImage: "/images/garbage-compactor-mobile.png",
     count: "Municipal Fleet",
     color: "#e8612c",
   },
@@ -23,6 +25,7 @@ const categories = [
     title: "Industrial Vacuum",
     description: "Industrial vacuum cleaning machine (IVC - Super Sucker) for high-intensity cleaning and suction applications.",
     image: "/images/products/vaccum.png",
+    mobileImage: "/images/vaccum-mobile.png",
     count: "Specialized",
     color: "#1c2535",
   },
@@ -31,6 +34,7 @@ const categories = [
     title: "Special Purpose",
     description: "Anti-smog gun/fogging systems, skylift working platforms, and mobile oil spill recovery unit (MOSR).",
     image: "/images/products/anti-smog/anti-smog.png",
+    mobileImage: "/images/anti-smog-mobile.png",
     count: "Application Specific",
     color: "#7c3aed",
   },
@@ -46,14 +50,22 @@ export function ProductsShowcase() {
             <Link
               key={cat.slug}
               to="/products"
-              className="group relative overflow-hidden h-[450px] lg:h-[550px] shadow-2xl"
+              className="group relative overflow-hidden h-[600px] md:h-[450px] lg:h-[550px] shadow-2xl"
             >
               {/* Background Image - High Contrast focus */}
               <div className="absolute inset-0">
+                {/* Mobile Image */}
+                <img
+                  src={cat.mobileImage || cat.image}
+                  alt={cat.title}
+                  className="w-full h-full object-cover md:hidden transition-all duration-1000 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Desktop Image */}
                 <img
                   src={cat.image}
                   alt={cat.title}
-                  className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover hidden md:block transition-all duration-1000 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
                 {/* Minimalist Overlay - only darkens bottom for readability */}

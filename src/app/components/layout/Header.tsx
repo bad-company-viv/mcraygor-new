@@ -132,8 +132,8 @@ export function Header() {
             />
           </Link>
           <div className="h-10 md:h-14 w-px bg-gray-200 hidden sm:block" />
-          <div className="hidden sm:flex items-center h-full">
-            <img src="/celebration.jpg" alt="25 Years Celebration" className="h-10 md:h-14 lg:h-16 w-auto object-contain" />
+          <div className="flex items-center h-full">
+            <img src="/celebration.jpg" alt="25 Years Celebration" className="h-8 sm:h-10 md:h-14 lg:h-16 w-auto object-contain" />
           </div>
         </div>
 

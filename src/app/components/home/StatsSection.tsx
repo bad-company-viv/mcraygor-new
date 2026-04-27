@@ -114,7 +114,7 @@ export function StatsSection() {
     <section className="bg-[#0d1117] -mt-px pt-8 pb-16 md:pt-10 md:pb-20">
       <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 xl:px-10">
         <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-white" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
+          <h2 className="text-white" style={{ fontSize: "clamp(1.25rem, 5vw, 2.5rem)", fontWeight: 700, lineHeight: 1.3 }}>
             {sectionTitle}
           </h2>
         </div>

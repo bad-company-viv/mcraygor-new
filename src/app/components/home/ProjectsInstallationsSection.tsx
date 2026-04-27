@@ -48,14 +48,21 @@ export function ProjectsInstallationsSection() {
         <div className="grid lg:grid-cols-[minmax(0,1fr)_360px] gap-6 lg:gap-5 items-start">
           <div className="relative overflow-hidden min-h-[320px] sm:min-h-[420px] md:min-h-[500px] border border-[#1c2535]/10 shadow-xl bg-[#1c2535]">
             <img
+              key={activeIndex}
               src={activeProject.images[0]?.url}
               alt={activeProject.images[0]?.alt || activeProject.title}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover animate-[fadeIn_0.6s_ease-in-out]"
             />
+            <style>{`
+              @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+              }
+            `}</style>
             <div className="absolute inset-0 bg-gradient-to-t from-[#081421]/90 via-[#081421]/55 to-transparent" />
 
             <div className="absolute top-4 left-4 flex gap-2">
-              <div className="bg-[#e8612c] text-white inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+              <div className="hidden sm:inline-flex bg-[#e8612c] text-white items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
                 Landmark
               </div>
               <div className="bg-[#1a5c3a] text-white inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
@@ -89,7 +96,7 @@ export function ProjectsInstallationsSection() {
               <h3 className="text-2xl sm:text-4xl font-extrabold leading-tight mb-3 sm:mb-4">
                 {activeProject.title}
               </h3>
-              <p className="text-sm sm:text-lg text-gray-200 max-w-3xl leading-relaxed mb-4 sm:mb-5">
+              <p className="hidden sm:block text-sm sm:text-lg text-gray-200 max-w-3xl leading-relaxed mb-4 sm:mb-5">
                 {activeProject.description}
               </p>
               <Link

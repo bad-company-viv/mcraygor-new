@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router";
 import { AlertCircle, CheckCircle, TrendingUp, Wrench, ArrowRight, Settings } from "lucide-react";
-import { getProjectBySlug, validateProductLink } from "../data/projectsData";
+import { getProjectBySlug, validateProductLink, projectsData } from "../data/projectsData";
 import { SEO } from "../components/SEO";
 
 export function ProjectDetail() {
@@ -213,13 +213,13 @@ export function ProjectDetail() {
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {Object.entries(projectsData)
-                .filter(([s]) => s !== slug)
+              {projectsData
+                .filter((p) => p.slug !== slug)
                 .slice(0, 3)
-                .map(([s, p]) => (
-                  <Link key={s} to={`/projects/${s}`} className="group block">
+                .map((p) => (
+                  <Link key={p.slug} to={`/projects/${p.slug}`} className="group block">
                     <div className="aspect-[16/10] overflow-hidden rounded-xl mb-4">
-                      <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={p.images[0]?.url} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <h3 className="font-bold text-[#1c2535] group-hover:text-[#e8612c] transition-colors line-clamp-2">{p.title}</h3>
                   </Link>

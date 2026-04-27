@@ -26,8 +26,8 @@ export function FlagshipProducts() {
   return (
     <section className="bg-white border-y border-gray-100 pb-12 md:pb-20">
       {flagships.map((product, index) => (
-        <div 
-          key={product.id} 
+        <div
+          key={product.id}
           className={`flex flex-col ${product.align === "left" ? "md:flex-row" : "md:flex-row-reverse"} items-stretch min-h-[650px] mb-12 md:mb-20 last:mb-0`}
         >
           {/* Image Side */}
@@ -45,15 +45,15 @@ export function FlagshipProducts() {
           {/* Content Side */}
           <div className="w-full md:w-[45%] lg:w-[40%] flex flex-col justify-center px-8 py-20 md:px-14 lg:px-20 xl:px-24">
             <div className="max-w-[500px]">
-              
+
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#1a1a1a] mb-8 uppercase leading-[1]">
                 {product.title}
               </h2>
-              
+
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-12 font-medium">
                 {product.description}
               </p>
-              
+
               <div>
                 <Link
                   to={product.link}
