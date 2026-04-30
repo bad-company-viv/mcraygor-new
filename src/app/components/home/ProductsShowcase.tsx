@@ -6,8 +6,8 @@ const categories = [
     slug: "liquid-waste",
     title: "Liquid Waste",
     description: "Combined jetting-cum-suction, super sucker, sewer grabbing, gully suction emptier, bucket type and rodding systems.",
-    image: "/images/liquid-waste.png",
-    mobileImage: "/images/liquid-waste-mobile.png",
+    image: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
+    mobileImage: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
     count: "Core Range",
     color: "#1a5c3a",
   },
@@ -33,8 +33,8 @@ const categories = [
     slug: "special-purpose",
     title: "Special Purpose",
     description: "Anti-smog gun/fogging systems, skylift working platforms, and mobile oil spill recovery unit (MOSR).",
-    image: "/images/products/anti-smog/anti-smog.png",
-    mobileImage: "/images/anti-smog-mobile.png",
+    image: "/images/products/anti-smog/anti-smog-machine-1.jpg",
+    mobileImage: "/images/products/anti-smog/anti-smog-machine-1.jpg",
     count: "Application Specific",
     color: "#7c3aed",
   },
@@ -42,7 +42,7 @@ const categories = [
 
 export function ProductsShowcase() {
   return (
-    <section className="bg-black">
+    <section className="bg-white">
       <div className="w-full">
         {/* Cinematic Grid with Minimal Spacing */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1 p-1">

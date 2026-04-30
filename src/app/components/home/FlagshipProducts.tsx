@@ -7,7 +7,7 @@ const flagships = [
     title: "Combined Jetting Cum Suction Machine – COMBINATOR™",
     subtitle: "Flagship series",
     description: "Our high-performance combined unit for simultaneous high-pressure jetting and vacuum suction. Designed for efficient sewer line cleaning and liquid waste management in municipal and industrial environments.",
-    image: "/images/products/jetting-cum-suction-machine/jetting-machine.png",
+    image: "/images/products/jetting-cum-suction-machine/jetting-cum-suction-machine-1.jpg",
     link: "/products/COMBINATOR",
     align: "left"
   },
@@ -16,7 +16,7 @@ const flagships = [
     title: "Super Sucker Machine – HYPERVAC™",
     subtitle: "Heavy-Duty Series",
     description: "The ultimate industrial vacuum cleaner. Engineered for deep sewer desilting and high-intensity industrial cleaning, capable of handling dry and wet waste with unmatched suction power.",
-    image: "/images/products/super-sucker-machine/super-sucker.png",
+    image: "/images/products/super-sucker-machine/super-sucker-1.jpg",
     link: "/products/HYPERVAC",
     align: "right"
   }

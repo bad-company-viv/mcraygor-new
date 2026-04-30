@@ -122,18 +122,22 @@ export function Header() {
     <header ref={megaRef} className="bg-white shadow-sm relative z-[100]">
       {/* Main Header Row */}
       <div className="max-w-[1700px] mx-auto px-4 md:px-6 flex items-center justify-between gap-4 lg:gap-8">
-        {/* Left: Logos */}
-        <div className="flex items-center gap-3 md:gap-4 py-2">
-          <Link to="/" className="flex-shrink-0 flex items-center">
+        {/* Left: Logo */}
+        <div className="flex-shrink-0 flex items-center gap-4 md:gap-6 py-2">
+          <Link to="/" className="flex items-center">
             <img
               src={logoImg}
               alt="McRAYGOR Mechanicals Infrastructure"
-              className="h-14 md:h-20 lg:h-24 w-auto object-contain"
+              className="h-16 md:h-20 lg:h-24 w-auto object-contain"
             />
           </Link>
-          <div className="h-10 md:h-14 w-px bg-gray-200 hidden sm:block" />
-          <div className="flex items-center h-full">
-            <img src="/celebration.jpg" alt="25 Years Celebration" className="h-8 sm:h-10 md:h-14 lg:h-16 w-auto object-contain" />
+          <div className="h-8 md:h-12 w-px bg-gray-200 hidden sm:block" />
+          <div className="flex items-center">
+            <img 
+              src="/celebration.jpg" 
+              alt="25 Years Celebration" 
+              className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto object-contain" 
+            />
           </div>
         </div>
 
@@ -252,6 +256,9 @@ export function Header() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl max-h-[80vh] overflow-y-auto">
+          <div className="px-4 py-4 border-b border-gray-50 flex justify-center">
+            <img src={logoImg} alt="McRAYGOR" className="h-20 w-auto object-contain" />
+          </div>
           <div className="px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <div key={link.label}>

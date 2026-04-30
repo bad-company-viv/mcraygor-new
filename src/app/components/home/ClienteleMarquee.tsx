@@ -1,53 +1,52 @@
 const clients = [
   // Private Sector Clients
-  { name: "Hindalco", type: "Private", logo: "/clients-logo/hindalco.jpg" },
-  { name: "Reliance Industries", type: "Private", logo: "/clients-logo/reliance-industries.jpg" },
-  { name: "Gannon Dunkerley", type: "Private", logo: "/clients-logo/gannon-dunkerley.jpg" },
-  { name: "Unitech", type: "Private", logo: "/clients-logo/unitech.jpg" },
-  { name: "JSW Steel", type: "Private", logo: "/clients-logo/jsw.jpg" },
-  { name: "L&T", type: "Private", logo: "/clients-logo/l&t.jpg" },
-  { name: "DLF", type: "Private", logo: "/clients-logo/dlf-building.jpg" },
-  { name: "Genrobotics", type: "Private", logo: "/clients-logo/gemrobotics.jpg" },
-  { name: "G3R", type: "Private", logo: "/clients-logo/g3r.jpg" },
-  { name: "NCC", type: "Private", logo: "/clients-logo/ncc.jpg" },
-  { name: "ANSAL", type: "Private", logo: "/clients-logo/ansal.jpg" },
-  { name: "BTL EPC", type: "Private", logo: "/clients-logo/btl-epc.jpg" },
-  { name: "ACC Cement", type: "Private", logo: "/clients-logo/acc-cement.jpg" },
-  { name: "Shree Cement", type: "Private", logo: "/clients-logo/shree-cement.jpg" },
-  { name: "Prism Johnson", type: "Private", logo: "/clients-logo/prism-johnson.jpg" },
-  { name: "Bharat Petroleum", type: "Private", logo: "/clients-logo/bharat-petroleum.jpg" },
-  { name: "Vizag Steel", type: "Private", logo: "/clients-logo/vizag-steel.jpg" },
-  { name: "Industrial Infrastructure Partner", type: "Private", logo: "/clients-logo/12.jpg" },
-  
+  { name: "Hindalco", type: "Private", logo: "/clients-logo/hindalco.png" },
+  { name: "Reliance Industries", type: "Private", logo: "/clients-logo/reliance.png" },
+  { name: "Gannon Dunkerley", type: "Private", logo: "/clients-logo/gd.png" },
+  { name: "Unitech", type: "Private", logo: "/clients-logo/unitech.png" },
+  { name: "JSW Steel", type: "Private", logo: "/clients-logo/jsw.png" },
+  { name: "L&T", type: "Private", logo: "/clients-logo/l&t.png" },
+  { name: "DLF", type: "Private", logo: "/clients-logo/dlf.png" },
+  { name: "Genrobotics", type: "Private", logo: "/clients-logo/genrobotics.png" },
+  { name: "G3R", type: "Private", logo: "/clients-logo/smp.png" },
+  { name: "NCC", type: "Private", logo: "/clients-logo/ncc.png" },
+  { name: "ANSAL", type: "Private", logo: "/clients-logo/ansal.png" },
+  { name: "BTL EPC", type: "Private", logo: "/clients-logo/btlepc.png" },
+  { name: "ACC Cement", type: "Private", logo: "/clients-logo/acc.png" },
+  { name: "Shree Cement", type: "Private", logo: "/clients-logo/shree.png" },
+  { name: "Prism Johnson", type: "Private", logo: "/clients-logo/pjd.png" },
+  { name: "Bharat Petroleum", type: "Private", logo: "/clients-logo/bp.png" },
+  { name: "Vizag Steel", type: "Private", logo: "/clients-logo/vizag.png" },
+
   // Government Clients
-  { name: "Delhi Municipal Council", type: "Government", logo: "/clients-logo/delhi-municipal-council.jpg" },
-  { name: "Delhi PWD", type: "Government", logo: "/clients-logo/delhi-pwd.jpg" },
-  { name: "Delhi Jal Board", type: "Government", logo: "/clients-logo/delhi-jal-board.jpg" },
-  { name: "HWSSB", type: "Government", logo: "/clients-logo/hyderabad-metropolitan-water-supply-and-sewerage-board.jpg" },
-  { name: "Vijayawada Municipal Corporation", type: "Government", logo: "/clients-logo/vijayawada.jpg" },
-  { name: "Kalyan Dombivli Municipal Corporation", type: "Government", logo: "/clients-logo/kalyan-dombivili-municipal-corporation.jpg" },
-  { name: "Kerala Water Authority", type: "Government", logo: "/clients-logo/kerela-water-authority.jpg" },
-  { name: "BHEL", type: "Government", logo: "/clients-logo/bhel.jpg" },
-  { name: "Indian Oil Corporation", type: "Government", logo: "/clients-logo/indian-oil.jpg" },
-  { name: "Indian Army", type: "Government", logo: "/clients-logo/indian-army.jpg" },
-  { name: "BMC", type: "Government", logo: "/clients-logo/bmc.jpg" },
-  { name: "Gurugram Municipal Corporation", type: "Government", logo: "/clients-logo/gurugram-municipal-corporation.jpg" },
-  { name: "GMDA", type: "Government", logo: "/clients-logo/gurugram-metropolitan-development-authority.jpg" },
-  { name: "Vadodara Municipal Corporation", type: "Government", logo: "/clients-logo/vadodara-municipal-corporation.jpg" },
-  { name: "Municipal Council Tadipatri", type: "Government", logo: "/clients-logo/municipal-council-tadipatri.jpg" },
-  { name: "Jammu Municipal Corporation", type: "Government", logo: "/clients-logo/jammu-municipal.jpg" },
-  { name: "RUIDP", type: "Government", logo: "/clients-logo/rajasthan-urban-infrastructure-development-project.png" },
-  { name: "United Nations", type: "Government", logo: "/clients-logo/united-nations.jpg" },
-  { name: "International Red Cross", type: "Private", logo: "/clients-logo/comite-international.jpg" },
+  { name: "Delhi Municipal Council", type: "Government", logo: "/clients-logo/ndmc.png" },
+  { name: "Delhi PWD", type: "Government", logo: "/clients-logo/pwd.png" },
+  { name: "Delhi Jal Board", type: "Government", logo: "/clients-logo/delhi-jal-board.png" },
+  { name: "HWSSB", type: "Government", logo: "/clients-logo/hmwssb.png" },
+  { name: "Vijayawada Municipal Corporation", type: "Government", logo: "/clients-logo/vijayawada.png" },
+  { name: "Kalyan Dombivli Municipal Corporation", type: "Government", logo: "/clients-logo/kalyan.png" },
+  { name: "Kerala Water Authority", type: "Government", logo: "/clients-logo/kwa.png" },
+  { name: "BHEL", type: "Government", logo: "/clients-logo/bhel.png" },
+  { name: "Indian Oil Corporation", type: "Government", logo: "/clients-logo/indian-oil.png" },
+  { name: "Indian Army", type: "Government", logo: "/clients-logo/indian-army.png" },
+  { name: "BMC", type: "Government", logo: "/clients-logo/bmc.png" },
+  { name: "Gurugram Municipal Corporation", type: "Government", logo: "/clients-logo/mcg.png" },
+  { name: "GMDA", type: "Government", logo: "/clients-logo/gmda.png" },
+  { name: "Vadodara Municipal Corporation", type: "Government", logo: "/clients-logo/vmc.png" },
+  { name: "Municipal Council Tadipatri", type: "Government", logo: "/clients-logo/mct.png" },
+  { name: "Jammu Municipal Corporation", type: "Government", logo: "/clients-logo/jmc.png" },
+  { name: "RUIDP", type: "Government", logo: "/clients-logo/ruidp.png" },
+  { name: "United Nations", type: "Government", logo: "/clients-logo/un.png" },
+  { name: "International Red Cross", type: "Private", logo: "/clients-logo/cig.png" },
 ];
 
 function ClientCard({ name, type, logo }: { name: string; type: string; logo: string }) {
   return (
-    <div className="flex-shrink-0 mx-2 md:mx-4 bg-white border border-gray-100 shadow-sm px-6 py-4 md:px-12 md:py-10 flex flex-col items-center justify-center w-[160px] h-[100px] md:w-[400px] md:h-[240px] hover:shadow-md transition-shadow">
-      <div className="w-24 h-16 md:w-56 md:h-40 flex items-center justify-center">
-        <img 
-          src={logo} 
-          alt={`McRAYGOR Client: ${name} logo`} 
+    <div className="flex-shrink-0 mx-2 md:mx-4 bg-white border border-gray-100 shadow-sm flex flex-col items-center justify-center w-[160px] h-[100px] md:w-[400px] md:h-[240px] hover:shadow-md transition-shadow overflow-hidden">
+      <div className="w-full h-full flex items-center justify-center p-3 md:p-8">
+        <img
+          src={logo}
+          alt={`McRAYGOR Client: ${name} logo`}
           className="max-w-full max-h-full object-contain"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
@@ -56,7 +55,7 @@ function ClientCard({ name, type, logo }: { name: string; type: string; logo: st
             if (fallback) fallback.style.display = 'flex';
           }}
         />
-        <div 
+        <div
           className="w-10 h-10 md:w-16 md:h-16 rounded-full hidden items-center justify-center text-white font-bold text-base md:text-2xl"
           style={{ backgroundColor: type === "Private" ? "#e8612c" : "#1c2535" }}
         >

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router";
 import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { projectsData } from "../../data/projectsData";
@@ -15,13 +15,18 @@ export function ProjectsInstallationsSection() {
 
   if (!activeProject) return null;
 
-  function goToPrev() {
+  const goToPrev = useCallback(() => {
     setActiveIndex((current) => (current === 0 ? projects.length - 1 : current - 1));
-  }
+  }, [projects.length]);
 
-  function goToNext() {
+  const goToNext = useCallback(() => {
     setActiveIndex((current) => (current === projects.length - 1 ? 0 : current + 1));
-  }
+  }, [projects.length]);
+
+  useEffect(() => {
+    const timer = setInterval(goToNext, 6000);
+    return () => clearInterval(timer);
+  }, [goToNext]);
 
   return (
     <section
@@ -75,7 +80,7 @@ export function ProjectsInstallationsSection() {
               type="button"
               onClick={goToPrev}
               aria-label="Previous project"
-              className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-white text-[#1c2535] flex items-center justify-center transition-colors"
+              className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-white text-[#1c2535] flex items-center justify-center transition-colors z-30"
             >
               <ChevronLeft size={20} />
             </button>
@@ -83,7 +88,7 @@ export function ProjectsInstallationsSection() {
               type="button"
               onClick={goToNext}
               aria-label="Next project"
-              className="absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-white text-[#1c2535] flex items-center justify-center transition-colors"
+              className="absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/85 hover:bg-white text-[#1c2535] flex items-center justify-center transition-colors z-30"
             >
               <ChevronRight size={20} />
             </button>

@@ -59,7 +59,6 @@ export function Home() {
       <FlagshipProducts />
       <IndustriesWeServe />
       <MachinesInAction />
-      <CTASection />
       <ClienteleMarquee />
       <ProjectsInstallationsSection />
       <QuotationSection />

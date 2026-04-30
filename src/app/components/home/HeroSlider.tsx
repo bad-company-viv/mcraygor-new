@@ -122,7 +122,7 @@ export function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className={`relative z-10 h-full flex items-center pt-20 md:pt-0 pb-32 md:pb-0 md:items-center transition-opacity duration-300 ${transitioning ? "opacity-0" : "opacity-100"}`}>
+      <div className={`relative z-10 h-full flex items-center pt-16 md:pt-0 pb-32 md:pb-0 md:items-center transition-opacity duration-300 ${transitioning ? "opacity-0" : "opacity-100"}`}>
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 w-full">
           <div className="max-w-3xl">
             {/* Badge */}
@@ -136,7 +136,7 @@ export function HeroSlider() {
               EST. 2007
             </div>
 
-            <h1 className="text-white mb-80 sm:mb-5 px-4" style={{ fontSize: "clamp(2rem, 10vw, 3.5rem)", fontWeight: 800, lineHeight: 1.1, textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>
+            <h1 className="text-white mb-40 sm:mb-5 px-4" style={{ fontSize: "clamp(2rem, 10vw, 3.5rem)", fontWeight: 800, lineHeight: 1.1, textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>
               {slide.headline}
             </h1>
             <p className="hidden sm:block text-gray-300 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl" style={{ fontWeight: 400, lineHeight: 1.6 }}>
@@ -151,7 +151,7 @@ export function HeroSlider() {
               </Link>
               <Link
                 to={slide.secondaryCta.to}
-                className="backdrop-blur-md bg-white/5 border border-white/20 sm:border-white/40 text-white hover:bg-white/10 px-5 sm:px-7 py-3 sm:py-3.5 rounded font-semibold text-sm sm:text-base transition-all text-center w-full sm:w-auto"
+                className="!hidden sm:!flex backdrop-blur-md bg-white/5 border border-white/20 sm:border-white/40 text-white hover:bg-white/10 px-5 sm:px-7 py-3 sm:py-3.5 rounded font-semibold text-sm sm:text-base transition-all text-center w-full sm:w-auto items-center justify-center"
               >
                 {slide.secondaryCta.label}
               </Link>
